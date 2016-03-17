@@ -1,0 +1,16 @@
+#browser-detector,#browser-detector *{box-sizing:content-box}#browser-detector{background:#ffffe5;color:#333;position:fixed;_position:absolute;padding:.6em 1em;font-size:1em;font-family:"Trebuchet MS","Segoe UI",Arial,Tahoma,sans-serif;border:1px solid #d6d6c1;border-radius:.3em;-moz-border-radius:.3em;width:44em;z-index:1001;text-shadow:inherit}
+#browser-detector P{margin:0;padding:0;background:transparent;line-height:135%;width:auto;float:none;border:0;text-align:left}
+#browser-detector P.bd-title{padding-top:0;font-size:1.5em;line-height:100%}#browser-detector P.bd-notice{padding-bottom:.3em;padding-top:.3em}
+#browser-detector SPAN.bd-highlight{color:#b50e0e}#browser-detector A#browser-detector-close{color:#400;font-size:1.5em;font-weight:bold;text-decoration:none;outline:0;position:absolute;right:.5em;top:.5em;line-height:100%}
+#browser-detector A#browser-detector-close:HOVER{background-color:#f5d5d5}#browser-detector UL.bd-browsers-list,#browser-detector UL.bd-browsers-list LI,#browser-detector UL.bd-skip-buttons,#browser-detector UL.bd-skip-buttons LI{padding:0;margin:0;float:left;list-style:none}
+#browser-detector UL.bd-browsers-list{clear:both;margin-top:3px;padding:7px 0;border-top:1px solid #f5f5dc;border-bottom:1px solid #f5f5dc;width:100%}
+#browser-detector UL.bd-browsers-list LI{text-align:left}#browser-detector UL.bd-browsers-list LI A{width:60px;height:55px;display:block;color:#666;padding:10px 10px 0 65px;text-decoration:none}
+#browser-detector UL.bd-browsers-list LI A:HOVER{text-decoration:underline}#browser-detector UL.bd-browsers-list LI.firefox A{background:url('../img/browser-firefox.gif') no-repeat left top}
+#browser-detector UL.bd-browsers-list LI.chrome A{background:url('../img/browser-chrome.gif') no-repeat left top}
+#browser-detector UL.bd-browsers-list LI.safari A{background:url('../img/browser-safari.gif') no-repeat left top}
+#browser-detector UL.bd-browsers-list LI.opera A{background:url('../img/browser-opera.gif') no-repeat left top}
+#browser-detector UL.bd-browsers-list LI.msie A{background:url('../img/browser-msie.gif') no-repeat left top}#browser-detector UL.bd-skip-buttons{margin-top:10px}
+#browser-detector UL.bd-skip-buttons LI{display:inline;margin-right:.5em}#browser-detector UL.bd-skip-buttons LI BUTTON{font-size:13px}
+#browser-detector DIV.bd-poweredby{font-size:.8em;position:absolute;bottom:.5em;right:.5em;font-style:italic}#browser-detector DIV.bd-poweredby,#browser-detector DIV.bd-poweredby A{color:#aaa}
+#browser-detector DIV.bd-poweredby A{text-decoration:underline}#browser-detector DIV.bd-poweredby A:HOVER{text-decoration:none}
+#black_overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:black;z-index:1000;-moz-opacity:.8;opacity:.80;filter:alpha(opacity=80)}
