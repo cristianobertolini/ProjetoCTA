@@ -1,0 +1,55 @@
+/* 
+    Created on : 17/03/2016, 23:24:13
+    Author     : Talliny
+*/
+
+// Rodapé
+
+.copy{
+    background: #444444;
+    padding: 10px 0;
+}
+
+.copy p{
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.copy a{
+    color: #fff;
+    font-size: 14px;
+}
+//FIM rodapé
+
+
+.w3-btn{
+    color: #ffffff;
+}
+
+section{
+    padding-bottom: 50px;
+}
+
+#categorias{
+    padding: 50px 0;
+}
+
+// MENU
+
+.row:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -90px; 
+  height: 90px; 
+  visibility: hidden;
+}
+
+//FIM MENU
+ol, dl {
+    list-style: none;
+}
+
+.th{
+    border: none;
+}

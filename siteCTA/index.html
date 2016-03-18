@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>CTA | Sistema Colaborativo de Audio Descrição</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="css/csspersonalizado.css">
+        <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+        <link rel="stylesheet" href="css/w3.css">
+        
+        <script src="js/vendor/modernizr.js"></script>        
+    </head>
+    
+    <body>
+        
+        <header>
+            <!-- MENU -->
+            <div class="w3-row">
+              <div class="w3-col m8">
+                <div class="w3-light-grey w3-container w3-padding-48 w3-center">
+                  <a href="#"><img src="img/Logo.png" alt="logotipo"></a>
+                  <p>Comunicação, tecnologia e acessibilidade UFSM</p>
+                  <h2>Sistema Colaborativo de Audio Descrição</h2>
+                </div>
+              </div>
+              <div class="w3-col m4">
+                <div class="w3-light-grey w3-container w3-padding-64 w3-center">
+                    <div class="w3-row w3-margin-bottom">
+                    <button type="button" class="w3-btn w3-round w3-orange w3-hover-blue w3-large">Entrar</button>
+                    </div>
+                    <div class="w3-row w3-margin-bottom">
+                    <button type="button" class="w3-btn w3-round w3-pink w3-hover-blue w3-large">Cadastre-se</button>
+                    </div>
+                </div>
+              </div>
+            </div>  
+            <div class="w3-topnav w3-large w3-orange w3-center">
+                <a href="index.html">INÍCIO</a>
+                <a href="quemsomos.html">QUEM SOMOS</a>
+                <a href="ajuda.html">AJUDA</a>
+                <a href="contato.html">CONTATO</a>
+            </div>            
+
+        <!-- CORPO -->   
+        <section id="categorias">    
+            <div class="w3-row w3-center w3-padding-16">
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 1</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 2</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 3</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 4</button> 
+                </div>
+            </div>
+            
+            <div class="w3-row  w3-center w3-padding-16">
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 5</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 6</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 7</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 8</button> 
+                </div>
+            </div>    
+            
+            
+            <div class="w3-row  w3-center w3-padding-16">
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 9</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 10</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 11</button> 
+                </div>
+                <div class="w3-container w3-quarter">
+                    <button class="w3-btn w3-round w3-xxlarge">Categoria 12</button> 
+                </div>
+            </div>             
+        </section>
+        </header>
+        
+        <!-- RODAPE -->
+        <footer class="w3-container w3-center w3-blue w3-padding-medium">
+            <a href="https://www.facebook.com"><i class="fi-social-facebook" style="font-size:22px;"></i></a>
+            &nbsp;
+            <a href="https://plus.google.com"><i class="fi-social-google-plus" style="font-size:22px;"></i></a>
+            &nbsp;
+            <a href="https://twitter.com"><i class="fi-social-twitter" style="font-size:22px;"></i></a>
+            <p>&copy; Copyright 2016 Comunicação, tecnologia e acessibilidade UFSM.</p>
+        </footer>      
+        
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(document).foundation();
+            }
+        </script>  
+        <script>
+            $(function() {
+                $('a[href*=#]:not([href=#])').click(function() {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html,body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        </script>        
+    </body>
+</html>
