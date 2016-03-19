@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+     
     <head>
-        <title>CTA | Sistema Colaborativo de Audio Descrição</title>
-        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                
-        <link rel="stylesheet" href="css/foundation.css">
-        <link rel="stylesheet" href="css/foundation.min.css">
-        <link rel="stylesheet" href="css/csspersonalizado.css">
-        <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
-        <link rel="stylesheet" href="css/w3.css">
-        
-        <script src="js/vendor/modernizr.js"></script>        
+        <?php
+            include("cabecalho.php");
+        ?>
+            <title>CTA | Sistema Colaborativo de Audio Descrição</title>           
     </head>
     
     <body>
@@ -39,10 +32,10 @@
               </div>
             </div>  
             <div class="w3-topnav w3-large w3-orange w3-center">
-                <a href="index.html">INÍCIO</a>
-                <a href="quemsomos.html">QUEM SOMOS</a>
-                <a href="ajuda.html">AJUDA</a>
-                <a href="contato.html">CONTATO</a>
+                <a href="index.php">INÍCIO</a>
+                <a href="quemsomos.php">QUEM SOMOS</a>
+                <a href="ajuda.php">AJUDA</a>
+                <a href="contato.php">CONTATO</a>
             </div>            
 
         <!-- CORPO -->   
@@ -106,37 +99,8 @@
         </header>
         
         <!-- RODAPE -->
-        <footer class="w3-container w3-center w3-blue w3-padding-medium">
-            <a href="https://www.facebook.com"><i class="fi-social-facebook" style="font-size:22px;"></i></a>
-            &nbsp;
-            <a href="https://plus.google.com"><i class="fi-social-google-plus" style="font-size:22px;"></i></a>
-            &nbsp;
-            <a href="https://twitter.com"><i class="fi-social-twitter" style="font-size:22px;"></i></a>
-            <p>&copy; Copyright 2016 Comunicação, tecnologia e acessibilidade UFSM.</p>
-        </footer>      
-        
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $(document).foundation();
-            }
-        </script>  
-        <script>
-            $(function() {
-                $('a[href*=#]:not([href=#])').click(function() {
-                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                        var target = $(this.hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        if (target.length) {
-                            $('html,body').animate({
-                                scrollTop: target.offset().top
-                            }, 1000);
-                            return false;
-                        }
-                    }
-                });
-            });
-        </script>        
+            <?php 
+                include("rodape.php"); 
+            ?>       
     </body>
 </html>

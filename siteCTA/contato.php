@@ -181,7 +181,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                         <div class="large-4 pull-1 columns text-center">
-                            <p>&copy; Copyright 2015 Dallcon Sistemas.</p>
+                            <p>&copy; Copyright 2016 Dallcon Sistemas.</p>
                         </div>
                         <div class="large-4 columns text-center">
                             <a href="https://www.facebook.com/DallconSistemas"><i class="fi-social-facebook" style="font-size:22px;"></i></a>
