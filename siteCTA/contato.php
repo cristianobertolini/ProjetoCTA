@@ -39,19 +39,15 @@
                             </li>
                             <li>
                                 <a href="empresa.html">
-                                    <i class="fi-info"></i> Empresa
+                                    <i class="fi-info"></i> Quem Somos
                                 </a>
                             </li>
                             <li>
                                 <a href="produtos.html">
-                                    <i class="fi-shopping-cart"></i> Produtos
+                                    <i class=""></i> Ajuda
                                 </a>
                             </li>                           
-                            <li>
-                                <a href="portfolio.html">
-                                    <i class="fi-plus"></i> Portfólio
-                                </a>
-                            </li>
+                       
                             <li class="active">
                                 <a href="contato.html">
                                     <i class="fi-mail"></i> Contato
