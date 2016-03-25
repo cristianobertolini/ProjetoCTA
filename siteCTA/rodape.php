@@ -1,33 +1,29 @@
-<!-- RODAPE -->
-        <footer class="w3-container w3-center w3-blue w3-padding-medium">
-            <a href="https://www.facebook.com"><i class="fi-social-facebook" style="font-size:22px;"></i></a>
-            &nbsp;
-            <a href="https://plus.google.com"><i class="fi-social-google-plus" style="font-size:22px;"></i></a>
-            &nbsp;
-            <a href="https://twitter.com"><i class="fi-social-twitter" style="font-size:22px;"></i></a>
-            <p>&copy; Copyright 2016 Comunicação, tecnologia e acessibilidade UFSM.</p>
-        </footer>      
-        
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $(document).foundation();
-            }
-        </script>  
-        <script>
-            $(function() {
-                $('a[href*=#]:not([href=#])').click(function() {
-                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                        var target = $(this.hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        if (target.length) {
-                            $('html,body').animate({
-                                scrollTop: target.offset().top
-                            }, 1000);
-                            return false;
-                        }
-                    }
-                });
-            });
-        </script>        
+ <div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">
+    <footer class="w3-container w3-section w3-padding-jumbo w3-card-4 w3-light-grey w3-center w3-opacity">
+        <p>
+            Copyright 2016 por CTA - Comunicação, tecnologia e acessibilidade UFSM.<br><br>
+        </p>
+    </footer>
+ </div>     
+
+<script>
+function w3_open() {
+    document.getElementsByClassName("w3-sidenav")[0].style.width = "300px";
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+    document.getElementById("main").style.marginLeft = "300px";
+}
+function w3_close() {
+    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+    document.getElementById("main").style.marginLeft = 0;
+}
+function w3_show_nav(name) {
+    document.getElementById("menuCategoria").style.display = "none";
+    document.getElementById("menuQuemSomos").style.display = "none";
+    document.getElementById("menuAjuda").style.display = "none";
+    document.getElementById("menuContato").style.display = "none";    
+    document.getElementById(name).style.display = "block";
+    w3-open();
+}
+</script>
+     
+<script src="http://www.w3schools.com/lib/w3codecolors.js"></script>
