@@ -16,10 +16,10 @@ move_uploaded_file( $arquivo_tmp, $destino  );
  
 // verifica se foi enviado um arquivo
 if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] == 0 ) {
-    echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'arquivo' ][ 'name' ] . '</strong><br />';
-    echo 'Este arquivo é do tipo: <strong > ' . $_FILES[ 'arquivo' ][ 'type' ] . ' </strong ><br />';
-    echo 'Temporáriamente foi salvo em: <strong>' . $_FILES[ 'arquivo' ][ 'tmp_name' ] . '</strong><br />';
-    echo 'Seu tamanho é: <strong>' . $_FILES[ 'arquivo' ][ 'size' ] . '</strong> Bytes<br /><br />';
+    echo 'VocÃª enviou o arquivo: <strong>' . $_FILES[ 'arquivo' ][ 'name' ] . '</strong><br />';
+    echo 'Este arquivo Ã© do tipo: <strong > ' . $_FILES[ 'arquivo' ][ 'type' ] . ' </strong ><br />';
+    echo 'TemporÃ¡riamente foi salvo em: <strong>' . $_FILES[ 'arquivo' ][ 'tmp_name' ] . '</strong><br />';
+    echo 'Seu tamanho Ã©: <strong>' . $_FILES[ 'arquivo' ][ 'size' ] . '</strong> Bytes<br /><br />';
  
     $arquivo_tmp = $_FILES[ 'arquivo' ][ 'tmp_name' ];
     $nome = $_FILES[ 'arquivo' ][ 'name' ];
@@ -31,12 +31,12 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
     $extensao = strtolower ( $extensao );
  
     // Somente imagens, .jpg;.jpeg;.gif;.png
-    // Aqui eu enfilero as extesões permitidas e separo por ';'
+    // Aqui eu enfilero as extesï¿½es permitidas e separo por ';'
     // Isso server apenas para eu poder pesquisar dentro desta String
     if ( strstr ( '.jpg;.jpeg;.gif;.png', $extensao ) ) {
-        // Cria um nome único para esta imagem
+        // Cria um nome ï¿½nico para esta imagem
         // Evita que duplique as imagens no servidor.
-        // Evita nomes com acentos, espaços e caracteres não alfanuméricos
+        // Evita nomes com acentos, espaï¿½os e caracteres nï¿½o alfanumï¿½ricos
         $novoNome = uniqid ( time () ) . $extensao;
  
         // Concatena a pasta com o nome
@@ -48,13 +48,13 @@ if ( isset( $_FILES[ 'arquivo' ][ 'name' ] ) && $_FILES[ 'arquivo' ][ 'error' ] 
 //            echo '< img src = "' . $destino . '" />';
         }
         else
-            echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
+            echo 'Erro ao salvar o arquivo. Aparentemente vocÃª nÃ£o tem permissÃ£o de escrita.<br />';
     }
     else
-        echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
+        echo 'VocÃª poderÃ¡ enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
 }
 else
-    echo 'Você não enviou nenhum arquivo!';
+    echo 'VocÃª nÃ£o enviou nenhum arquivo!';
 
 
 

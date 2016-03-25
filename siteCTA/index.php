@@ -4,6 +4,7 @@
         <?php
             include("include/conexao.php");
             include("cabecalho.php");
+            $pagina = 'IN';
         ?>
         <title>colabAD | Sistema Colaboratido de Áudiodescrição</title>           
     </head>    
@@ -23,7 +24,6 @@
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <h1>Últimas imagens</h1>
         </div>
-    </div>
     <?php
         include("rodape.php");
     ?>    

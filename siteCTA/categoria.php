@@ -4,6 +4,7 @@
         <?php
             include("include/conexao.php");
             include("cabecalho.php");
+            $pagina = 'IN';
             
             if(isset($_GET['id'])){
                 $id = $mysqli->real_escape_string($_GET['id']);
@@ -74,7 +75,6 @@
                 echo '</div>';                
             } 
         }  
-        echo '</div>';
     ?>
    
     <?php
