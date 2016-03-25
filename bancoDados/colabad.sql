@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Mar-2016 às 02:47
+-- Generation Time: 25-Mar-2016 às 03:41
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   `cat_codigo` int(11) DEFAULT NULL,
   `img_audiodescricao` text,
   `img_nome` varchar(50) DEFAULT NULL,
+  `img_imagem` longblob,
   PRIMARY KEY (`img_codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
