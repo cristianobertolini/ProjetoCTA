@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Mar-2016 às 20:42
+-- Generation Time: 26-Mar-2016 às 01:22
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   `img_audiodescricao` text,
   `img_nome` varchar(50) DEFAULT NULL,
   `img_nome_original` varchar(150) DEFAULT NULL,
+  `img_extensao` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`img_codigo`),
   KEY `cat_codigo` (`cat_codigo`),
   KEY `usu_codigo` (`usu_codigo`)
