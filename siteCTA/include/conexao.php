@@ -2,7 +2,7 @@
     $servidor_mysql = "127.0.0.1";
     $login_mysql = "root";
     $senha_mysql = "";
-    $base_mysql = "colabad";
+    $base_mysql = "colabad";    
  
     $conexao = mysqli_connect($servidor_mysql, $login_mysql, $senha_mysql,$base_mysql);
 

@@ -5,7 +5,7 @@
 <div class="w3-top">
     <div class="w3-row w3-white w3-padding">
         <div class="w3-half" style="margin:4px 0 6px 0"><a href='<?php echo $URL_PADRAO; ?>'><img src='./img/logotipoColabAD.png' alt='colabad.ufsm.com'></a></div>
-        <div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small"><div class="w3-right">SISTEMA COLABORATIVO DE ÁUDIODESCRIÇÃO</div></div>
+        <div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small"><div class="w3-right">SISTEMA COLABORATIVO DE AUDIODESCRIÇÃO</div></div>
     </div>
 
     <ul class="w3-navbar w3-theme w3-large w3-card-4">
@@ -42,6 +42,8 @@
             echo "<a>Nenhuma categoria encontrada</a>";
         }    
     ?>
+        <div class="w3-container"><h3>SUBMETER</h3></div>
+        <a href="./upload_imagem.php">Submeter imagem</a>    
     </div>
  
     <div id="menuQuemSomos" class="myMenu"  <?php if ($pagina != 'QS') {echo " style='display:none'";} ?>> 
@@ -58,7 +60,6 @@
     <div id="menuContato" class="myMenu"  <?php if ($pagina != 'CT') {echo " style='display:none'";} ?>>
         <div class="w3-container"><h3>CONTATO</h3></div>
         <a href="./CTcontato.php">Formulário de contato</a>
-        <a href="./CTtelefone.php">Telefones</a>
         <a href="./CTlocalizacao.php">Localização</a>
     </div>  
 </div>

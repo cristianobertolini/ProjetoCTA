@@ -63,7 +63,7 @@
         $nome = $mysqli->real_escape_string($_POST['descricao']);
         $audiodescricao = $mysqli->real_escape_string($_POST['audiodescricao']);
         $usuario  = 1;
-        $categoria= 1;
+        $categoria= $mysqli->real_escape_string($_POST['categoria']);
 
         if ($upload == true) {
             // Cria uma query MySQL
