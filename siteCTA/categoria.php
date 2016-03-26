@@ -44,30 +44,38 @@
         echo '  </div>';
         
         if ($id > 0) {
-            $sqlImg =  "SELECT i.`img_codigo`, i.`img_audiodescricao`, i.`img_nome`, i.`img_imagem` 
+            $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original` 
                         FROM `imagens` as i 
                         WHERE i.`cat_codigo` = $id
                     ORDER BY i.`img_nome`";
-            $queryImg = $mysqli->query($sqlImg) OR trigger_error($MySQLi->error, E_USER_ERROR);
+            $queryImg = $mysqli->query($sqlImg) OR trigger_error($mysqli->error, E_USER_ERROR);
             
             $rowsImg = mysqli_num_rows($queryImg);
             
             if ($rowsImg > 0) {
                 // Exibe o total de registros encontrados
                 echo "Imagens encontradas: {$queryImg->num_rows}";
-                
-                while ($registroImg = $queryImg->fetch_object()) {    
-                    echo '<div class="w3-row-padding w3-margin-top">';
+            $count = 0;
+            echo '<div class="w3-row-padding w3-margin-top">';
+                while ($registroImg = $queryImg->fetch_assoc()) {
+                    if ($count == 0) {
+                        echo '<div class="w3-row-padding w3-margin-top">';
+                    }
+                    $count = $count + 1;
                     echo '  <div class="w3-third">';
                     echo '      <div class="w3-card-2">';
-                    echo '          <img src="./img/img_5terre.png" style="width:100%">';
+                    echo '          <img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'">';
                     echo '          <div class="w3-container">';
-                    echo '              <h5>'.$registroImg->img_nome.'</h5>';
+                    echo '              <h5>'.$registroImg['img_nome'].'</h5>';
                     echo '          </div>';
                     echo '      </div>';
                     echo '  </div>';
-                    echo '</div>';
+                    if ($count == 3) {
+                        $count = 0;
+                        echo '</div>';
+                    }
                 } 
+            echo '</div>';
                 $queryImg->free();
             } else {
                 echo '<div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';

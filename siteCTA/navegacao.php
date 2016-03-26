@@ -1,5 +1,7 @@
-<?php include("include/config.php"); ?>
-<?php include("include/conexao.php"); ?>
+<?php include("include/config.php"); 
+      include("include/conexao.php");
+      include("include/funcoes.php");
+?>
 <div class="w3-top">
     <div class="w3-row w3-white w3-padding">
         <div class="w3-half" style="margin:4px 0 6px 0"><a href='<?php echo $URL_PADRAO; ?>'><img src='./img/logotipoColabAD.png' alt='colabad.ufsm.com'></a></div>
@@ -32,7 +34,9 @@
         if ($rowsCat > 0) {
             //Mostra as categorias
             while ($registroCat = $queryCat->fetch_assoc()) {    
-                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.$registroCat['cat_nome'].'</a>';
+                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.$registroCat['cat_nome'].' (';
+                echo contaCategoria($registroCat['cat_codigo']);
+                echo ')</a>';
             }   
         } else {
             echo "<a>Nenhuma categoria encontrada</a>";

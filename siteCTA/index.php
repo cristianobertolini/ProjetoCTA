@@ -16,15 +16,48 @@
     ?>  
 
     <div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">
-
-        <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
-            <h1>Imagens mais vistas</h1>
-        </div>
-
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <h1>Últimas imagens</h1>
         </div>
     <?php
+    
+        $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`,
+                           i.`img_nome`, i.`img_nome_original`, c.`cat_nome` 
+                    FROM `imagens` as i
+                        INNER JOIN `categoria` as c ON c.`cat_codigo` = i.`cat_codigo`
+                    ORDER BY i.`img_data` DESC, `img_hora` DESC LIMIT 6";
+            $queryImg = $mysqli->query($sqlImg) OR trigger_error($mysqli->error, E_USER_ERROR);
+            
+            $rowsImg = mysqli_num_rows($queryImg);
+            
+            if ($rowsImg > 0) {
+            $count = 0;
+            echo '<div class="w3-row-padding w3-margin-top">';
+                while ($registroImg = $queryImg->fetch_assoc()) {
+                    if ($count == 0) {
+                        echo '<div class="w3-row-padding w3-margin-top">';
+                    }
+                    $count = $count + 1;
+                    echo '  <div class="w3-third">';
+                    echo '      <div class="w3-card-2">';
+                    echo '          <img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'">';
+                    echo '          <div class="w3-container">';
+                    echo '              <h5>'.$registroImg['img_nome'].'<br><b>Categoria: </b>'.$registroImg['cat_nome'].'</h5>';
+                    echo '          </div>';
+                    echo '      </div>';
+                    echo '  </div>';
+                    if ($count == 3) {
+                        $count = 0;
+                        echo '</div>';
+                    }
+                } 
+            echo '</div>';
+                $queryImg->free();
+            } else {
+                echo '<div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
+                echo '  <h3>Nenhuma imagem cadastrada.</h3>';
+                echo '</div>';                
+            }     
         include("rodape.php");
     ?>    
 </body>

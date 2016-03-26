@@ -50,14 +50,14 @@
         $mensagem = 
         "<html>
             <body>
-                Olá!<p>
-                Você foi cadastrado do Gerenciador de TGSI!<br>
+                Olï¿½!<p>
+                Vocï¿½ foi cadastrado do Gerenciador de TGSI!<br>
                 Login: ".$login." <br>
                 Senha: ".$senha."<br></p> 
                 <p>Para efetuar login acesse: <a href='".$URL_PADRAO."'>Gerenciador TGSI</a></p>
                 
                 <p>---------------------------------------------------------------<br>
-                <em>Não Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
+                <em>Nï¿½o Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
             </body>
         </html>";
        
@@ -106,23 +106,23 @@ function geraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos 
     $num = '1234567890';
     $simb = '!@#$%*-';
     
-    // Variáveis internas
+    // Variï¿½veis internas
     $retorno = '';
     $caracteres = '';
     
-    // Agrupamos todos os caracteres que poderão ser utilizados
+    // Agrupamos todos os caracteres que poderï¿½o ser utilizados
     $caracteres .= $lmin;
     if ($maiusculas) $caracteres .= $lmai;
     if ($numeros) $caracteres .= $num;
     if ($simbolos) $caracteres .= $simb;
     
-    // Calculamos o total de caracteres possíveis
+    // Calculamos o total de caracteres possï¿½veis
     $len = strlen($caracteres);
     
     for ($n = 1; $n <= $tamanho; $n++) {
-        // Criamos um número aleatório de 1 até $len para pegar um dos caracteres
+        // Criamos um nï¿½mero aleatï¿½rio de 1 atï¿½ $len para pegar um dos caracteres
         $rand = mt_rand(1, $len);
-        // Concatenamos um dos caracteres na variável $retorno
+        // Concatenamos um dos caracteres na variï¿½vel $retorno
         $retorno .= $caracteres[$rand-1];
     }
     
@@ -144,33 +144,23 @@ function BuscaDado($NomedoCampo, $NomeDaTabela, $Condicao) {
     }    
 }
 
-function BancaPossuiNota($codluno, $tipo){
-    //Ve se existe as 3 avaliações desse aluno
+function contaCategoria($codCat){
+    //Ve se existe as 3 avaliaï¿½ï¿½es desse aluno
     include("conexao.php");       
 
-    $sql = "SELECT bav.`bav_codigo` 
-            FROM `banca_detalhe_avaliacao` as bav
-                RIGHT JOIN `banca_detalhe` as bd 
-                    ON bd.`band_codigo` = bav.`band_codigo` 
-                RIGHT JOIN `banca` as b 
-                    ON bd.`ban_codigo` = b.`ban_codigo` 
-            WHERE b.`usu_codigo` = $codluno 
-              AND b.`ban_tipo`= $tipo
-              AND bav.`bav_nota_soma` IS NOT NULL";
+    $sql = "SELECT `img_codigo` 
+            FROM `imagens` 
+            WHERE `cat_codigo` = $codCat";
 
     $query = $mysqli->query($sql);
-
-    if (mysqli_num_rows($query) >= 3) {        
-        return True;
-    } else {
-        return False;
-    }
+        
+    return mysqli_num_rows($query);
 
     $mysqli->Close();
 }
 
 function BancaResultado($codluno, $tipo){
-    //Ve o resultado das avaliações Aprovado ou Reprovado
+    //Ve o resultado das avaliaï¿½ï¿½es Aprovado ou Reprovado
     include("conexao.php");       
 
     $sql = "SELECT bav.`bav_codigo`, bav.`bav_nota_soma` 
