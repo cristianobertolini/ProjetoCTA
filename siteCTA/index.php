@@ -22,7 +22,7 @@
     <?php
     
         $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`,
-                           i.`img_nome`, i.`img_nome_original`, c.`cat_nome` 
+                           i.`img_nome`, i.`img_nome_original`, c.`cat_nome`, i.`cat_codigo` 
                     FROM `imagens` as i
                         INNER JOIN `categoria` as c ON c.`cat_codigo` = i.`cat_codigo`
                     ORDER BY i.`img_data` DESC, `img_hora` DESC LIMIT 6";
@@ -40,9 +40,9 @@
                     $count = $count + 1;
                     echo '  <div class="w3-third">';
                     echo '      <div class="w3-card-2">';
-                    echo '          <img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'">';
+                    echo '          <a href="./detalhe.php?id='.$registroImg['img_codigo'].'" target="_self"><img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'" class="w3-hover-opacity"></a>';
                     echo '          <div class="w3-container">';
-                    echo '              <h5>'.$registroImg['img_nome'].'<br><b>Categoria: </b>'.$registroImg['cat_nome'].'</h5>';
+                    echo '              <h5>'.$registroImg['img_nome'].'<br><a href="./categoria.php?id='.$registroImg['cat_codigo'].'" target="_self"><b>Categoria: </b>'.$registroImg['cat_nome'].'</h5></a>';
                     echo '          </div>';
                     echo '      </div>';
                     echo '  </div>';

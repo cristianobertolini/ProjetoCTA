@@ -64,10 +64,10 @@
                     $count = $count + 1;
                     echo '  <div class="w3-third">';
                     echo '      <div class="w3-card-2">';
-                    echo '          <img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'">';
+                    echo '          <a href="./detalhe.php?id='.$registroImg['img_codigo'].'" target="_self"><img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'" class="w3-hover-opacity"></a>';
                     echo '          <div class="w3-container">';
                     echo '              <h5>'.$registroImg['img_nome'].'</h5>';
-                    echo '          </div>';
+                    echo '          </div>';                                       
                     echo '      </div>';
                     echo '  </div>';
                     if ($count == 3) {
