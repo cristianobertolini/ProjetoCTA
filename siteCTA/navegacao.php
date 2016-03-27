@@ -12,19 +12,19 @@
     <div class="w3-center"><br>
              <h1>Cadastro de Usuário</h1>
     </div>
-      <form action="cadastro_usuario.php">
+      <form id="cadastro_usuario" action="cadastro_usuario.php" method="POST">         
       <div class="w3-section">
         <label><b>Nome</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira seu nome completo" required>
+        <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
         
         <label><b>Login</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Insira seu login" required>
+        <input class="w3-input w3-border" id="email" name="email" type="text" placeholder="Insira seu email" required>
         
          <label><b>Senha</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira sua senha" required>
+        <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
         
         <label><b>Escolaridade</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira sua escolaridade" required>
+        <input class="w3-input w3-border w3-margin-bottom" id="escolaridade" name="escolaridade" type="text" placeholder="Insira sua escolaridade" required>
          
          <label for="estado">Estado
                             <select id="estado" name="estado">
@@ -59,7 +59,7 @@
                             </select>
         </label> <br> 
          <label><b>Cidade</b></label>
-        <input class="w3-input w3-border w3-margin-bottom"  type="text" placeholder="Insira o nome de sua cidade" required>
+        <input class="w3-input w3-border w3-margin-bottom"  id="endereco" name="endereco" type="text" placeholder="Insira o nome de sua cidade" required>
         </div>
         <label><b>Marque seu tipo de usuário</b> (Para ser aceito seu usuário será avaliado pelo administrador)</label>
         <input class="w3-check w3-margin-top" type="checkbox" > Usuario Normal
@@ -88,11 +88,11 @@
     </div>
     
       <div class="w3-section">
-        <label><b>Usuário</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira seu login">
+        <label><b>Email</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira seu email" required>
 
         <label><b>Senha</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Insira sua senha">
+        <input class="w3-input w3-border" type="password" placeholder="Insira sua senha" required>
 
        <button class="w3-btn w3-btn-block w3-green">Entrar</button>
       </div>
