@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Mar-2016 às 01:22
+-- Generation Time: 28-Mar-2016 às 15:43
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -61,14 +61,20 @@ CREATE TABLE IF NOT EXISTS `imagens` (
 
 CREATE TABLE IF NOT EXISTS `usuario` (
   `usu_codigo` int(100) NOT NULL AUTO_INCREMENT,
-  `usu_login` varchar(150) DEFAULT NULL,
   `usu_senha` varchar(150) DEFAULT NULL,
   `usu_nome` varchar(150) DEFAULT NULL,
   `usu_email` varchar(150) DEFAULT NULL,
   `usu_escolaridade` varchar(150) DEFAULT NULL,
   `usu_endereco` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`usu_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`usu_codigo`, `usu_senha`, `usu_nome`, `usu_email`, `usu_escolaridade`, `usu_endereco`) VALUES
+(22, 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '', '', '', '');
 
 --
 -- Constraints for dumped tables
