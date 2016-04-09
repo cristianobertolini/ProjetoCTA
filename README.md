@@ -4,7 +4,7 @@ Trabalho desenvolvido em conjunto com a CTA - Comunicação, Tecnologia e Acessi
 
 **Bacharelado em Sistemas de Informação**
 
-**Universidade Federal de Santa Maria**
+**Universidade Federal de Santa Maria - Frederico Westphalen**
 
 **1º Semeste de 2016**
 
