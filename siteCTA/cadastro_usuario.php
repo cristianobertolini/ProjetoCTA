@@ -15,11 +15,12 @@
                 $categoria[$key] = $value;
         }    
         $categoria = $mysqli->fetch_array($_POST['categoria']);
+        echo $categoria;
 
         if (($codigo >= 0)  && ($codigo != '')) {
             $sql = "DELETE FROM `usuario_categoria` WHERE `usu_codigo`= '$codigo'";     
             $mysqli->query($sql); 
-//
+
             $sql = "UPDATE `usuario`
                     SET `usu_login`='$login',`usu_senha`='".SHA1($senha)."',`usu_nome`='$nome',`usu_email`='$email'
                         `usu_matricula`='$matricula',`usu_situacao`='$situacao'
@@ -27,10 +28,10 @@
         } else {
             $sql = "INSERT INTO `usuario` (`usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_estado`, `usu_cidade`, `usu_descricao`) 
                     VALUES ('$nome', '$login','".SHA1($senha)."', '$escolaridade', '$estado', '$cidade', '$descricao');";        
-        }    
+            }    
 
         $mysqli->query($sql);
-        //$queryInsert->execute();   
+        $queryInsert->execute();   
         if (($codigo >= 0)  && ($codigo != '')) {
             $sqlUsu = "SELECT `usu_codigo`
                      FROM `usuario`  

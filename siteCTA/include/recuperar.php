@@ -19,7 +19,7 @@
         $nome  = $resultado['USU_NOME'];
         $matr  = $resultado['USU_MATRICULA'];
         $codigo = $resultado['USU_CODIGO'];
-        // Gera uma senha com 9 carecteres: letras minúsculas e números
+        // Gera uma senha com 9 carecteres: letras minï¿½sculas e nï¿½meros
         $senha = geraSenha(9, false, true);
         
         $update = "update usuario set usu_senha = '".sha1($senha)."' where usu_codigo = '$codigo' ";
@@ -28,24 +28,24 @@
         $emailmsg =
             "<html>
                 <body>
-                    Olá ".$nome."!<p>
+                    Olï¿½ ".$nome."!<p>
                     Sua senha foi recuperada com sucesso pelo Gerenciador de TGSI!<br>
-                    Matrícula: ".$matr." <br>
+                    Matrï¿½cula: ".$matr." <br>
                     Login: ".$login." <br>
                     Nova Senha: ".$senha."<br></p> 
                     <p>Utilize ela pra acessar o sistema e troque por uma senha de sua escolha.</p><br>
                     <p>Para efetuar login acesse: <a href='".$URL_PADRAO."'>Gerenciador TGSI</a></p>
 
                     <p>---------------------------------------------------------------<br>
-                    <em>Não Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
+                    <em>Nï¿½o Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
                 </body>
             </html>";                
         
         $emailret = smtpmailer($email, 'gerenciador.tgsi@gmail.com', 'naoresponder', '[Gerenciador TGSI] Esqueci minha senha', $emailmsg);        
         
-        echo "<script>location.href='../esqueciSenha.php?mensagem1=Operação realizada com sucesso!<br>A nova senha foi enviada para o seguinte endereço: $email <br>A entrega do e-mail com a nova senha pode demorar alguns minutos. Caso não o encontre, verifique a caixa de Spam.';</script>";
+        echo "<script>location.href='../esqueciSenha.php?mensagem1=OperaÃ§Ã£o realizada com sucesso!<br>A nova senha foi enviada para o seguinte endereï¿½o: $email <br>A entrega do e-mail com a nova senha pode demorar alguns minutos. Caso nï¿½o o encontre, verifique a caixa de Spam.';</script>";
     } else {        
-        echo "<script>location.href='../esqueciSenha.php?mensagem2=Nenhum usuário encontrado.';</script>";                
+        echo "<script>location.href='../esqueciSenha.php?mensagem2=Nenhum usuï¿½rio encontrado.';</script>";                
     }
     $mysqli->Close();
     die(); 

@@ -78,12 +78,14 @@
           <label class="w3-label"><strong>Conte-nos qual é o seu conhecimento sobre audiodescrição:</strong></label> 
           <textarea class="w3-input w3-border" name="descricao" id="descricao"required></textarea></br>
                 <label class="w3-label"required><strong>Marque seu tipo de usuário</strong> (Para ser aceito seu usuário será avaliado pelo administrador)<br>
-               
-                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='1'><strong>Usuario Normal</strong> (O usuário tem permissão de fazer upload de imagens para audiodescriçao)<br>
-                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='2'><strong>Audiodescritor</strong> (O usuário tem permissão de fazer audio descricao nas imagens)<br>
-                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='3'><strong>Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com audiodescrição)
-                </label>
- 
+
+                    <br><input id='categoria' name='categoria[]' type='checkbox' value='1'>
+                    <label for='categoria1'><strong>Usuário</strong>(O usuário tem permissão upload de imagens que deseja audiodescrição)</label>
+                    <br><input id='categoria' name='categoria[]' type='checkbox' value='2'>
+                    <label for='categoria2'><strong>Audiodescritor</strong>(O usuário tem permissão de fazer audio descricao nas imagens)</label>
+                    <br><input id='categoria' name='categoria[]' type='checkbox' value='3'>
+                    <label for='categoria3'><strong>Revisor</strong>(O usuário tem permissão de fazer revisões das imagens com audiodescrição)</label>
+
       </div>
       
     <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
