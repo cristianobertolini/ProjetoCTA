@@ -14,21 +14,35 @@
     </div>
       <form id="cadastro_usuario" action="cadastro_usuario.php" method="POST">         
       <div class="w3-section">
-        <label><b>Nome</b></label>
+        <label class="w3-label"><strong>Nome</strong></label>
         <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
         
-        <label><b>Login</b></label>
+        <label class="w3-label"><strong>Login</strong></label>
         <input class="w3-input w3-border" id="email" name="email" type="text" placeholder="Insira seu email" required>
         
-         <label><b>Senha</b></label>
+         <label class="w3-label"><strong>Senha</strong></label>
         <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
         
-        <label><b>Escolaridade</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" id="escolaridade" name="escolaridade" type="text" placeholder="Insira sua escolaridade" required>
+        <label class="w3-label" for="escolaridade"><strong>Escolaridade</strong>
+            <select name="escolaridade" id="escolaridade" required>
+                                <option value=""> --- selecione ---</option>
+                                <option value="Primeiro Grau Incompleto">1&deg; Grau - Prim&aacute;rio Incompleto</option>
+                                <option value="Primeiro Grau Completo">1&deg; Grau - Prim&aacute;rio Completo</option>
+                                <option value="Ginasial Incompleto">1&deg; Grau - Ginasial Incompleto</option>
+                                <option value="Ginasial Completo">1&deg; Grau - Ginasial Completo</option>
+                                <option value="Segundo Grau Incompleto">2&deg; Grau - Colegial Incompleto</option>
+                                <option value="Segundo Grau Completo">2&deg; Grau - Colegial Completo</option>
+                                <option value="Terceiro Grau Incompleto">3&deg; Grau - Superior Incompleto</option>
+                                <option value="Terceiro Grau Completo">3&deg; Grau - Superior Completo</option>
+                                <option value="Especializa&ccedil;&atilde;o">Especializa&ccedil;&atilde;o</option>
+                                <option value="Mestrado">Mestrado</option>
+                                <option value="Doutorado">Doutorado</option>
+                </select>  <br />
+        </label>    
          
-         <label for="estado">Estado
-                            <select id="estado" name="estado">
-                                <option value="">Selecione</option>
+        <label class="w3-label" for="estado"><strong>Estado</strong>
+                            <select  name="estado" id="estado"required>
+                                <option value="">---Selecione---</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -58,13 +72,18 @@
                                 <option value="TO">Tocantins</option>
                             </select>
         </label> <br> 
-         <label><b>Cidade</b></label>
-        <input class="w3-input w3-border w3-margin-bottom"  id="endereco" name="endereco" type="text" placeholder="Insira o nome de sua cidade" required>
+         <label class="w3-label"><strong>Cidade</strong></label>
+        <input class="w3-input w3-border w3-margin-bottom"  id="cidade" name="cidade" type="text" placeholder="Insira o nome de sua cidade" required>
         </div>
-        <label><b>Marque seu tipo de usuário</b> (Para ser aceito seu usuário será avaliado pelo administrador)</label>
-        <input class="w3-check w3-margin-top" type="checkbox" > Usuario Normal
-        <input class="w3-check w3-margin-top" type="checkbox" > Audiodescritor
-        <input class="w3-check w3-margin-top" type="checkbox" > Revisor
+          <label class="w3-label"><strong>Conte-nos qual é o seu conhecimento sobre audiodescrição:</strong></label> 
+          <textarea class="w3-input w3-border" name="descricao" id="descricao"required></textarea></br>
+                <label class="w3-label"required><strong>Marque seu tipo de usuário</strong> (Para ser aceito seu usuário será avaliado pelo administrador)<br>
+               
+                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='1'><strong>Usuario Normal</strong> (O usuário tem permissão de fazer upload de imagens para audiodescriçao)<br>
+                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='2'><strong>Audiodescritor</strong> (O usuário tem permissão de fazer audio descricao nas imagens)<br>
+                    <input id="categoria" class="w3-check w3-margin-top" name='categoria[]' type="checkbox" value='3'><strong>Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com audiodescrição)
+                </label>
+ 
       </div>
       
     <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
@@ -86,16 +105,17 @@
     <div class="w3-center"><br>
              <h1>Entrar</h1>
     </div>
-    
+        <form id="cadastro_usuario" action="login.php" method="POST">
       <div class="w3-section">
-        <label><b>Email</b></label>
-        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Insira seu email" required>
+        <label><strong>Email</strong></label>
+        <input class="w3-input w3-border w3-margin-bottom" id="email" name="email" type="text" placeholder="Insira seu email" required>
 
-        <label><b>Senha</b></label>
-        <input class="w3-input w3-border" type="password" placeholder="Insira sua senha" required>
+        <label><strong>Senha</strong></label>
+        <input class="w3-input w3-border" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
 
        <button class="w3-btn w3-btn-block w3-green">Entrar</button>
       </div>
+        </form>
     </div>
 
     <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
