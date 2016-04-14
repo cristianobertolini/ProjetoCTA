@@ -22,7 +22,7 @@
         <?php
             if (empty($categoriaSessao)) {
                 echo '<li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./entrar.php">Entrar</a></li>';
-                echo '<li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" href="#">Cadastre-se</a></li>';                
+                echo '<li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" href="./usuario_cadastrar.php">Cadastre-se</a></li>';                
             } else {
                 for($i = 0; $i < count($categoriaSessao); $i++){
                   echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.strtoupper(nomeCatUsu($categoriaSessao[$i])).'</a></li>';
