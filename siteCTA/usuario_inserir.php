@@ -62,7 +62,7 @@
         include("../include/funcoes.php");
 //
 //        $emailmsg = montaMensagem($login, $senha); 
-        echo "<script>location.href='cadastrar.php?mensagem=w3-green&texto=Inserido com sucesso!';</script>";
+        echo "<script>location.href='usuario_cadastrar.php?mensagem=w3-green&texto=Inserido com sucesso!';</script>";
         $mysqli->Close();
         die();
     ?>
