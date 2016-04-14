@@ -43,9 +43,9 @@
                     </div>
                     
                     <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                        <span class="w3-left"><a href="#">Esqueceu Senha 
+                        <span class="w3-left"><a href="#">Esqueceu Senha</a>  
                         <br>
-                        <span class="w3-left"><a href="#">Cadastre-se      
+                        <span class="w3-left"><a href="./usuario_cadastrar.php">Cadastre-se</a>      
                     </div>                    
                 </form>
             </div>
