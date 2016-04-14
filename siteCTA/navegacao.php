@@ -98,38 +98,7 @@
 </div>
   <!--  fim codigo do login (modal) -->
   
-     <!-- inicio codigo do login (modal) -->
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-card-8 w3-animate-top" style="max-width:400px">
-    <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-16 w3-display-topright">x</span>
 
-    <div class="w3-container">
-    <div class="w3-center"><br>
-             <h1>Entrar</h1>
-    </div>
-        <form id="cadastro_usuario" action="login.php" method="POST">
-      <div class="w3-section">
-        <label><strong>Email</strong></label>
-        <input class="w3-input w3-border w3-margin-bottom" id="email" name="email" type="text" placeholder="Insira seu email" required>
-
-        <label><strong>Senha</strong></label>
-        <input class="w3-input w3-border" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
-
-       <button class="w3-btn w3-btn-block w3-green">Entrar</button>
-      </div>
-        </form>
-    </div>
-
-    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-      
-      <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
-      <span class="w3-right w3-padding w3-hide-small"><a href="#">Esqueceu Senha 
-              <br>
-      <span class="w3-right w3-padding w3-hide-small"><a href="#">Cadastre-se      
-    </div>
-  </div>
-</div>
- <!--  fim codigo do login (modal) -->
 
 <div class="w3-top">
     <div class="w3-row w3-white w3-padding">
@@ -142,7 +111,7 @@
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuQuemSomos')">QUEM SOMOS</a></li>
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuAjuda')">AJUDA</a></li>
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuContato')">CONTATO</a></li>            
-        <li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" onclick="document.getElementById('id01').style.display='block'" href="#">Entrar</a></li>
+        <li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./entrar.php">Entrar</a></li>
         <li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" onclick="document.getElementById('id02').style.display='block'" href="#">Cadastre-se</a></li>
     </ul>
 </div>
