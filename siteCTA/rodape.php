@@ -1,8 +1,8 @@
 <footer class="w3-container w3-section w3-padding-jumbo w3-card-4 w3-light-grey w3-center w3-opacity">
-  <p><nav>
+  <br><nav><p>
   <a href="http://site.ufsm.br" target="_blank">UFSM</a> |
   <a href="./QSdescricao.php" target="_top">QUEM SOMOS</a>
-  </nav></p>
+  </p></nav>
   <p>
   SISTEMA COLABORATIVO DE ÁUDIODESCRIÇÃO<br>
   Copyright 2016 por CTA - Comunicação, tecnologia e acessibilidade UFSM.<br><br>
