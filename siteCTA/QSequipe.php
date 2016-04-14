@@ -47,7 +47,7 @@
               <li class="w3-padding-hor-16">
                 <span onclick="this.parentElement.style.display='none'" 
                 class="w3-closebtn w3-padding w3-margin-right w3-medium"></span>
-                  <img src="img/img_avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                  <img src="img/img_avatar_2.png" class="w3-left w3-circle w3-margin-right" style="width:60px">
                 <span class="w3-xlarge">Prof. Cristiano Bertolini</span><br>
                 <span>E-mail:cristiano.bertolini@ufsm.br</span>
               </li>
