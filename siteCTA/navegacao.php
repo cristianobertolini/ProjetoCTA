@@ -1,6 +1,10 @@
-<?php include("include/config.php"); 
-      include("include/conexao.php");
-      include("include/funcoes.php");
+<?php 
+    session_start();
+    include("include/config.php"); 
+    include("include/conexao.php");
+    include("include/funcoes.php");
+      
+    $categoriaSessao = $_SESSION['Categorias'];
 ?>
 
 <div class="w3-top">
@@ -13,9 +17,19 @@
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuCategoria')">CATEGORIAS</a></li>
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuQuemSomos')">QUEM SOMOS</a></li>
         <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuAjuda')">AJUDA</a></li>
-        <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuContato')">CONTATO</a></li>            
-        <li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./entrar.php">Entrar</a></li>
-        <li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" onclick="document.getElementById('id02').style.display='block'" href="#">Cadastre-se</a></li>
+        <li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav('menuContato')">CONTATO</a></li> 
+        
+        <?php
+            if (empty($categoriaSessao)) {
+                echo '<li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./entrar.php">Entrar</a></li>';
+                echo '<li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" href="#">Cadastre-se</a></li>';                
+            } else {
+                for($i = 0; $i < count($categoriaSessao); $i++){
+                  echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.strtoupper(nomeCatUsu($categoriaSessao[$i])).'</a></li>';
+                }                 
+                echo '<li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./logout.php">SAIR</a></li>';
+            }
+        ?> 
     </ul>
 </div>
 
@@ -41,9 +55,7 @@
         } else {
             echo "<a>Nenhuma categoria encontrada</a>";
         }    
-    ?>
-        <div class="w3-container"><h3>SUBMETER</h3></div>
-        <a href="./upload_imagem.php">Submeter imagem</a>    
+    ?>   
     </div>
  
     <div id="menuQuemSomos" class="myMenu"  <?php if ($pagina != 'QS') {echo " style='display:none'";} ?>> 
@@ -62,4 +74,20 @@
         <a href="./CTcontato.php">Formulário de contato</a>
         <a href="./CTlocalizacao.php">Localização</a>
     </div>  
+    
+    <div id="cat1" class="myMenu"  <?php if ($pagina != 'US') {echo " style='display:none'";} ?>>
+        <div class="w3-container"><h3>USUÁRIO</h3></div>
+        <a href="./upload_imagem.php">Submeter imagem</a> 
+    </div>  
+
+    <div id="cat2" class="myMenu"  <?php if ($pagina != 'AU') {echo " style='display:none'";} ?>>
+        <div class="w3-container"><h3>AUDIODESCRITOR</h3></div>
+        <a href="#">Descrever</a>
+    </div> 
+    
+    <div id="cat3" class="myMenu"  <?php if ($pagina != 'RE') {echo " style='display:none'";} ?>>
+        <div class="w3-container"><h3>REVISOR</h3></div>
+        <a href="#">REvisar imagens</a>
+    </div>      
+    
 </div>

@@ -195,6 +195,23 @@ function BancaResultado($codluno, $tipo){
     $mysqli->Close();
 }
 
+function nomeCatUsu($codigo){
+    //Ve o resultado das avalia��es Aprovado ou Reprovado
+    include("conexao.php");       
+
+    $sql = "SELECT `cat_usu_nome` 
+            FROM `categoria_usuario`
+            WHERE `cat_usu_codigo` = $codigo";
+
+    $query = $mysqli->query($sql);
+    
+    $Resultado = $query->fetch_assoc();
+
+    return $Resultado['cat_usu_nome'];     
+
+    $mysqli->Close();  
+}
+
 function gerar_pdf($corpo){
     
     return true;

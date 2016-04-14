@@ -25,7 +25,10 @@ function w3_show_nav(name) {
     document.getElementById("menuCategoria").style.display = "none";
     document.getElementById("menuQuemSomos").style.display = "none";
     document.getElementById("menuAjuda").style.display = "none";
-    document.getElementById("menuContato").style.display = "none";    
+    document.getElementById("menuContato").style.display = "none";
+    document.getElementById("cat1").style.display = "none";
+    document.getElementById("cat2").style.display = "none";
+    document.getElementById("cat3").style.display = "none";
     document.getElementById(name).style.display = "block";
     w3-open();
 }

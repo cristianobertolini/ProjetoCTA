@@ -3,7 +3,7 @@
     <head>
         <?php
             include("cabecalho.php");
-            $pagina = 'IN';
+            $pagina = 'US';
         ?>    
             
         <title>colabAD | Submeter imagem </title>           
