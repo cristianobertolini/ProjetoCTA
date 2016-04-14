@@ -3,8 +3,12 @@
     include("include/config.php"); 
     include("include/conexao.php");
     include("include/funcoes.php");
-      
-    $categoriaSessao = $_SESSION['Categorias'];
+    
+    if (isset($_SESSION['Categorias'])){
+        $categoriaSessao = $_SESSION['Categorias'];
+    } else {
+        $categoriaSessao = 0;
+    }
 ?>
 
 <div class="w3-top">
