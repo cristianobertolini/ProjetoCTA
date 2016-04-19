@@ -35,7 +35,7 @@
                        <label><strong>Nome</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
 
-                        <label><strong>Login</strong></label>
+                        <label><strong>Login (E-mail)</strong></label>
                         <input class="w3-input w3-border" id="email" name="email" type="text" placeholder="Insira seu email" required>
 
                         <label><strong>Senha</strong></label>
@@ -95,12 +95,10 @@
                     <input class="w3-input w3-border w3-margin-bottom"  id="cidade" name="cidade" type="text" placeholder="Insira o nome de sua cidade" required>
                       <label><strong>Conte-nos qual é o seu conhecimento sobre audiodescrição:</strong></label> 
                       <textarea class="w3-input w3-border" name="descricao" id="descricao"required></textarea></br>
-                            <label required><strong>Marque seu tipo de usuário</strong> (Para ser aceito seu usuário será avaliado pelo administrador)<br>
-                                <br>
-                                <p>
-                                <input class="w3-check" checked="checked" id='categoria' name='categoria[]' type='checkbox' value='1'>
-                                <label for='categoria1' class="w3-validate"><strong>Usuário</strong> (O usuário tem permissão upload de imagens que deseja audiodescrição)</label></p>
-                                <p>
+                            <label required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>
+                             
+                                <input type='hidden' class="w3-check"  id='categoria' name='categoria[]' value='1'checked>
+                                <label for='categoria1' class="w3-validate"></label></p>
                                 <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='2'>
                                 <label for='categoria2' class="w3-validate"><strong>Audiodescritor</strong> (O usuário tem permissão de fazer audio descricao nas imagens)</label></p>
                                 <p>
