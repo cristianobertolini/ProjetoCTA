@@ -21,6 +21,12 @@
                acesso à áudio-descrição de imagens para pessoas com deficiência
                visual e profissionais que precisam do recurso de áudio-descrição em
                suas imagens.</p>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
 
         <?php
