@@ -4,7 +4,7 @@
   <a href="./QSdescricao.php" target="_top">QUEM SOMOS</a>
   </p></nav>
   <p>
-  SISTEMA COLABORATIVO DE ÁUDIODESCRIÇÃO<br>
+  SISTEMA COLABORATIVO DE ÁUDIO-DESCRIÇÃO<br>
   Copyright 2016 por CTA - Comunicação, tecnologia e acessibilidade UFSM.<br><br>
   </p>
 </footer>
