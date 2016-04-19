@@ -14,7 +14,7 @@
 <div class="w3-top">
     <div class="w3-row w3-white w3-padding">
         <div class="w3-half" style="margin:4px 0 6px 0"><a href='<?php echo $URL_PADRAO; ?>'><img src='./img/logotipoColabAD.png' alt='colabad.ufsm.com'></a></div>
-        <div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small"><div class="w3-right">SISTEMA COLABORATIVO DE AUDIODESCRIÇÃO</div></div>
+        <div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small"><div class="w3-right">SISTEMA COLABORATIVO DE ÁUDIO-DESCRIÇÃO</div></div>
     </div>
     <ul class="w3-navbar w3-theme w3-large w3-card-4">
         <li><a class="w3-hover-black w3-padding-16 w3-opennav" href="javascript:void(0)" onclick="w3_open()">☰</a></li>
