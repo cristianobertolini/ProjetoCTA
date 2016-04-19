@@ -31,7 +31,7 @@
                 <br>
                 <label class="w3-label"><b>Descrição:</b></label> 
                 <input class="w3-input w3-border" required name="descricao" type="text" />
-                <label class="w3-label"><b>Audiodescrição: (opcional)</b></label> 
+                <label class="w3-label"><b>Áudio-descrição: (opcional)</b></label> 
                 <textarea class="w3-input w3-border" name="audiodescricao"></textarea>
                 <br>
                 <label class="w3-label"><b>Categoria: (opcional)</b></label> 
