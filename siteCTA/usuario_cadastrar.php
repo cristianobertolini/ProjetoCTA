@@ -93,17 +93,17 @@
                     
                     <label><strong>Cidade</strong></label>
                     <input class="w3-input w3-border w3-margin-bottom"  id="cidade" name="cidade" type="text" placeholder="Insira o nome de sua cidade" required>
-                      <label><strong>Conte-nos qual é o seu conhecimento sobre audiodescrição:</strong></label> 
+                      <label><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição:</strong></label> 
                       <textarea class="w3-input w3-border" name="descricao" id="descricao"required></textarea></br>
                             <label required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>
                              
                                 <input type='hidden' class="w3-check"  id='categoria' name='categoria[]' value='1'checked>
                                 <label for='categoria1' class="w3-validate"></label></p>
                                 <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='2'>
-                                <label for='categoria2' class="w3-validate"><strong>Audiodescritor</strong> (O usuário tem permissão de fazer audio descricao nas imagens)</label></p>
+                                <label for='categoria2' class="w3-validate"><strong>Áudio-descritor</strong> (O usuário tem permissão de fazer áudio-descricao nas imagens)</label></p>
                                 <p>
                                 <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='3'>
-                                <label for='categoria3' class="w3-validate"><strong> Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com audiodescrição)</label></p>
+                                <label for='categoria3' class="w3-validate"><strong> Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com áudio-descrição)</label></p>
  
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
           <button class="w3-btn w3-btn-block w3-green">Enviar</button>

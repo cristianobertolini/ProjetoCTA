@@ -80,12 +80,12 @@
     </div>  
     
     <div id="cat1" class="myMenu"  <?php if ($pagina != 'US') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>USUÁRIO</h3></div>
+        <div class="w3-container"><h3>USUARIO</h3></div>
         <a href="./upload_imagem.php">Submeter imagem</a> 
     </div>  
 
     <div id="cat2" class="myMenu"  <?php if ($pagina != 'AU') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>AUDIODESCRITOR</h3></div>
+        <div class="w3-container"><h3>ÁUDIO-DESCRITOR</h3></div>
         <a href="#">Descrever</a>
     </div> 
     
