@@ -45,19 +45,18 @@
         }else{ return 'Mensagem de email enviada!'; }
     }    
     
-    function montaMensagem ($login,$senha){
+    function montaMensagem ($login, $nome){
         include ("config.php");
         $mensagem = 
         "<html>
             <body>
-                Ol�!<p>
-                Voc� foi cadastrado do Gerenciador de TGSI!<br>
-                Login: ".$login." <br>
-                Senha: ".$senha."<br></p> 
-                <p>Para efetuar login acesse: <a href='".$URL_PADRAO."'>Gerenciador TGSI</a></p>
+                Olá $nome!<p>
+                Você se cadastrau do ColabAD!<br>
+                Login: ".$login." <br></p> 
+                <p>Para efetuar login acesse: <a href='".$URL_PADRAO."'>ColabAD</a></p>
                 
                 <p>---------------------------------------------------------------<br>
-                <em>N�o Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
+                <em>Não Responder! Mensagem gerada automaticamente pelo servidor.<br></em></p>
             </body>
         </html>";
        

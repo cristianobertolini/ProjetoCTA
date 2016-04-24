@@ -11,12 +11,25 @@
     $cidade = $mysqli->real_escape_string($_POST['cidade']); 
     $descricao = $mysqli->real_escape_string($_POST['descricao']); 
     
-     foreach ($_POST['categoria'] as $key => $value){
-                $categoria[$key] = $value;
-        }    
-//        $categoria = $mysqli->fetch_array($_POST['categoria']);
-//        echo $categoria;
+    foreach ($_POST['categoria'] as $key => $value){
+        $categoria[$key] = $value;
+    }    
+    
+    //Validações
+    
+    $sqlUsuarioExistente = "SELECT `usu_codigo` 
+                            FROM `usuario` 
+                            WHERE `usu_email` = $login";
+    
+    //Se encontrar esse e-mail então já existe, pede se quer recuperar a senha?
+    $queryUsuarioExistente = $mysqli->query($sqlUsuarioExistente);    
 
+    if (mysqli_num_rows($queryUsuarioExistente) > 0) {   
+        echo "<script>location.href='usuario_cadastrar.php?mensagem=w3-red&texto=O e-mail $email já está sendo usado! Tente utilizar a opção de recuperação de senha.';</script>";
+        $mysqli->Close();
+        die();        
+    }     
+        
 //        if (($codigo >= 0)  && ($codigo != '')) {
 //            $sql = "DELETE FROM `usuario_categoria` WHERE `usu_codigo`= '$codigo'";     
 //            $mysqli->query($sql); 
@@ -60,9 +73,11 @@
         }  
 
         include("../include/funcoes.php");
-//
-//        $emailmsg = montaMensagem($login, $senha); 
-        echo "<script>location.href='usuario_cadastrar.php?mensagem=w3-green&texto=Inserido com sucesso!';</script>";
+
+        $emailmsg = montaMensagem($login, $nome);
+        $emailret = smtpmailer($email, 'gerenciador.tgsi@gmail.com', $nome, 'Cadastro Gerenciador TGSI', $emailmsg);
+    
+        echo "<script>location.href='usuario_cadastrar.php?mensagem=w3-green&texto=Inserido com sucesso! $emailret';</script>";
         $mysqli->Close();
         die();
     ?>
