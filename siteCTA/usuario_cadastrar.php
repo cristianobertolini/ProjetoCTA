@@ -41,18 +41,17 @@
                         <label><strong>Senha</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
 
+                               
                         <label for="escolaridade"><strong>Escolaridade</strong>
                             <select name="escolaridade" id="escolaridade" required>
-                                <option value=""> selecione </option>
-                                <option value="Primeiro Grau Incompleto">1&deg; Grau - Prim&aacute;rio Incompleto</option>
-                                <option value="Primeiro Grau Completo">1&deg; Grau - Prim&aacute;rio Completo</option>
-                                <option value="Ginasial Incompleto">1&deg; Grau - Ginasial Incompleto</option>
-                                <option value="Ginasial Completo">1&deg; Grau - Ginasial Completo</option>
-                                <option value="Segundo Grau Incompleto">2&deg; Grau - Colegial Incompleto</option>
-                                <option value="Segundo Grau Completo">2&deg; Grau - Colegial Completo</option>
-                                <option value="Terceiro Grau Incompleto">3&deg; Grau - Superior Incompleto</option>
-                                <option value="Terceiro Grau Completo">3&deg; Grau - Superior Completo</option>
-                                <option value="Especializa&ccedil;&atilde;o">Especializa&ccedil;&atilde;o</option>
+                                <option value=""disabled selected> Selecione uma opção </option>
+                                <option value="Primeiro Grau Incompleto">1º Grau - Incompleto</option>
+                                <option value="Primeiro Grau Completo">1º Grau - Completo</option>
+                                <option value="Segundo Grau Incompleto">2º Grau - Incompleto</option>
+                                <option value="Segundo Grau Completo">2º Grau - Completo</option>
+                                <option value="Terceiro Grau Incompleto">3º Grau - Superior Incompleto</option>
+                                <option value="Terceiro Grau Completo">3º Grau - Superior Completo</option>
+                                <option value="Especializa&ccedil;&atilde;o">Especialização</option>
                                 <option value="Mestrado">Mestrado</option>
                                 <option value="Doutorado">Doutorado</option>
                             </select>  <br/>
@@ -60,7 +59,7 @@
 
                         <label  for="estado"><strong>Estado</strong>
                             <select  name="estado" id="estado"required>
-                                <option value="">Selecione</option>
+                                <option value="" disabled selected>Selecione uma opção</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -94,7 +93,7 @@
                     <label><strong>Cidade</strong></label>
                     <input class="w3-input w3-border w3-margin-bottom"  id="cidade" name="cidade" type="text" placeholder="Insira o nome de sua cidade" required>
                       <label><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição:</strong></label> 
-                      <textarea class="w3-input w3-border" name="descricao" id="descricao"required></textarea></br>
+                      <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea></br>
                             <label required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>
                              
                                 <input type='hidden' class="w3-check"  id='categoria' name='categoria[]' value='1'checked>

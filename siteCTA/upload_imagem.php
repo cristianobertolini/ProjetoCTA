@@ -54,7 +54,7 @@
                 <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="texto" name="texto" class="textarea" rows="3" maxlength="2000" name="audiodescricao"></textarea>
                 <label ><b>Restam <span id="cont">2000</span> caracteres</label>     
                 <br>
-                <label class="w3-label"><b>Categoria: (opcional)</b></label> 
+                <label class="w3-label"><strong>Categoria: </strong></label> 
                 <select class="w3-select w3-border" name="categoria" required>
                     <option value="" disabled selected> Escolha uma opção</option>
                     <?php

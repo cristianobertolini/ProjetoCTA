@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Abr-2016 às 04:54
+-- Generation Time: 24-Abr-2016 às 18:49
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -105,25 +105,26 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usu_nome` varchar(150) DEFAULT NULL,
   `usu_email` varchar(150) DEFAULT NULL,
   `usu_senha` varchar(150) DEFAULT NULL,
-  `usu_escolaridade` int(11) DEFAULT NULL,
-  `usu_estado` int(11) DEFAULT NULL,
+  `usu_escolaridade` varchar(50) DEFAULT NULL,
+  `usu_estado` char(2) DEFAULT NULL,
   `usu_cidade` varchar(100) DEFAULT NULL,
   `usu_descricao` text NOT NULL,
   `usu_situacao` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`usu_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_estado`, `usu_cidade`, `usu_descricao`, `usu_situacao`) VALUES
-(23, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', 2, 3, 'Frederico Wetphalen', 'Pouco conhecimento em audio_descricao', NULL),
-(31, 'TDN', 'loja.anima.animus@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 0, 0, 'fw', 'nada', NULL),
-(32, 'usuarioplus', 'usuarioplus@mail.com', '5b6251657675beb2735319f9107468dcba985b28', 0, 0, 'FW', 'AvanÃ§ado', NULL),
-(33, 'ju', 'ju', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', 0, 0, 'fw', 'pouco\r\n', NULL),
-(34, 'ju', 'ju@', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', 0, 0, 'Seberi', 'bla', NULL),
-(36, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', '81427a8ca2346669e614430cc07dc2b14fa0adec', 0, 0, 'Seberi', 'bla bla', NULL);
+(23, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '2', '3', 'Frederico Wetphalen', 'Pouco conhecimento em audio_descricao', NULL),
+(31, 'TDN', 'loja.anima.animus@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '0', '0', 'fw', 'nada', NULL),
+(32, 'usuarioplus', 'usuarioplus@mail.com', '5b6251657675beb2735319f9107468dcba985b28', '0', '0', 'FW', 'AvanÃ§ado', NULL),
+(33, 'ju', 'ju', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '0', '0', 'fw', 'pouco\r\n', NULL),
+(34, 'ju', 'ju@', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '0', '0', 'Seberi', 'bla', NULL),
+(36, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', '81427a8ca2346669e614430cc07dc2b14fa0adec', '0', '0', 'Seberi', 'bla bla', NULL),
+(37, 'Jonas', 'jonas@', '35a2c6fae61f8077aab61faa4019722abf05093c', 'Terceiro Grau Incompleto', 'RS', 'FW', 'Regular', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,10 +150,13 @@ INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`) VALUES
 (33, 1),
 (34, 1),
 (36, 1),
+(37, 1),
 (31, 2),
 (32, 2),
 (36, 2),
-(36, 3);
+(37, 2),
+(36, 3),
+(37, 3);
 
 --
 -- Constraints for dumped tables
