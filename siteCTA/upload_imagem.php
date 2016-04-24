@@ -19,6 +19,24 @@
             <h1>Submeter imagem</h1>
         </div>
         
+        <script type="text/javascript">
+            function blocTexto(valor)
+            {
+                quant = 2000;
+                total = valor.length;
+                if(total <= quant)
+                {
+                    resto = quant - total;
+                    document.getElementById('cont').innerHTML = resto;
+                }
+                else
+                {
+                    document.getElementById('texto').value = valor.substr(0,quant);
+                }
+            }
+            </script>
+        
+        
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <?php
                 if((isset($_GET['mensagem'])) && (isset($_GET['texto']))){
@@ -30,9 +48,11 @@
             <form method="post" enctype="multipart/form-data" action="upload_recebe.php">
                 <br>
                 <label class="w3-label"><b>Descrição:</b></label> 
-                <input class="w3-input w3-border" required name="descricao" type="text" />
+                <input class="w3-input w3-border" name="descricao" type="text" />
                 <label class="w3-label"><b>Áudio-descrição: (opcional)</b></label> 
-                <textarea class="w3-input w3-border" name="audiodescricao"></textarea>
+
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="texto" name="texto" class="textarea" rows="3" maxlength="2000" name="audiodescricao"></textarea>
+                <label ><b>Restam <span id="cont">2000</span> caracteres</label>     
                 <br>
                 <label class="w3-label"><b>Categoria: (opcional)</b></label> 
                 <select class="w3-select w3-border" name="categoria" required>
