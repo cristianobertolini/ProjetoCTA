@@ -6,7 +6,7 @@
         $login = $mysqli->real_escape_string($_POST["email"]);
         $senha = $mysqli->real_escape_string($_POST["senha"]);
 
-          // Validação do usuário/senha digitados
+        // Validação do usuário/senha digitados
         $sql = "SELECT u.`usu_codigo`, u.`usu_nome`
                 FROM `usuario` as u  
                 WHERE u.`usu_email` = '$login' AND u.`usu_senha` = SHA1('$senha')  
@@ -31,7 +31,7 @@
             $_SESSION['UsuarioNome'] = $resultado['usu_nome'];
                 
             //$mysqli = $conexao;
-            $sqlCat = "SELECT c.`cat_usu_codigo` FROM `usuario_categoria_usuario` as c WHERE (c.`usu_codigo` = '". $resultado['usu_codigo'] ."')";
+            $sqlCat = "SELECT `cat_usu_codigo` FROM `usuario_categoria_usuario` WHERE `usu_codigo` = '". $resultado['usu_codigo'] ."' AND `cat_usu_situacao` = 'ativo'";
             
             $resposta = $mysqli->query($sqlCat);
             
