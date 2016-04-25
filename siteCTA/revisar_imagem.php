@@ -9,7 +9,7 @@
             if(isset($_GET['id'])){
                 $id = $mysqli->real_escape_string($_GET['id']);
 
-                $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original` 
+                $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original`,i.`img_situacao`  
                             FROM `imagens` as i 
                             WHERE i.`img_codigo` = $id";
                 
@@ -49,7 +49,7 @@
             echo '      <br>';             
             echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';
             echo '      <br>';            
-            echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'">';                                       
+            echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%,left:45%" alt="'.$registroImg['img_nome'].'">';                                       
             echo '      <br><br>';
             echo '  </div>';
             echo '</div>';
