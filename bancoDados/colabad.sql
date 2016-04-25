@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2016 às 04:46
+-- Generation Time: 25-Abr-2016 às 05:51
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -9893,6 +9893,24 @@ INSERT INTO `imagens` (`img_codigo`, `usu_codigo`, `img_data`, `img_hora`, `cat_
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `log`
+--
+
+CREATE TABLE IF NOT EXISTS `log` (
+  `log_codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `log_data_hora` datetime DEFAULT NULL,
+  `user_codigo` int(11) DEFAULT NULL,
+  `img_codigo` int(11) DEFAULT NULL,
+  `log_tipo` int(11) DEFAULT NULL COMMENT '1 usuario,2audiodescritor,3revisor',
+  `log_observacao` varchar(5000) DEFAULT NULL,
+  PRIMARY KEY (`log_codigo`),
+  KEY `user_codigo` (`user_codigo`,`img_codigo`),
+  KEY `img_codigo` (`img_codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
@@ -9959,6 +9977,13 @@ ALTER TABLE `cidades`
 ALTER TABLE `imagens`
   ADD CONSTRAINT `imagens_ibfk_1` FOREIGN KEY (`cat_codigo`) REFERENCES `categoria` (`cat_codigo`),
   ADD CONSTRAINT `imagens_ibfk_2` FOREIGN KEY (`usu_codigo`) REFERENCES `usuario` (`usu_codigo`);
+
+--
+-- Limitadores para a tabela `log`
+--
+ALTER TABLE `log`
+  ADD CONSTRAINT `log_ibfk_2` FOREIGN KEY (`img_codigo`) REFERENCES `imagens` (`img_codigo`),
+  ADD CONSTRAINT `log_ibfk_1` FOREIGN KEY (`user_codigo`) REFERENCES `usuario` (`usu_codigo`);
 
 --
 -- Limitadores para a tabela `usuario`
