@@ -77,7 +77,7 @@
             }  
 
             $emailmsg = montaMensagem($login, $nome, $senha);
-            $emailret = smtpmailer($login, 'gerenciador.tgsi@gmail.com', 'ColabAD', 'Cadastro ColabAD', $emailmsg);
+            $emailret = smtpmailer($login, 'gerenciador.tgsi@gmail.com', 'ColabAD', 'Cadastro ColabAD', $emailmsg, 1);
 
             echo "<script>location.href='entrar.php?mensagem=w3-green&texto=Cadastro efetuado com sucesso! $emailret';</script>";
             $mysqli->Close();

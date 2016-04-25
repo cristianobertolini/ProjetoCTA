@@ -42,11 +42,10 @@
                         <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
 
                         <label><strong>Login (E-mail)</strong></label>
-                        <input class="w3-input w3-border" id="email" name="email" type="text" placeholder="Insira seu email" required>
+                        <input class="w3-input w3-border" id="email" name="email" type="email" placeholder="Insira seu email" required>
 
                         <label><strong>Senha</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
-
                                
                         <label for="escolaridade"><strong>Escolaridade</strong>
                             <select class="w3-select" name="escolaridade" id="escolaridade" required>

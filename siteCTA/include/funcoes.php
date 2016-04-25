@@ -1,6 +1,10 @@
 <?php
-    function smtpmailer($para, $de, $de_nome, $assunto, $corpo){
-        include ("./phpmailer/class.phpmailer.php");
+    function smtpmailer($para, $de, $de_nome, $assunto, $corpo, $tipo){
+        if ($tipo = 0) {
+            include ("./phpmailer/class.phpmailer.php");
+        } else {
+           include ("../phpmailer/class.phpmailer.php"); 
+        }
         $mail = new PHPMailer();
         $mail->IsSMTP();
         $mail->IsHTML(true);
