@@ -25,30 +25,6 @@
         }else{ return 'Informações enviadas para o seu e-mail!'; }
     }
     
-    function emailAnexo($para, $de, $de_nome, $assunto, $corpo, $file){
-        include ("../phpmailer/class.phpmailer.php");
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->IsHTML(true);
-        $mail->SMTPDebug = 1;
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'ssl';
-        $mail->Host = "smtp.gmail.com";
-        $mail->Port = 465;
-        $mail->Username = "gerenciador.tgsi@gmail.com";
-        $mail->Password = "testegerenciador";
-        $mail->SetFrom($de, $de_nome);
-        $mail->Subject = $assunto;
-        //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-        $mail->Body = $corpo;
-        $mail->AddAddress($para);
-        $mail->addAttachment($file);
-        if(!$mail->Send()){
-            $erro = 'Erro: '.$mail->ErrorInfo;
-            return $erro;
-        }else{ return 'Mensagem de email enviada!'; }
-    }    
-    
     function montaMensagem ($login, $nome, $senha){
         include ("config.php");
         $mensagem = 
@@ -67,40 +43,6 @@
        
        return $mensagem;
     }
-    
-    function pegaTurma($idAluno){
-        include("conexao.php");       
-        
-        $sql = "SELECT `tur_codigo` 
-                FROM `turma_detalhe` 
-                WHERE `usu_aluno` = $idAluno 
-                LIMIT 1";
-           
-        $query = $mysqli->query($sql);    
-        $resposta = $query->fetch_assoc();
-        if (mysqli_num_rows($query) > 0) {        
-            return $resposta['tur_codigo'];
-        }
-        
-        $mysqli->Close();
-    }
-
-    function pegaOrientador($idAluno){
-        include("conexao.php");       
-        
-        $sql = "SELECT `usu_orientador` 
-                FROM `turma_detalhe` 
-                WHERE `usu_aluno` = $idAluno 
-                LIMIT 1";
-           
-        $query = $mysqli->query($sql);    
-        $resposta = $query->fetch_assoc();
-        if (mysqli_num_rows($query) > 0) {        
-            return $resposta['usu_orientador'];
-        }
-        
-        $mysqli->Close();
-    }  
     
 function geraSenha($tamanho = 8, $maiusculas = true, $numeros = true, $simbolos = false)
 {
@@ -216,7 +158,17 @@ function nomeCatUsu($codigo){
     $mysqli->Close();  
 }
 
-function gerar_pdf($corpo){
+function gravaLog($usuario, $imagem, $tipo, $obs){
+    include("conexao.php");
     
-    return true;
+    date_default_timezone_set('America/Sao_Paulo');
+    $dataHora     = date('Y-m-d H:i:s');
+    
+    $sql = "INSERT INTO `log`(`log_data_hora`, `user_codigo`, `img_codigo`, `log_tipo`, `log_observacao`)
+                      VALUES ('$dataHora', '$usuario', '$imagem', '$tipo', '$obs')";
+
+    // Executa o insert    
+    mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
 }
+
+
