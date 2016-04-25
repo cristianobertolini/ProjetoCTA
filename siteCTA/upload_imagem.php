@@ -22,7 +22,7 @@
         <script type="text/javascript">
             function blocTexto(valor)
             {
-                quant = 2000;
+                quant = 5000;
                 total = valor.length;
                 if(total <= quant)
                 {
@@ -51,8 +51,8 @@
                 <input class="w3-input w3-border" name="descricao" type="text" />
                 <label class="w3-label"><b>Áudio-descrição: (opcional)</b></label> 
 
-                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="texto" name="texto" class="textarea" rows="3" maxlength="2000" name="audiodescricao"></textarea>
-                <label ><b>Restam <span id="cont">2000</span> caracteres</label>     
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="2000"></textarea>
+                <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
                 <label class="w3-label"><strong>Categoria: </strong></label> 
                 <select class="w3-select w3-border" name="categoria" required>

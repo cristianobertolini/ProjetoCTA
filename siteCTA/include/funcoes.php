@@ -154,7 +154,7 @@ function contaCategoria($codCat){
 
     $sql = "SELECT `img_codigo` 
             FROM `imagens` 
-            WHERE `cat_codigo` = $codCat";
+            WHERE `cat_codigo` = $codCat AND `img_situacao` = 'publicar'";
 
     $query = $mysqli->query($sql);
         

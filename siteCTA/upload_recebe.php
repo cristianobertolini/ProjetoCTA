@@ -68,21 +68,18 @@
         if ($upload == true) {
             // Cria uma query MySQL
            $sql = "INSERT INTO 
-                   `imagens`(`usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_audiodescricao`, `img_nome`, `img_nome_original`,`img_extensao`) 
-                   VALUES ('$usuario','$data','$hora','$categoria','$audiodescricao','$nome','$novo_nome','$extensao')";
+                   `imagens`(`usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_audiodescricao`, `img_nome`, `img_nome_original`,`img_extensao`, `img_situacao`) 
+                   VALUES ('$usuario','$data','$hora','$categoria','$audiodescricao','$nome','$novo_nome','$extensao', 'descrever')";
 
-    // Executa o insert    
+            // Executa o insert    
             mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
 
             //Volta ara a página anterior
             echo "<script>location.href='upload_imagem.php?mensagem=w3-green&texto=Arquivo enviado com sucesso!';</script>";
-            echo "";
-            exit;
-
         } else {
             echo "<script>location.href='upload_imagem.php?mensagem=w3-red&texto=Não foi possivel fazer upload da imagem!';</script>";   
             die();    
         }
     }
-        $mysqli->Close();
+    $mysqli->Close();
 ?>

@@ -46,7 +46,7 @@
         if ($id > 0) {
             $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original` 
                         FROM `imagens` as i 
-                        WHERE i.`cat_codigo` = $id
+                        WHERE i.`cat_codigo` = $id AND i.`img_situacao` = 'publicar'
                     ORDER BY i.`img_nome`";
             $queryImg = $mysqli->query($sqlImg) OR trigger_error($mysqli->error, E_USER_ERROR);
             

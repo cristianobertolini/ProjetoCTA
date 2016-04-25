@@ -25,6 +25,7 @@
                            i.`img_nome`, i.`img_nome_original`, c.`cat_nome`, i.`cat_codigo` 
                     FROM `imagens` as i
                         INNER JOIN `categoria` as c ON c.`cat_codigo` = i.`cat_codigo`
+                    WHERE i.`img_situacao` = 'publicar'
                     ORDER BY i.`img_data` DESC, `img_hora` DESC LIMIT 6";
             $queryImg = $mysqli->query($sqlImg) OR trigger_error($mysqli->error, E_USER_ERROR);
             
