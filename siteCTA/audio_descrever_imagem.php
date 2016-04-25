@@ -133,7 +133,7 @@
                 
                 <label class="w3-label"><b>Áudio-descrição:</b></label> 
 
-                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000"><?php echo utf8_encode($registroImg['img_audiodescricao']); ?></textarea>
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000" required><?php echo utf8_encode($registroImg['img_audiodescricao']); ?></textarea>
                 <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
  
