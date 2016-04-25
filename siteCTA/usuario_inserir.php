@@ -30,38 +30,18 @@
 
         if (mysqli_num_rows($queryUsuarioExistente) > 0) {   
             echo "<script>location.href='usuario_cadastrar.php?mensagem=w3-red&texto=O e-mail de login ".$login." já está sendo usado! Tente utilizar a opção de recuperação de senha.';</script>";
-            //$mysqli->Close();
-            //die();        
+       
         } else {     
-
-    //        if (($codigo >= 0)  && ($codigo != '')) {
-    //            $sql = "DELETE FROM `usuario_categoria` WHERE `usu_codigo`= '$codigo'";     
-    //            $mysqli->query($sql); 
-    //
-    //            $sql = "UPDATE `usuario`
-    //                    SET `usu_login`='$login',`usu_senha`='".SHA1($senha)."',`usu_nome`='$nome',`usu_email`='$email'
-    //                        `usu_matricula`='$matricula',`usu_situacao`='$situacao'
-    //                    WHERE `usu_codigo`= '$codigo'";
-    //        } else {
-                $sql = "INSERT INTO `usuario` (`usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `cid_codigo`, `usu_descricao`, `usu_data_hora_cad`) 
-                        VALUES ('$nome', '$login','".SHA1($senha)."', '$escolaridade', '$cidade', '$descricao', '$dataHora');";        
-    //            }    
+            $sql = "INSERT INTO `usuario` (`usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `cid_codigo`, `usu_descricao`, `usu_data_hora_cad`) 
+                    VALUES ('$nome', '$login','".SHA1($senha)."', '$escolaridade', '$cidade', '$descricao', '$dataHora');";        
 
             $mysqli->query($sql);
 
-    //        $queryInsert->execute(); 
-
-    //        if (($codigo >= 0)  && ($codigo != '')) {
-    //            $sqlUsu = "SELECT `usu_codigo`
-    //                     FROM `usuario`  
-    //                     WHERE `usu_codigo`= '$codigo'    
-    //                     LIMIT 1";
-    //        } else {
-                $sqlUsu = "SELECT `usu_codigo`
-                         FROM `usuario`  
-                         WHERE (`usu_email` = '". $login ."') AND (`usu_senha` = '". SHA1($senha) ."')    
-                         LIMIT 1";     
-    //        }
+            $sqlUsu = "SELECT `usu_codigo`
+                     FROM `usuario`  
+                     WHERE (`usu_email` = '". $login ."') AND (`usu_senha` = '". SHA1($senha) ."')    
+                     LIMIT 1";     
+                
             $queryUsu = $mysqli->query($sqlUsu);    
 
             if (mysqli_num_rows($queryUsu) > 0) { 

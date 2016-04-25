@@ -29,7 +29,7 @@
                 echo '<li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" href="./usuario_cadastrar.php">Cadastre-se</a></li>';                
             } else {
                 for($i = 0; $i < count($categoriaSessao); $i++){
-                  echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.strtoupper(utf8_encode(nomeCatUsu($categoriaSessao[$i]))).'</a></li>';
+                  echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.utf8_encode(strtoupper(nomeCatUsu($categoriaSessao[$i]))).'</a></li>';
                 }                 
                 echo '<li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./logout.php">SAIR</a></li>';
             }
@@ -81,7 +81,8 @@
     
     <div id="cat1" class="myMenu"  <?php if ($pagina != 'US') {echo " style='display:none'";} ?>>
         <div class="w3-container"><h3>USUARIO</h3></div>
-        <a href="./upload_imagem.php">Submeter imagem</a> 
+        <a href="./upload_imagem.php">Submeter imagem</a>
+        <a href="./usuario_editar.php">Editar perfil</a>
     </div>  
 
     <div id="cat2" class="myMenu"  <?php if ($pagina != 'AU') {echo " style='display:none'";} ?>>
