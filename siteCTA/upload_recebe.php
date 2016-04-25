@@ -54,15 +54,15 @@
         
         $upload = move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta'] . $novo_nome);
 
-        //session_start();
+        session_start();
         date_default_timezone_set('America/Sao_Paulo');
 
-        //$usuario = $_SESSION['UsuarioCOD'];
+        $usuario = $_SESSION['UsuarioCOD'];
         $data = date('Y-m-d');
         $hora = date('H:i:s');
         $nome = $mysqli->real_escape_string($_POST['descricao']);
         $audiodescricao = $mysqli->real_escape_string($_POST['audiodescricao']);
-        $usuario  = 1;
+       
         $categoria= $mysqli->real_escape_string($_POST['categoria']);
 
         if ($upload == true) {

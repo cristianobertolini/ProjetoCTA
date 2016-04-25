@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2016 às 00:05
+-- Generation Time: 25-Abr-2016 às 04:46
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -53,6 +53,7 @@ INSERT INTO `categoria` (`cat_codigo`, `cat_nome`) VALUES
 CREATE TABLE IF NOT EXISTS `categoria_usuario` (
   `cat_usu_codigo` int(11) NOT NULL AUTO_INCREMENT,
   `cat_usu_nome` varchar(100) DEFAULT NULL,
+  `cat_usu_descricao` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`cat_usu_codigo`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -60,10 +61,10 @@ CREATE TABLE IF NOT EXISTS `categoria_usuario` (
 -- Extraindo dados da tabela `categoria_usuario`
 --
 
-INSERT INTO `categoria_usuario` (`cat_usu_codigo`, `cat_usu_nome`) VALUES
-(1, 'usuário'),
-(2, 'áudio-descritor'),
-(3, 'revisor');
+INSERT INTO `categoria_usuario` (`cat_usu_codigo`, `cat_usu_nome`, `cat_usu_descricao`) VALUES
+(1, 'usuário', NULL),
+(2, 'áudio-descritor', '(O usuário tem permissão de fazer áudio-descricao nas imagens)'),
+(3, 'revisor', '(O usuário tem permissão de fazer revisões das imagens com áudio-descrição)');
 
 -- --------------------------------------------------------
 
@@ -9863,22 +9864,31 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   `img_data` date DEFAULT NULL,
   `img_hora` time DEFAULT NULL,
   `cat_codigo` int(11) DEFAULT NULL,
-  `img_audiodescricao` text CHARACTER SET latin1,
   `img_nome` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `img_audiodescricao` text,
   `img_nome_original` varchar(150) CHARACTER SET latin1 DEFAULT NULL,
   `img_extensao` varchar(5) CHARACTER SET latin1 DEFAULT NULL,
-  `img_situacao` int(11) NOT NULL,
+  `img_situacao` varchar(15) DEFAULT NULL COMMENT 'descrever, revisar,publicar,cancelar',
   PRIMARY KEY (`img_codigo`),
   KEY `cat_codigo` (`cat_codigo`),
   KEY `usu_codigo` (`usu_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Extraindo dados da tabela `imagens`
 --
 
-INSERT INTO `imagens` (`img_codigo`, `usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_audiodescricao`, `img_nome`, `img_nome_original`, `img_extensao`, `img_situacao`) VALUES
-(2, 23, '2016-03-28', '11:19:00', 2, 'A bandeira do Brasil é formada por um retângulo verde, no qual está inserido bem no meio um grande um losango amarelo, cujo centro possui um círculo azul com vinte e sete estrelas brancas e uma faixa branca, que divide o círculo ao meio. Na faixa branca contém a frase: “Ordem e Progresso”. \r\nNota proêmia: Cada elemento da bandeira possui um significado, sendo o verde o símbolo da robustez das matas brasileiras; O amarelo representa as riquezas minerais do solo; A cor azul ilustra o céu; E o branco, a paz; Cada uma das 27 estrelas brancas representa um estado braspngileiro e o Distrito Federal;\r\n', 'Bandeira', 'Bandeira do Brasil.png', 'png', 0);
+INSERT INTO `imagens` (`img_codigo`, `usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_nome`, `img_audiodescricao`, `img_nome_original`, `img_extensao`, `img_situacao`) VALUES
+(2, 23, '2016-03-28', '11:19:00', 2, 'Bandeira do Brasil', 'A bandeira do Brasil é formada por um retângulo verde, no qual está inserido bem no meio um grande um losango amarelo, cujo centro possui um círculo azul com vinte e sete estrelas brancas e uma faixa branca, que divide o círculo ao meio. Na faixa branca contém a frase: “Ordem e Progresso”. \r\nNota proêmia: Cada elemento da bandeira possui um significado, sendo o verde o símbolo da robustez das matas brasileiras; O amarelo representa as riquezas minerais do solo; A cor azul ilustra o céu; E o branco, a paz; Cada uma das 27 estrelas brancas representa um estado brasileiro e o Distrito Federal;\r\n', 'Bandeira do Brasil.png', 'png', '0'),
+(4, 39, '2016-04-24', '22:34:27', 2, 'BANDEIRA DO RIO GRANDE DO SUL', NULL, '8efc88c315bc04f082de75ae02c4997a.png', 'png', '0'),
+(5, 39, '2016-04-24', '22:38:35', 5, 'BRASÃƒO ESPORTE CLUBE GRÃŠMIO', NULL, 'b20c1b4698e05bb76fb095e53c04983e.jpg', 'jpg', '0'),
+(6, 39, '2016-04-24', '22:39:36', 5, 'BRASÃƒO ESPORTE CLUBE INTERNACIONAL', NULL, '57902c277ef1791f67ef9bef7083863b.png', 'png', '0'),
+(7, 39, '2016-04-24', '22:40:25', 3, 'CRISTO REDENTOR, RIO DE JANEIRO', NULL, 'c6483656fa08401612e891c22973997e.jpg', 'jpg', '0'),
+(8, 39, '2016-04-24', '22:41:47', 3, 'O LAÃ‡ADOR', NULL, '8e63d75ca1a02d8a781e97bf2bbd64f3.jpg', 'jpg', '0'),
+(9, 39, '2016-04-24', '22:43:00', 3, 'PALÃCIO DA ALVORADA', NULL, '599e9a3a1f4a8b78e839a49c1724cf9c.jpg', 'jpg', '0'),
+(10, 39, '2016-04-24', '22:43:48', 3, 'PELOURINHO SALVADOR', NULL, '6a765b252786a60299a40dbc7da6af5a.jpg', 'jpg', '0'),
+(11, 39, '2016-04-24', '22:45:05', 1, 'DILMA ROUSSEF', NULL, 'dde1c35531279ca4049d4d2d2120afab.jpg', 'jpg', '0'),
+(12, 39, '2016-04-24', '22:46:23', 4, 'BRASÃƒO UFSM', NULL, 'da2de225e7d1576cc21f67ceaad1e553.jpg', 'jpg', '0');
 
 -- --------------------------------------------------------
 
@@ -9893,25 +9903,20 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usu_senha` varchar(150) DEFAULT NULL,
   `usu_escolaridade` varchar(50) DEFAULT NULL,
   `usu_descricao` text NOT NULL,
-  `usu_situacao` varchar(10) DEFAULT NULL,
   `cid_codigo` int(11) DEFAULT NULL,
   `usu_data_hora_cad` datetime DEFAULT NULL,
   PRIMARY KEY (`usu_codigo`),
   KEY `cid_codigo` (`cid_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_descricao`, `usu_situacao`, `cid_codigo`, `usu_data_hora_cad`) VALUES
-(23, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '2', 'Pouco conhecimento em audio_descricao', NULL, NULL, NULL),
-(31, 'TDN', 'loja.anima.animus@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '0', 'nada', NULL, NULL, NULL),
-(32, 'usuarioplus', 'usuarioplus@mail.com', '5b6251657675beb2735319f9107468dcba985b28', '0', 'AvanÃ§ado', NULL, NULL, NULL),
-(33, 'ju', 'ju', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '0', 'pouco\r\n', NULL, NULL, NULL),
-(34, 'ju', 'ju@', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '0', 'bla', NULL, NULL, NULL),
-(36, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', '81427a8ca2346669e614430cc07dc2b14fa0adec', '0', 'bla bla', NULL, NULL, NULL),
-(37, 'Jonas', 'jonas@', '35a2c6fae61f8077aab61faa4019722abf05093c', 'Terceiro Grau Incompleto', 'Regular', NULL, NULL, NULL);
+INSERT INTO `usuario` (`usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_descricao`, `cid_codigo`, `usu_data_hora_cad`) VALUES
+(23, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '2', 'Pouco conhecimento em audio_descricao', NULL, NULL),
+(38, 'usuario', 'usuario@mail.com', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Terceiro Grau Completo', 'Pouco conhecimento', 5671, '2016-04-24 22:01:06'),
+(39, 'Juliana de Fatima da Silva', 'julianafatsil@gmail.com', 'e1e58cab7873729c6d8d4f22331b7eebe8c562d4', 'Terceiro Grau Incompleto', 'Regular', 7527, '2016-04-24 22:11:13');
 
 -- --------------------------------------------------------
 
@@ -9922,6 +9927,7 @@ INSERT INTO `usuario` (`usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_
 CREATE TABLE IF NOT EXISTS `usuario_categoria_usuario` (
   `usu_codigo` int(11) NOT NULL,
   `cat_usu_codigo` int(11) NOT NULL,
+  `cat_usu_situacao` varchar(10) DEFAULT NULL COMMENT 'ativo, pendente,inativo',
   PRIMARY KEY (`usu_codigo`,`cat_usu_codigo`),
   KEY `cat_usu_codigo` (`cat_usu_codigo`),
   KEY `usu_codigo` (`usu_codigo`)
@@ -9931,19 +9937,11 @@ CREATE TABLE IF NOT EXISTS `usuario_categoria_usuario` (
 -- Extraindo dados da tabela `usuario_categoria_usuario`
 --
 
-INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`) VALUES
-(23, 1),
-(31, 1),
-(33, 1),
-(34, 1),
-(36, 1),
-(37, 1),
-(31, 2),
-(32, 2),
-(36, 2),
-(37, 2),
-(36, 3),
-(37, 3);
+INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`, `cat_usu_situacao`) VALUES
+(38, 1, NULL),
+(39, 1, NULL),
+(39, 2, NULL),
+(39, 3, NULL);
 
 --
 -- Constraints for dumped tables
