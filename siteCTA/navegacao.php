@@ -29,7 +29,7 @@
                 echo '<li class="w3-right"><a class="w3-btn w3-blue-grey w3-hover-black w3-large w3-padding-16" href="./usuario_cadastrar.php">Cadastre-se</a></li>';                
             } else {
                 for($i = 0; $i < count($categoriaSessao); $i++){
-                  echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.strtoupper(nomeCatUsu($categoriaSessao[$i])).'</a></li>';
+                  echo '<li><a class="w3-hover-black w3-padding-16" href="javascript:void(0)" onclick="w3_show_nav(\'cat'.$categoriaSessao[$i].'\')">'.strtoupper(utf8_encode(nomeCatUsu($categoriaSessao[$i]))).'</a></li>';
                 }                 
                 echo '<li class="w3-right"><a class="w3-btn w3-green w3-hover-black w3-large w3-padding-16" href="./logout.php">SAIR</a></li>';
             }
@@ -52,7 +52,7 @@
         if ($rowsCat > 0) {
             //Mostra as categorias
             while ($registroCat = $queryCat->fetch_assoc()) {    
-                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.$registroCat['cat_nome'].' (';
+                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.(utf8_encode($registroCat['cat_nome'])).' (';
                 echo contaCategoria($registroCat['cat_codigo']);
                 echo ')</a>';
             }   
