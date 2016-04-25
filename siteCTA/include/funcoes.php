@@ -45,14 +45,15 @@
         }else{ return 'Mensagem de email enviada!'; }
     }    
     
-    function montaMensagem ($login, $nome){
+    function montaMensagem ($login, $nome, $senha){
         include ("config.php");
         $mensagem = 
         "<html>
             <body>
                 Olá $nome!<p>
                 Você se cadastrou do ColabAD!<br>
-                Login: ".$login." <br></p> 
+                Login: ".$login." <br>
+                Senha: ".$senha." <br></p> 
                 <p>Para efetuar login acesse: <a href='".$URL_PADRAO."'>ColabAD</a></p>
                 
                 <p>---------------------------------------------------------------<br>

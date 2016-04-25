@@ -2,13 +2,15 @@
       include("include/conexao.php");
       include("include/funcoes.php");
 
-      
-    $login = $mysqli->real_escape_string($_POST['email']);
-    $senha = $mysqli->real_escape_string($_POST['senha']);
-    $nome = $mysqli->real_escape_string($_POST['nome']);
+    date_default_timezone_set('America/Sao_Paulo');
+    
+    $login        = $mysqli->real_escape_string($_POST['email']);
+    $senha        = $mysqli->real_escape_string($_POST['senha']);
+    $nome         = $mysqli->real_escape_string($_POST['nome']);
     $escolaridade = $mysqli->real_escape_string($_POST['escolaridade']);
-    $cidade = $mysqli->real_escape_string($_POST['cid_codigo']); 
-    $descricao = $mysqli->real_escape_string($_POST['descricao']); 
+    $cidade       = $mysqli->real_escape_string($_POST['cid_codigo']); 
+    $descricao    = $mysqli->real_escape_string($_POST['descricao']);
+    $dataHora     = date('Y-m-d H:i:s');
     
      foreach ($_POST['categoria'] as $key => $value){
         $categoria[$key] = $value;
@@ -41,8 +43,8 @@
     //                        `usu_matricula`='$matricula',`usu_situacao`='$situacao'
     //                    WHERE `usu_codigo`= '$codigo'";
     //        } else {
-                $sql = "INSERT INTO `usuario` (`usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `cid_codigo`, `usu_descricao`) 
-                        VALUES ('$nome', '$login','".SHA1($senha)."', '$escolaridade', '$cidade', '$descricao');";        
+                $sql = "INSERT INTO `usuario` (`usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `cid_codigo`, `usu_descricao`, `usu_data_hora_cad`) 
+                        VALUES ('$nome', '$login','".SHA1($senha)."', '$escolaridade', '$cidade', '$descricao', '$dataHora');";        
     //            }    
 
             $mysqli->query($sql);
@@ -74,7 +76,7 @@
                 }
             }  
 
-            $emailmsg = montaMensagem($login, $nome);
+            $emailmsg = montaMensagem($login, $nome, $senha);
             $emailret = smtpmailer($login, 'gerenciador.tgsi@gmail.com', 'ColabAD', 'Cadastro ColabAD', $emailmsg);
 
             echo "<script>location.href='entrar.php?mensagem=w3-green&texto=Cadastro efetuado com sucesso! $emailret';</script>";
