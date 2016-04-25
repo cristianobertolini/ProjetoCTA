@@ -200,7 +200,7 @@ function BancaResultado($codluno, $tipo){
 }
 
 function nomeCatUsu($codigo){
-    //Ve o resultado das avalia��es Aprovado ou Reprovado
+    
     include("conexao.php");       
 
     $sql = "SELECT `cat_usu_nome` 

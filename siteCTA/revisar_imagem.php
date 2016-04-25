@@ -4,10 +4,10 @@
         <?php
             include("include/conexao.php");
             include("cabecalho.php");
-            $pagina = 'IN';
+            $pagina = 'RE';
             
-            if(isset($_GET['id'])){
-                $id = $mysqli->real_escape_string($_GET['id']);
+            if(isset($_POST['imagem'])){
+                $id = $mysqli->real_escape_string($_POST['imagem']);
 
                 $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original`,i.`img_situacao`  
                             FROM `imagens` as i 

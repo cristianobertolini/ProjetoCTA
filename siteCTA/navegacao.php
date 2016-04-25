@@ -92,7 +92,7 @@
     
     <div id="cat3" class="myMenu"  <?php if ($pagina != 'RE') {echo " style='display:none'";} ?>>
         <div class="w3-container"><h3>REVISOR</h3></div>
-        <a href="#">REvisar imagens</a>
+        <a href="./revisar.php">Revisar imagens</a>
     </div>      
     
 </div>
