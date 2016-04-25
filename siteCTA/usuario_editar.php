@@ -8,10 +8,10 @@
             
         <title>colabAD | Editar Perfil </title>  
         <style type="text/css">
-                .carregando{
-                    color:#666;
-                    display:none;
-                }
+            .carregando{
+                color:#666;
+                display:none;
+            }
         </style>        
     </head>    
 

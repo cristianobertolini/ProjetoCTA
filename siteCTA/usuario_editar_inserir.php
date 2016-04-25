@@ -31,9 +31,6 @@
         if (mysqli_num_rows($queryUsuarioExistente) > 0) {   
             echo "<script>location.href='usuario_editar.php?mensagem=w3-red&texto=O e-mail de login ".$login." já está sendo usado por outro usuário!';</script>";       
         } else {     
-            $sql = "DELETE FROM `usuario_categoria_usuario` WHERE `usu_codigo`= '$codUsu'";     
-            $mysqli->query($sql); 
-
             $sql = "UPDATE `usuario`
                     SET `usu_senha` = '".SHA1($senha)."',
                         `usu_nome` = '$nome',
@@ -43,12 +40,33 @@
                         `usu_descricao` = '$descricao'
                     WHERE `usu_codigo` = '$codUsu'";
             $mysqli->query($sql);
+            
+            /*pega no banco de dados do usuario */
+            $sqlUsuCat = "SELECT `usu_codigo`, `cat_usu_codigo`, `cat_usu_situacao` 
+                       FROM `usuario_categoria_usuario`
+                       WHERE `usu_codigo` = $codUsu";
+            /*retorna a quantidade registros encontrados na consulta acima */
+            $queryUsuCat = $mysqli->query($sqlUsuCat);
 
+            /*se quantidade de linhas maior que zero então já existe usuario cadastrado*/
+            if(mysqli_num_rows($queryUsuCat) > 0){
+                while ($registro = $queryUsuCat->fetch_assoc()) {
+                    $cat[$registro['cat_usu_codigo']] = $registro['cat_usu_situacao'];
+                }
+            }          
+            
+            $sql = "DELETE FROM `usuario_categoria_usuario` WHERE `usu_codigo`= '$codUsu'";     
+            $mysqli->query($sql);            
+            
             if (!empty($categoria)) {
                 $N = count($categoria);
                 for($i=0; $i < $N; $i++)
                 {
-                    $sqlCategoria = "INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`) VALUES ('$codUsu', '". $categoria[$i] ."');";
+                    $situacao = 'pendente';
+                    if (isset($cat[$categoria[$i]])) {
+                        $situacao = $cat[$categoria[$i]];
+                    }
+                    $sqlCategoria = "INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`, `cat_usu_situacao`) VALUES ('$codUsu', '". $categoria[$i] ."', '$situacao');";
                     $mysqli->query($sqlCategoria);
                 }
             }

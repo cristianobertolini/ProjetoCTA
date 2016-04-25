@@ -50,7 +50,13 @@
                     $resultado = $queryUsu->fetch_assoc();
                     for($i=0; $i < $N; $i++)
                     {
-                        $sqlCategoria = "INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`) VALUES ('". $resultado['usu_codigo'] ."', '". $categoria[$i] ."');";
+                        if ($i == 1) {
+                            $situacao = 'ativo';
+                        } else {
+                            $situacao = 'pendente';
+                        }
+                            
+                        $sqlCategoria = "INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`, `cat_usu_situacao`) VALUES ('". $resultado['usu_codigo'] ."', '". $categoria[$i] ."', '$situacao');";
                         $mysqli->query($sqlCategoria);
                     }
                 }
