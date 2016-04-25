@@ -5,7 +5,7 @@
     
     session_start();
     
-    $situacao = 'revisar';
+    $situacao = $mysqli->real_escape_string($_POST['situacao']);;
     $obs      = $mysqli->real_escape_string($_POST['obs']);
     $codigo   = $mysqli->real_escape_string($_POST['img']);
     $categoria = $mysqli->real_escape_string($_POST['categoria']);

@@ -98,8 +98,8 @@
                 <label for="situacao" class="w3-label"><strong>Situação</strong>
                     <select class="w3-select" name="situacao" id="situacao" required>
                         <option value=""disabled> Selecione uma opção </option>
-                        <option value="revisar" selected>descrever (Situação atual da imagem)</option>
-                         <option value="descrever">revisar </option>
+                        <option value="descrever" selected>Descrever (Situação atual da imagem)</option>
+                         <option value="revisar">Revisar (Envia imagem para revisão)</option>
                         <option value="cancelar">Cancelar (Remove imagem - imagem inadequada)</option>
                     </select>  <br/>
                 </label>    
@@ -129,11 +129,11 @@
                 <br><br> 
                 <label><strong>Observação: (opcional)</strong></label> 
                 
-                <textarea class="w3-input w3-border" name="obs" id="obs"required=""></textarea></br>
+                <textarea class="w3-input w3-border" name="obs" id="obs"></textarea></br>
                 
                 <label class="w3-label"><b>Áudio-descrição:</b></label> 
 
-                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000"></textarea>
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000"><?php echo utf8_encode($registroImg['img_audiodescricao']); ?></textarea>
                 <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
  
