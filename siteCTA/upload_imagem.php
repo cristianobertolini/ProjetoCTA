@@ -19,24 +19,6 @@
             <h1>Submeter imagem</h1>
         </div>
         
-        <script type="text/javascript">
-            function blocTexto(valor)
-            {
-                quant = 5000;
-                total = valor.length;
-                if(total <= quant)
-                {
-                    resto = quant - total;
-                    document.getElementById('cont').innerHTML = resto;
-                }
-                else
-                {
-                    document.getElementById('texto').value = valor.substr(0,quant);
-                }
-            }
-            </script>
-        
-        
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <?php
                 if((isset($_GET['mensagem'])) && (isset($_GET['texto']))){
@@ -51,7 +33,7 @@
                 <input class="w3-input w3-border" name="descricao" type="text" />
                 <label class="w3-label"><b>Áudio-descrição: (opcional)</b></label> 
 
-                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="2000"></textarea>
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000"></textarea>
                 <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
                 <label class="w3-label"><strong>Categoria: </strong></label> 
@@ -85,7 +67,24 @@
                 <br>
             </form>  
         </div>             
-        
+                
+         <script type="text/javascript">
+            function blocTexto(valor)
+            {
+                quant = 5000;
+                total = valor.length;
+                if(total <= quant)
+                {
+                    resto = quant - total;
+                    document.getElementById('cont').innerHTML = resto;
+                }
+                else
+                {
+                    document.getElementById('texto').value = valor.substr(0,quant);
+                }
+            }
+            </script>
+ 
         <?php
             include("rodape.php");
         ?>    

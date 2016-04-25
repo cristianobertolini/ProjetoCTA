@@ -87,7 +87,7 @@
 
     <div id="cat2" class="myMenu"  <?php if ($pagina != 'AU') {echo " style='display:none'";} ?>>
         <div class="w3-container"><h3>ÁUDIO-DESCRITOR</h3></div>
-        <a href="#">Descrever</a>
+        <a href="audio_descrever.php">Descrever</a>
     </div> 
     
     <div id="cat3" class="myMenu"  <?php if ($pagina != 'RE') {echo " style='display:none'";} ?>>
