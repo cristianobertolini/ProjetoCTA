@@ -41,7 +41,7 @@
                         <?php
                             $codUsu = $_SESSION['UsuarioCOD'];
 
-                            $sqlUsuario = "SELECT `usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_descricao`, `usu_situacao`, `cid_codigo`, `usu_data_hora_cad` 
+                            $sqlUsuario = "SELECT `usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_descricao`, `cid_codigo`, `usu_data_hora_cad` 
                                            FROM `usuario` 
                                            WHERE `usu_codigo` = '$codUsu'";
                             
