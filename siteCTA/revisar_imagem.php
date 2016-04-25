@@ -49,7 +49,7 @@
             echo '      <br>';             
             echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';
             echo '      <br>';            
-            echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%,left:45%" alt="'.$registroImg['img_nome'].'">';                                       
+            echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
             echo '      <br><br>';
             echo '  </div>';
             echo '</div>';
