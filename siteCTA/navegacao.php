@@ -13,7 +13,7 @@
 
 <div class="w3-top">
     <div class="w3-row w3-white w3-padding">
-        <div class="w3-half" style="margin:4px 0 6px 0"><a href='<?php echo $URL_PADRAO; ?>'><img src='./img/logotipoColabAD.png' alt='colabad.ufsm.com'></a></div>
+        <div class="w3-half" style="margin:4px 0 6px 0"><a href='<?php echo $URL_PADRAO; ?>'><img src='./img/logotipoColabAD.png' alt='Imagem com link para o site do colabAD'></a></div>
         <div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small"><div class="w3-right">SISTEMA COLABORATIVO DE ÁUDIO-DESCRIÇÃO</div></div>
     </div>
     <ul class="w3-navbar w3-theme w3-large w3-card-4">
@@ -41,7 +41,7 @@
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-xxlarge">×</a>
   
     <div id="menuCategoria" class="myMenu" <?php if ($pagina != 'IN') {echo " style='display:none'";} ?>>
-    <div class="w3-container"><h3>CATEGORIAS</h3></div>
+    <div class="w3-container"><span class="w3-large">CATEGORIAS</span></div>
     <?php
         //Carrega as categorias do banco de dados
         $sqlCat = "SELECT `cat_codigo`, `cat_nome` FROM `categoria` ORDER BY `cat_nome`"; 
@@ -63,35 +63,35 @@
     </div>
  
     <div id="menuQuemSomos" class="myMenu"  <?php if ($pagina != 'QS') {echo " style='display:none'";} ?>> 
-        <div class="w3-container"><h3>QUEM SOMOS</h3></div>
+        <div class="w3-container"><span class="w3-large">QUEM SOMOS</span></div>
         <a href="./QSdescricao.php">O ColabAD</a>
         <a href="./QSequipe.php">Equipe</a>
     </div>  
   
     <div id="menuAjuda" class="myMenu"  <?php if ($pagina != 'AJ') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>AJUDA</h3></div>
+        <div class="w3-container"><span class="w3-large">AJUDA</span></div>
         <a href="./AJduvidas.php">Dúvidas gerais</a>
     </div>
   
     <div id="menuContato" class="myMenu"  <?php if ($pagina != 'CT') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>CONTATO</h3></div>
+        <div class="w3-container"><span class="w3-large">CONTATO</span></div>
         <a href="./CTcontato.php">Formulário de contato</a>
         <a href="./CTlocalizacao.php">Localização</a>
     </div>  
     
     <div id="cat1" class="myMenu"  <?php if ($pagina != 'US') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>USUARIO</h3></div>
+        <div class="w3-container"><span class="w3-large">USUARIO</span></div>
         <a href="./upload_imagem.php">Submeter imagem</a>
         <a href="./usuario_editar.php">Editar perfil</a>
     </div>  
 
     <div id="cat2" class="myMenu"  <?php if ($pagina != 'AU') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>ÁUDIO-DESCRITOR</h3></div>
+        <div class="w3-container"><span class="w3-large">ÁUDIO-DESCRITOR</span></div>
         <a href="audio_descrever.php">Descrever</a>
     </div> 
     
     <div id="cat3" class="myMenu"  <?php if ($pagina != 'RE') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><h3>REVISOR</h3></div>
+        <div class="w3-container"><span class="w3-large">REVISOR</span></div>
         <a href="./revisar.php">Revisar imagens</a>
     </div>      
     

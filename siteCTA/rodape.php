@@ -35,3 +35,5 @@ function w3_show_nav(name) {
 </script>
      
 <script src="http://www.w3schools.com/lib/w3codecolors.js"></script>
+
+<noscript>Seu navegador não suporta JavaScript!</noscript>

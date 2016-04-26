@@ -62,11 +62,11 @@
             <br>
             <div class="w3-row w3-center">
                 <h2><strong><i class="fi-heart"></i> Redes Sociais:</strong></h2>
-                <a href="https://www.facebook.com/UFSM-Frederico-Westphalen-214706985230683"><i class="fi-social-facebook w3-jumbo" style="font-size:22px;"></i></a>
+                <a href="https://www.facebook.com/UFSM-Frederico-Westphalen-214706985230683"><i class="fi-social-facebook w3-large"></i> Facebook</a>
                 &nbsp;
-                <a href="https://plus.google.com/105592117570270546246/"><i class="fi-social-google-plus  w3-jumbo" style="font-size:22px;"></i></a>
+                <a href="https://plus.google.com/105592117570270546246/"><i class="fi-social-google-plus w3-large"> Google+</i></a>
                 &nbsp;
-                <a href="https://twitter.com/NoticiasUFSM"><i class="fi-social-twitter  w3-jumbo" style="font-size:22px;"></i></a>
+                <a href="https://twitter.com/NoticiasUFSM"><i class="fi-social-twitter w3-large"></i> Twitter</a>
             </div>
         </div>        
         

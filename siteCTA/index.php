@@ -56,7 +56,7 @@
                 $queryImg->free();
             } else {
                 echo '<div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
-                echo '  <h2>Nenhuma imagem cadastrada.</h2>';
+                echo '  <span class="w3-large">Nenhuma imagem cadastrada.</span>';
                 echo '</div>';                
             }     
         include("rodape.php");

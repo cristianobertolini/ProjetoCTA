@@ -25,10 +25,10 @@
                             <input type="text" id="nome" name="nome" placeholder="John Doe" required class="w3-input w3-border">
                         </label>
                         <label for="sexo" class="w3-label">Sexo <br>
-                            <input class="w3-radio" type="radio" name="sexo" value="masculino" checked>
-                            <label class="w3-validate">Masculino</label>
-                            <input class="w3-radio" type="radio" name="sexo" value="feminino">
-                            <label class="w3-validate">Feminino</label>
+                            <input class="w3-radio" type="radio" name="sexo" id="sexo" value="masculino" checked>
+                            <span class="w3-validate">Masculino</span>
+                            <input class="w3-radio" type="radio" name="sexo" id="sexo" value="feminino">
+                            <span class="w3-validate">Feminino</span>
                         </label>  
                         <label for="email" class="w3-label">Email *
                             <input type="email" id="email" name="email" placeholder="johndoe@minhaempresa.com" required class="w3-input w3-border">
