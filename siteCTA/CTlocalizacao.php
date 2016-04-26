@@ -20,13 +20,13 @@
         </div>
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <div class="w3-row">
-                <h3>Onde Estamos</h3>
+                <h2>Onde Estamos</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3542.387650096885!2d-53.43080368523519!3d-27.394833220081026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fb9db5d68358e1%3A0xc72f45885e08948a!2sUniversidade+Federal+de+Santa+Maria%2C+Campus+de+Frederico+Westphalen!5e0!3m2!1spt-BR!2sbr!4v1459028766219" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <br><br>
             <div class="w3-row">
                 <div class="w3-container w3-quarter">
-                    <h5><b>CAMPUS SEDE</b></h5>
+                    <strong>CAMPUS SEDE</strong>
                     Av. Roraima nº 1000 <br>
                     Cidade Universitária <br>
                     Bairro Camobi <br>
@@ -35,7 +35,7 @@
                     +55 (55) 3220-8000<br>                    
                 </div>
                 <div class="w3-container w3-quarter">
-                    <h5><b>CAMPUS DE SILVEIRA MARTINS</b></h5>
+                    <strong>CAMPUS DE SILVEIRA MARTINS</strong>
                     Rua Francisco Guerino n° 407<br> 
                     Bairro Centro<br> 
                     Silveira Martins - RS<br> 
@@ -43,7 +43,7 @@
                     +55 (55) 3224-4701<br>
                 </div>
                 <div class="w3-container w3-quarter">
-                    <h5><b>CAMPUS DE FREDERICO WESTPHALEN</b></h5>
+                    <strong>CAMPUS DE FREDERICO WESTPHALEN</strong>
                     Linha 7 de Setembro, s/n<br>
                     BR 386 Km 40<br> 
                     Frederico Westphalen - RS<br> 
@@ -51,7 +51,7 @@
                     +55 (55) 3744-0600<br>                    
                 </div>
                 <div class="w3-container w3-quarter">
-                    <h5><b>CAMPUS DE PALMEIRA DAS MISSÕES</b></h5>
+                    <strong>CAMPUS DE PALMEIRA DAS MISSÕES</strong>
                     Av. Independência, nº 3751<br> 
                     Bairro Vista Alegre<br> 
                     Palmeira das Missões - RS <br>

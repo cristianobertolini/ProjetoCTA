@@ -2,7 +2,6 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/foundation.min.css">
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/csspersonalizado.css">    
