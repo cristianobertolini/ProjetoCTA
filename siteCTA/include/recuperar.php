@@ -37,7 +37,7 @@
                 </body>
             </html>";                
         
-        $emailret = smtpmailer($login, 'gerenciador.tgsi@gmail.com', 'naoresponder', '[ColabAD] Esqueci minha senha', $emailmsg, 0);        
+        $emailret = smtpmailer($login, 'gerenciador.tgsi@gmail.com', 'naoresponder', '[ColabAD] Esqueci minha senha', $emailmsg, 1);        
         
         echo "<script>location.href='../esqueciSenha.php?mensagem=w3-green&texto=Operação realizada com sucesso!<br>A nova senha foi enviada para o seguinte endereço: $login <br>A entrega do e-mail com a nova senha pode demorar alguns minutos. Caso não o encontre, verifique a caixa de Spam.';</script>";
     } else {        

@@ -1,6 +1,6 @@
 <?php
     function smtpmailer($para, $de, $de_nome, $assunto, $corpo, $tipo){
-        if ($tipo = 0) {
+        if ($tipo == 0) {
             include ("./phpmailer/class.phpmailer.php");
         } else {
            include ("../phpmailer/class.phpmailer.php"); 
