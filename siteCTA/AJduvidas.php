@@ -29,21 +29,21 @@
         <ul class="none"
             <p style="text-align: justify;">
           
-                <li> <strong>Usuário comum </strong>: gera demanda de imagens, ao cadastrar-se, automaticamente
-                    é aceito como usuário normal, podendo gerar demandas de imagens para áudio-descrição.</li>
+                <li> <strong>Usuário comum </strong>: Gera demanda de imagens, ao cadastrar-se, automaticamente
+                    é aceito como usuário normal, podendo fazer o envio (upload) de imagens para áudio-descrição.</li>
                 </br>
-                 <li> <strong>Áudio-descritor</strong>: Pode ser usuário normal, mas para fazer áudio-descrição
-                     nas imagens é preciso aceitação do Administrador do Sistema que irá avaliar, seu conhecimento
+                 <li> <strong>Áudio-descritor</strong>: Possui permissões de usuário normal e também pode áudio-descrever imagens, mas para fazer áudio-descrição
+                     nas imagens é preciso aceitação do Administrador do Sistema que irá avaliar seu conhecimento
                      em áudio-descrição.</li>
                  </br>
-                 <li> <strong>Revisor</strong>: Pode ser usuário normal e a forma de cadastro funciona como para o 
+                 <li> <strong>Revisor</strong>:  Possui permissões de usuário normal e a forma de cadastro funciona como para o 
                      áudio-descritor, contribui fazendo revisões nas imagens áudio-descritas, podendo inclusive
                      enviar novamente para o áudio-descritor com observações.</li>
                  </br> 
             </p>
         </ul>
         
-         <h3>Usuários com todas as permissões (usuario comun, áudio-descritor e avaliador) para teste:</h3>
+         <h3>Usuários com todas as permissões (usuario comum, áudio-descritor e revisor) para teste:</h3>
 
         <table class="w3-table w3-striped w3-bordered w3-card-4">
         <thead>

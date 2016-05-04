@@ -26,7 +26,7 @@
             <br><br>
             <div class="w3-row">
                 <div class="w3-container w3-quarter">
-                    <strong>CAMPUS SEDE</strong>
+                    <strong>CAMPUS SEDE</strong><br>
                     Av. Roraima nº 1000 <br>
                     Cidade Universitária <br>
                     Bairro Camobi <br>
@@ -35,7 +35,7 @@
                     +55 (55) 3220-8000<br>                    
                 </div>
                 <div class="w3-container w3-quarter">
-                    <strong>CAMPUS DE SILVEIRA MARTINS</strong>
+                    <strong>CAMPUS DE SILVEIRA MARTINS</strong><br>
                     Rua Francisco Guerino n° 407<br> 
                     Bairro Centro<br> 
                     Silveira Martins - RS<br> 
@@ -43,7 +43,7 @@
                     +55 (55) 3224-4701<br>
                 </div>
                 <div class="w3-container w3-quarter">
-                    <strong>CAMPUS DE FREDERICO WESTPHALEN</strong>
+                    <strong>CAMPUS DE FREDERICO WESTPHALEN</strong><br>
                     Linha 7 de Setembro, s/n<br>
                     BR 386 Km 40<br> 
                     Frederico Westphalen - RS<br> 
@@ -51,7 +51,7 @@
                     +55 (55) 3744-0600<br>                    
                 </div>
                 <div class="w3-container w3-quarter">
-                    <strong>CAMPUS DE PALMEIRA DAS MISSÕES</strong>
+                    <strong>CAMPUS DE PALMEIRA DAS MISSÕES</strong><br>
                     Av. Independência, nº 3751<br> 
                     Bairro Vista Alegre<br> 
                     Palmeira das Missões - RS <br>
