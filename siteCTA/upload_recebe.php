@@ -62,6 +62,7 @@
         $hora = date('H:i:s');
         $nome = $mysqli->real_escape_string($_POST['descricao']);
         $audiodescricao = $mysqli->real_escape_string($_POST['audiodescricao']);
+        
        
         $categoria= $mysqli->real_escape_string($_POST['categoria']);
 

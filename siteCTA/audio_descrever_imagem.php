@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  
     <head>
         <?php
             include("include/conexao.php");
@@ -47,7 +48,8 @@
             echo '<div class="w3-row-padding w3-margin-top">';
             echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
             echo '      <br>';             
-            echo '      <div class="w3-justify">'.utf8_encode($registroImg['img_audiodescricao']).'</div>';
+//            echo '      <div class="w3-justify">'.(utf8_encode($registroImg['img_audiodescricao'])).'</div>';
+            echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';   
             echo '      <br>';            
             echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
             echo '      <br><br>';
@@ -93,7 +95,7 @@
     ?>
     <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
         <h3>Descrever imagem:</h3> 
-        <form id="revisor" action="audio_descrever_upload_imagem.php" method="post">
+        <form id="descritor" action="audio_descrever_upload_imagem.php" method="post">
             <div class="w3-section">
                 <label for="situacao" class="w3-label"><strong>Situação</strong>
                     <select class="w3-select" name="situacao" id="situacao" required>
@@ -133,7 +135,9 @@
                 
                 <label class="w3-label"><b>Áudio-descrição:</b></label> 
 
-                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000" required><?php echo utf8_encode($registroImg['img_audiodescricao']); ?></textarea>
+                <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000" required><?php echo $registroImg['img_audiodescricao']; ?></textarea>
+
+
                 <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
  

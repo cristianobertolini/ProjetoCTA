@@ -9,7 +9,7 @@
         
         <title>colabAD | Descrever Imagens </title>           
     </head>    
-
+        
     <body>
         
     <?php

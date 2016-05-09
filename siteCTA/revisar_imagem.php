@@ -47,7 +47,7 @@
             echo '<div class="w3-row-padding w3-margin-top">';
             echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
             echo '      <br>';             
-            echo '      <div class="w3-justify">'.utf8_encode($registroImg['img_audiodescricao']).'</div>';
+            echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';
             echo '      <br>';            
             echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
             echo '      <br><br>';

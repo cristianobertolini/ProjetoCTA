@@ -8,7 +8,7 @@
             
         <title>colabAD | Submeter imagem </title>           
     </head>    
-
+<!--  <meta charset="utf-8"/>-->
     <body>
         
     <?php
