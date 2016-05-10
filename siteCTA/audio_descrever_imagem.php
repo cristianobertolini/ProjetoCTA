@@ -20,7 +20,7 @@
 
                 if ($rowsImg > 0){
                     $registroImg = $queryImg->fetch_assoc();
-                    $nome = $registroImg['img_nome'];
+                    $nome = (utf8_encode($registroImg['img_nome']));
                 } else {
                     $id   = 0;
                     $nome = 'Imagem não encontrada.';
@@ -31,7 +31,7 @@
             }                   
             ?>    
             
-        <title>colabAD | Imagem <?php echo $nome; ?> </title>           
+        <title>colabAD | Imagem <?php echo utf8_encode($nome); ?> </title>           
     </head>    
 
     <body>
@@ -48,10 +48,10 @@
             echo '<div class="w3-row-padding w3-margin-top">';
             echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
             echo '      <br>';             
-//            echo '      <div class="w3-justify">'.(utf8_encode($registroImg['img_audiodescricao'])).'</div>';
-            echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';   
+            echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';
+//            echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';   
             echo '      <br>';            
-            echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
+            echo '      <img src="./img/'.utf8_encode($registroImg['img_nome_original']).'" style="width:45%" alt="'.utf8_encode($registroImg['img_nome']).'">';                                       
             echo '      <br><br>';
             echo '  </div>';
             echo '</div>';

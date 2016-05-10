@@ -5,11 +5,12 @@
     session_start();
     
     $situacao = $mysqli->real_escape_string($_POST['situacao']);
-    $obs      = $mysqli->real_escape_string($_POST['obs']);
+    $obd      = $mysqli->real_escape_string($_POST['obs']);
     $codigo   = $mysqli->real_escape_string($_POST['img']);
     $categoria = $mysqli->real_escape_string($_POST['categoria']);
     $usuario  = $_SESSION['UsuarioCOD'];
 
+    //para mudar a situação
     $update = "update `imagens` 
                set `img_situacao` = '$situacao',
                    `cat_codigo`   = '$categoria'

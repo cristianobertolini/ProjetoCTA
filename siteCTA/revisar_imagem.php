@@ -40,7 +40,7 @@
         
         echo '<div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">';
         echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
-        echo '      <h1>'.$nome.'</h1>';
+        echo '      <h1>'.utf8_encode($nome).'</h1>';
         echo '  </div>';
         
         if ($id > 0) {

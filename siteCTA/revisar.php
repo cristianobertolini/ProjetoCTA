@@ -50,7 +50,7 @@
 
                 while ($registroRev = $queryRev->fetch_assoc()) {    
                     echo '<tr>';
-                    echo '  <td>'.$registroRev['img_nome'].'</td>';
+                    echo '  <td>'.utf8_encode($registroRev['img_nome']).'</td>';
                     echo '  <td>'.date('d/m/Y', strtotime($registroRev['img_data'])).' - '.$registroRev['img_hora'].'</td>';
                     echo '  <td>'.BuscaDado('cat_nome', 'categoria', 'cat_codigo = '.$registroRev['cat_codigo']).'</td>';
                     echo '  <td>'.BuscaDado('usu_nome', 'usuario', 'usu_codigo = '.$registroRev['usu_codigo']).'</td>';

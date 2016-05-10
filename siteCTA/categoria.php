@@ -30,7 +30,7 @@
             }                   
             ?>    
             
-        <title>colabAD | Categoria <?php echo $nome; ?> </title>           
+        <title>colabAD | Categoria <?php echo utf8_encode($nome); ?> </title>           
     </head>    
 
     <body>
@@ -40,7 +40,7 @@
         
         echo '<div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">';
         echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
-        echo '      <h1>Categoria '.$nome.'</h1>';
+        echo '      <h1>Categoria '.utf8_decode($nome).'</h1>';
         echo '  </div>';
         
         if ($id > 0) {
@@ -66,7 +66,7 @@
                     echo '      <div class="w3-card-2">';
                     echo '          <a href="./detalhe.php?id='.$registroImg['img_codigo'].'" target="_self"><img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'" class="w3-hover-opacity"></a>';
                     echo '          <div class="w3-container">';
-                    echo '              <h5>'.$registroImg['img_nome'].'</h5>';
+                    echo '              <h5>'.utf8_encode($registroImg['img_nome']).'</h5>';
                     echo '          </div>';                                       
                     echo '      </div>';
                     echo '  </div>';

@@ -9,7 +9,7 @@
         
         <title>colabAD | Descrever Imagens </title>           
     </head>    
-        
+       
     <body>
         
     <?php
@@ -54,7 +54,7 @@
                         while ($Linha = $queryImagens->fetch_assoc()) { 
                          
                         echo '<tr>';
-                        echo '  <td>'.$Linha['img_nome'].'</td>';
+                        echo '  <td>'.(utf8_encode($Linha['img_nome'])).'</td>';
                         echo '  <td>'.date('d/m/Y', strtotime($Linha['img_data'])).' - '.$Linha['img_hora'].'</td>';
                         echo '  <td>'.$Linha['cat_nome'].'</td>';
                         echo '  <td>'.$Linha['usu_nome'].'</td>';

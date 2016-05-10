@@ -60,10 +60,11 @@
         $usuario = $_SESSION['UsuarioCOD'];
         $data = date('Y-m-d');
         $hora = date('H:i:s');
-        $nome = $mysqli->real_escape_string($_POST['descricao']);
-        $audiodescricao = $mysqli->real_escape_string($_POST['audiodescricao']);
-        
-       
+        $nome1 = $mysqli->real_escape_string($_POST['descricao']);
+        $nome =  (utf8_decode($nome1));
+        $audiodescrica = $mysqli->real_escape_string($_POST['audiodescricao']);
+        $audiodescricao= (utf8_decode($audiodescrica));
+ 
         $categoria= $mysqli->real_escape_string($_POST['categoria']);
 
         if ($upload == true) {
