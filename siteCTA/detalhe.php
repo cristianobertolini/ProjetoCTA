@@ -30,7 +30,7 @@
             }                   
             ?>    
             
-        <title>colabAD | Imagem <?php echo $nome; ?> </title>           
+        <title>colabAD | Imagem <?php echo utf8_encode($nome); ?> </title>           
     </head>    
 
     <body>

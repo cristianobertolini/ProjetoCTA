@@ -41,9 +41,9 @@
                     $count = $count + 1;
                     echo '  <div class="w3-third">';
                     echo '      <div class="w3-card-2">';
-                    echo '          <a href="./detalhe.php?id='.$registroImg['img_codigo'].'" target="_self"><img src="./img/'.$registroImg['img_nome_original'].'" style="width:100%" alt="'.$registroImg['img_nome'].'" class="w3-hover-opacity"></a>';
+                    echo '          <a href="./detalhe.php?id='.$registroImg['img_codigo'].'" target="_self"><img src="./img/'.utf8_encode($registroImg['img_nome_original']).'" style="width:100%" alt="'.utf8_encode($registroImg['img_nome']).'" class="w3-hover-opacity"></a>';
                     echo '          <div class="w3-container">';
-                    echo '              <h5>'.$registroImg['img_nome'].'<br><a href="./categoria.php?id='.$registroImg['cat_codigo'].'" target="_self"><b>Categoria: </b>'.$registroImg['cat_nome'].'</h5></a>';
+                    echo '              <h5>'.utf8_encode($registroImg['img_nome']).'<br><a href="./categoria.php?id='.$registroImg['cat_codigo'].'" target="_self"><b>Categoria: </b>'.$registroImg['cat_nome'].'</h5></a>';
                     echo '          </div>';
                     echo '      </div>';
                     echo '  </div>';
