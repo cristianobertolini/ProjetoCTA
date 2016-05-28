@@ -105,9 +105,12 @@
                     </select>  <br/>
                 </label>    
                 <br>
+          
                 <label class="w3-label"><strong>Categoria: </strong></label> 
-                <select class="w3-select" name="categoria" required>
-                    <option value="" disabled> Escolha uma opção</option>
+                <div class="w3-row">
+                    <div class="w3-col s6">
+                        <select class="w3-select" name="categoria" required > 
+                            <option value="" disabled> Escolha uma opção</option>  
                     <?php
                         //Carrega as categorias do banco de dados
                         $sqlCat = "SELECT `cat_codigo`, `cat_nome` FROM `categoria` ORDER BY `cat_nome`"; 
@@ -126,8 +129,12 @@
                             echo '<option value="" disabled selected>Nenhuma categoria encontrada</option>';
                         }    
                     ?>
-                </select>
-                <br><br> 
+                    </select> <br><br> 
+                    </div>
+                    <div class="w3-col s6">
+                        <p><button class="w3-btn-block w3-teal" type="button" onClick="NovaCat()">Adicionar Nova Categoria</button></p></div>
+                </div>
+                
                 <label><strong>Observação: (opcional)</strong></label> 
                 <textarea class="w3-input w3-border" name="obs" id="obs"></textarea></br>
                 
@@ -140,9 +147,15 @@
             </div>
         </form>
     </div>       
+      
+        <script type="text/javascript">
+            function NovaCat(){
+            location.href=" categoria_nova.php"
+            }
+        </script>
         
     <?php
-        include("rodape.php");
+          include("rodape.php");
     ?>    
 </body>
 </html> 

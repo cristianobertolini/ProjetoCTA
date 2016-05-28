@@ -95,6 +95,7 @@
     <div id="cat3" class="myMenu"  <?php if ($pagina != 'RE') {echo " style='display:none'";} ?>>
         <div class="w3-container"><span class="w3-large">REVISOR</span></div>
         <a href="./revisar.php">Revisar imagens</a>
+        <a href="./categoria_nova.php">Inserir Nova Categoria</a>
     </div>      
     
 </div>
