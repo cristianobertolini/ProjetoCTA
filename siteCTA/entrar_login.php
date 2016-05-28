@@ -23,6 +23,9 @@
             // Salva os dados encontados na variável $resultado
             $resultado = $query->fetch_assoc();    
             
+            //INICIO A SESSÃO COM UM TEMPO DE EXPIRAÇÃO DE 10 MINUTOS
+            session_cache_expire(30);            
+            
             // Se a sessão não existir, inicia uma
             session_start();   
             

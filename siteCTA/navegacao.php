@@ -1,8 +1,10 @@
 <?php 
-    session_start();
+    
     include("include/config.php"); 
     include("include/conexao.php");
     include("include/funcoes.php");
+    
+    if (!isset($_SESSION)){ session_start();}
     
     if (isset($_SESSION['Categorias'])){
         $categoriaSessao = $_SESSION['Categorias'];
