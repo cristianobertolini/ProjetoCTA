@@ -6,4 +6,5 @@
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/csspersonalizado.css">    
 
-    <script src="js/vendor/modernizr.js"></script>  
+    <script src="js/vendor/modernizr.js"></script> 
+    <script src="http://www.w3schools.com/lib/w3codecolors.js"></script>    

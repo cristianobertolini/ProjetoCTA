@@ -2,6 +2,7 @@
 <html lang="pt-br">
     <head>
         <?php
+            include("restrito.php");
             include("cabecalho.php");
             $pagina = 'IN';
         ?>    
@@ -88,6 +89,7 @@
                         </select>                        
                         <br>
                         <br>
+                        
                         <label><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
                         <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea></br>
 
@@ -109,30 +111,30 @@
         </div>
         
         <script src="http://www.google.com/jsapi"></script>
-            <script type="text/javascript">
-              google.load('jquery', '1.3');
-            </script>        
+        <script type="text/javascript">
+          google.load('jquery', '1.3');
+        </script>        
 
-            <script type="text/javascript">        
-                $(function(){
-                    $('#est_codigo').change(function(){
-                        if( $(this).val() ) {
-                            $('#cid_codigo').hide();
-                            $('.carregando').show();
-                            $.getJSON('cidades.ajax.php?search=', {est_codigo: $(this).val(), ajax: 'true'}, function(j){
-                                    var options = '<option value="" disabled selected>-- Escolha uma cidade --</option>';
-                                    for (var i = 0; i < j.length; i++) {
-                                        options += '<option value="' + j[i].cid_codigo + '">' + j[i].cid_nome + '</option>';
-                                    }	
-                                    $('#cid_codigo').html(options).show();
-                                    $('.carregando').hide();
-                            });
-                        } else {
-                            $('#cid_codigo').html('<option value="">-- Escolha um estado --</option>');
-                        }
-                    });
-                });      
-            </script>          
+        <script type="text/javascript">        
+            $(function(){
+                $('#est_codigo').change(function(){
+                    if( $(this).val() ) {
+                        $('#cid_codigo').hide();
+                        $('.carregando').show();
+                        $.getJSON('cidades.ajax.php?search=', {est_codigo: $(this).val(), ajax: 'true'}, function(j){
+                                var options = '<option value="" disabled selected>-- Escolha uma cidade --</option>';
+                                for (var i = 0; i < j.length; i++) {
+                                    options += '<option value="' + j[i].cid_codigo + '">' + j[i].cid_nome + '</option>';
+                                }	
+                                $('#cid_codigo').html(options).show();
+                                $('.carregando').hide();
+                        });
+                    } else {
+                        $('#cid_codigo').html('<option value="">-- Escolha um estado --</option>');
+                    }
+                });
+            });      
+        </script>          
         
 
         <?php

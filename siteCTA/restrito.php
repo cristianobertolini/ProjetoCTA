@@ -1,25 +1,14 @@
 <?php
     include("include/config.php");
-    // A sessão precisa ser iniciada em cada página diferente
-    if (!isset($_SESSION)) session_start();
+    // A sess�o precisa ser iniciada em cada p�gina diferente
+    if (!isset($_SESSION)){ session_start();}
        
-    // Verifica se não há a variável da sessão que identifica o usuário
-    if (!isset($_SESSION['UsuarioCOD'])) {
-        // Destrói a sessão por segurança
+    // Verifica se n�o h� a vari�vel da sess�o que identifica o usu�rio
+    if (!isset($_SESSION['UsuarioCOD']) || empty($_SESSION['UsuarioCOD'])) {
+        // Destr�i a sess�o por seguran�a
         session_destroy();
-        //echo 'Sessão terminada';
+        //echo 'Sess�o terminada';
         // Redireciona o visitante de volta pro login
         header("Location: ".$URL_PADRAO); 
         exit();  
-    }
-    
-    if (isset($_SESSION['categoriaPagina']) && isset($_SESSION['categoriaUsuario'])) {
-        if ($_SESSION['categoriaPagina'] != $_SESSION['categoriaUsuario']) {
-            $codigoCat = $_SESSION['categoriaUsuario'];
-            switch ($codigoCat) {
-                case 1: header("Location: ../usuario"); exit; break; 
-                case 2: header("Location: ../audiodescritor"); exit; break; 
-                case 3: header("Location: ../revisor"); exit; break;    
-            }
-        }
     }

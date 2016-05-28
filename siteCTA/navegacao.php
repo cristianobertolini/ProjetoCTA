@@ -65,7 +65,7 @@
     <div id="menuQuemSomos" class="myMenu"  <?php if ($pagina != 'QS') {echo " style='display:none'";} ?>> 
         <div class="w3-container"><span class="w3-large">QUEM SOMOS</span></div>
         <a href="./QSdescricao.php">O ColabAD</a>
-        <a href="./QSequipe.php">Equipe</a>
+        <a href="./qsequipe.php">Equipe</a>
     </div>  
   
     <div id="menuAjuda" class="myMenu"  <?php if ($pagina != 'AJ') {echo " style='display:none'";} ?>>

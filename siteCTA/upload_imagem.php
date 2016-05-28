@@ -2,6 +2,7 @@
 <html lang="pt-br">
     <head>
         <?php
+            include("restrito.php");
             include("cabecalho.php");
             $pagina = 'US';
         ?>    

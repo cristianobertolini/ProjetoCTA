@@ -3,6 +3,7 @@
     
     <head>
         <?php
+            include("restrito.php");
             include("cabecalho.php");
             $pagina = 'RE';
         ?>    

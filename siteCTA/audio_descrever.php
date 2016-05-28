@@ -2,6 +2,7 @@
 <html lang="pt-br">
     <head>
         <?php
+            include("restrito.php");
             include("include/conexao.php");
             include("cabecalho.php");
             $pagina = 'AU';
