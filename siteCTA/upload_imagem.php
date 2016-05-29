@@ -31,11 +31,10 @@
             <form method="post" enctype="multipart/form-data" action="upload_recebe.php">
                 <br>
                 <label class="w3-label"><b>Descrição:</b></label> 
-                <input class="w3-input w3-border" name="descricao" type="text" />
+                <input class="w3-input w3-border" name="descricao" type="text"/>
                 <label class="w3-label"><b>Áudio-descrição: (opcional)</b></label> 
-
                 <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000"></textarea>
-                <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
+                <label><b>Restam <span id="cont">5000</span> caracteres</label>     
                 <br>
                 <label class="w3-label"><strong>Categoria: </strong></label> 
                 <select class="w3-select w3-border" name="categoria" required>
@@ -58,12 +57,15 @@
                     ?>
                 </select>
                 <br><br>
+                <label class="w3-label"><b>Tag (palavra-chave separada por vírgula):</b></label> 
+                <input class="w3-input w3-border" name="tag" type="text"/>
+                <br>
                 <label class="w3-label"><b>Selecione uma imagem:</b></label> 
-                <input class="w3-input w3-border" required name="arquivo" type="file" />
+                <input class="w3-input w3-border" required name="arquivo" type="file"/>
                 <br>
                 <div class="w3-row">
-                    <input class="w3-input w3-green w3-half" type="submit" value="Salvar" />
-                    <input class="w3-input w3-blue-grey w3-half" type="reset" value="Limpar" />
+                    <input class="w3-input w3-green w3-half" type="submit" value="Salvar"/>
+                    <input class="w3-input w3-blue-grey w3-half" type="reset" value="Limpar"/>
                 </div>
                 <br>
             </form>  

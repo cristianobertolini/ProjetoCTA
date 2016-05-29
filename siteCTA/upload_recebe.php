@@ -58,24 +58,67 @@
         date_default_timezone_set('America/Sao_Paulo');
 
         $usuario = $_SESSION['UsuarioCOD'];
-        $data = date('Y-m-d');
-        $hora = date('H:i:s');
+        $data  = date('Y-m-d');
+        $hora  = date('H:i:s');
         $nome1 = $mysqli->real_escape_string($_POST['descricao']);
-        $nome =  (utf8_decode($nome1));
+        $nome  =  (utf8_decode($nome1));
         $audiodescrica = $mysqli->real_escape_string($_POST['audiodescricao']);
         $audiodescricao= (utf8_decode($audiodescrica));
- 
+        
         $categoria= $mysqli->real_escape_string($_POST['categoria']);
 
         if ($upload == true) {
             // Cria uma query MySQL
-           $sql = "INSERT INTO 
-                   `imagens`(`usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_audiodescricao`, `img_nome`, `img_nome_original`,`img_extensao`, `img_situacao`) 
-                   VALUES ('$usuario','$data','$hora','$categoria','$audiodescricao','$nome','$novo_nome','$extensao', 'descrever')";
-
+            $sql = "INSERT INTO 
+                    `imagens`(`usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_audiodescricao`, `img_nome`, `img_nome_original`,`img_extensao`, `img_situacao`) 
+                    VALUES ('$usuario','$data','$hora','$categoria','$audiodescricao','$nome','$novo_nome','$extensao', 'descrever')";
+            
             // Executa o insert    
             mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
+            $codigoImg = $mysqli->insert_id;
+            
+            $tags     = Trim(strtolower($mysqli->real_escape_string($_POST['tag'])));
+            $arrayTag = explode(',', $tags);
 
+            foreach($arrayTag as $valoresTag) {
+                if ($valoresTag != '') {
+                    $sqlTag = "SELECT `tag_codigo`,
+                                      `tag_descricao`, 
+                                      `tag_cont`, 
+                                      `tag_ultima_buca` 
+                                 FROM `tag` 
+                                WHERE `tag_descricao` LIKE '$valoresTag' ";
+
+                    $queryTag     = $mysqli->query($sqlTag);
+                    $resultadoTag = $queryTag->fetch_assoc();
+
+                    if (mysqli_num_rows($queryTag) > 0){
+                        $sqlTagInsert = "INSERT INTO `imagem_tag`
+                                                   (`img_codigo`, 
+                                                    `tag_codigo`) 
+                                            VALUES ('$codigoImg',
+                                                    '".$resultadoTag['tag_codigo']."');";
+                        $mysqli->query($sqlTagInsert);
+                    } else {
+                        //se não encontrar insere tag nova e insere na imagem
+                        $sqlTagInsert = "INSERT INTO `tag`
+                                                    (`tag_descricao`, 
+                                                     `tag_cont`) 
+                                             VALUES ('$valoresTag',
+                                                     '1')";
+                        $mysqli->query($sqlTagInsert);
+                        $codigotag = $mysqli->insert_id;
+
+                        $sqlTagImgInsert = "INSERT INTO `imagem_tag`
+                                                       (`img_codigo`, 
+                                                        `tag_codigo`) 
+                                                VALUES ('$codigoImg',
+                                                        '$codigotag');";
+                        $mysqli->query($sqlTagImgInsert);
+                    }
+                }
+            }
+            
             //Volta ara a página anterior
             echo "<script>location.href='upload_imagem.php?mensagem=w3-green&texto=Arquivo enviado com sucesso!';</script>";
         } else {
