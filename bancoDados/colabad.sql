@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Maio-2016 às 02:04
+-- Generation Time: 29-Maio-2016 às 21:48
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `cat_codigo` int(11) NOT NULL AUTO_INCREMENT,
   `cat_nome` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`cat_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -44,10 +44,8 @@ INSERT INTO `categoria` (`cat_codigo`, `cat_nome`) VALUES
 (5, 'Futebol'),
 (6, 'Outros'),
 (20, 'teste'),
-(21, 'teste'),
-(22, 'lol'),
-(23, 'gffg'),
-(24, 'jkjk');
+(29, 'Testando'),
+(30, 'ola');
 
 -- --------------------------------------------------------
 
@@ -10012,16 +10010,16 @@ INSERT INTO `log` (`log_codigo`, `log_data_hora`, `user_codigo`, `img_codigo`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tabela_tag`
+-- Estrutura da tabela `tag`
 --
 
-CREATE TABLE IF NOT EXISTS `tabela_tag` (
-  `tag_codigo` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tag` (
+  `tag_codigo` int(11) NOT NULL AUTO_INCREMENT,
   `tag_descricao` varchar(255) COLLATE utf8_bin NOT NULL,
   `tag_cont` int(11) DEFAULT '1',
   `tag_ultima_buca` datetime NOT NULL,
   PRIMARY KEY (`tag_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -10106,7 +10104,7 @@ ALTER TABLE `cidades`
 -- Limitadores para a tabela `imagem_tag`
 --
 ALTER TABLE `imagem_tag`
-  ADD CONSTRAINT `imagem_tag_ibfk_2` FOREIGN KEY (`tag_codigo`) REFERENCES `tabela_tag` (`tag_codigo`),
+  ADD CONSTRAINT `imagem_tag_ibfk_2` FOREIGN KEY (`tag_codigo`) REFERENCES `tag` (`tag_codigo`),
   ADD CONSTRAINT `imagem_tag_ibfk_1` FOREIGN KEY (`img_codigo`) REFERENCES `imagens` (`img_codigo`);
 
 --
