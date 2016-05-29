@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2016 às 05:51
+-- Generation Time: 29-Maio-2016 às 02:04
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `cat_codigo` int(11) NOT NULL AUTO_INCREMENT,
   `cat_nome` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`cat_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -42,7 +42,12 @@ INSERT INTO `categoria` (`cat_codigo`, `cat_nome`) VALUES
 (3, 'Lugares'),
 (4, 'Institucionais'),
 (5, 'Futebol'),
-(6, 'Outros');
+(6, 'Outros'),
+(20, 'teste'),
+(21, 'teste'),
+(22, 'lol'),
+(23, 'gffg'),
+(24, 'jkjk');
 
 -- --------------------------------------------------------
 
@@ -9855,6 +9860,19 @@ INSERT INTO `estados` (`est_codigo`, `est_uf`, `est_nome`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `imagem_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `imagem_tag` (
+  `img_codigo` int(11) NOT NULL,
+  `tag_codigo` int(11) NOT NULL,
+  KEY `img_codigo` (`img_codigo`,`tag_codigo`),
+  KEY `tag_codigo` (`tag_codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `imagens`
 --
 
@@ -9872,23 +9890,44 @@ CREATE TABLE IF NOT EXISTS `imagens` (
   PRIMARY KEY (`img_codigo`),
   KEY `cat_codigo` (`cat_codigo`),
   KEY `usu_codigo` (`usu_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 --
 -- Extraindo dados da tabela `imagens`
 --
 
 INSERT INTO `imagens` (`img_codigo`, `usu_codigo`, `img_data`, `img_hora`, `cat_codigo`, `img_nome`, `img_audiodescricao`, `img_nome_original`, `img_extensao`, `img_situacao`) VALUES
-(2, 23, '2016-03-28', '11:19:00', 2, 'Bandeira do Brasil', 'A bandeira do Brasil é formada por um retângulo verde, no qual está inserido bem no meio um grande um losango amarelo, cujo centro possui um círculo azul com vinte e sete estrelas brancas e uma faixa branca, que divide o círculo ao meio. Na faixa branca contém a frase: “Ordem e Progresso”. \r\nNota proêmia: Cada elemento da bandeira possui um significado, sendo o verde o símbolo da robustez das matas brasileiras; O amarelo representa as riquezas minerais do solo; A cor azul ilustra o céu; E o branco, a paz; Cada uma das 27 estrelas brancas representa um estado brasileiro e o Distrito Federal;\r\n', 'Bandeira do Brasil.png', 'png', '0'),
-(4, 39, '2016-04-24', '22:34:27', 2, 'BANDEIRA DO RIO GRANDE DO SUL', NULL, '8efc88c315bc04f082de75ae02c4997a.png', 'png', '0'),
-(5, 39, '2016-04-24', '22:38:35', 5, 'BRASÃƒO ESPORTE CLUBE GRÃŠMIO', NULL, 'b20c1b4698e05bb76fb095e53c04983e.jpg', 'jpg', '0'),
-(6, 39, '2016-04-24', '22:39:36', 5, 'BRASÃƒO ESPORTE CLUBE INTERNACIONAL', NULL, '57902c277ef1791f67ef9bef7083863b.png', 'png', '0'),
-(7, 39, '2016-04-24', '22:40:25', 3, 'CRISTO REDENTOR, RIO DE JANEIRO', NULL, 'c6483656fa08401612e891c22973997e.jpg', 'jpg', '0'),
-(8, 39, '2016-04-24', '22:41:47', 3, 'O LAÃ‡ADOR', NULL, '8e63d75ca1a02d8a781e97bf2bbd64f3.jpg', 'jpg', '0'),
-(9, 39, '2016-04-24', '22:43:00', 3, 'PALÃCIO DA ALVORADA', NULL, '599e9a3a1f4a8b78e839a49c1724cf9c.jpg', 'jpg', '0'),
-(10, 39, '2016-04-24', '22:43:48', 3, 'PELOURINHO SALVADOR', NULL, '6a765b252786a60299a40dbc7da6af5a.jpg', 'jpg', '0'),
-(11, 39, '2016-04-24', '22:45:05', 1, 'DILMA ROUSSEF', NULL, 'dde1c35531279ca4049d4d2d2120afab.jpg', 'jpg', '0'),
-(12, 39, '2016-04-24', '22:46:23', 4, 'BRASÃƒO UFSM', NULL, 'da2de225e7d1576cc21f67ceaad1e553.jpg', 'jpg', '0');
+(2, 23, '2016-03-28', '11:19:00', 20, 'Bandeira do Brasil', 'A bandeira do Brasil é formada por um retângulo verde, no qual está inserido bem no meio um grande um losango amarelo, cujo centro possui um círculo azul com vinte e sete estrelas brancas e uma faixa branca, que divide o círculo ao meio. Na faixa branca contém a frase: “Ordem e Progresso”. \r\nNota proêmia: Cada elemento da bandeira possui um significado, sendo o verde o símbolo da robustez das matas brasileiras; O amarelo representa as riquezas minerais do solo; A cor azul ilustra o céu; E o branco, a paz; Cada uma das 27 estrelas brancas representa um estado brasileiro e o Distrito Federal;\r\n', 'Bandeira do Brasil.png', 'png', 'revisar'),
+(4, 39, '2016-04-24', '22:34:27', 2, 'BANDEIRA DO RIO GRANDE DO SUL', NULL, '8efc88c315bc04f082de75ae02c4997a.png', 'png', 'publicar'),
+(5, 39, '2016-04-24', '22:38:35', 5, 'BRASÃƒO ESPORTE CLUBE GRÃŠMIO', 'O brasÃ£o do GrÃªmio faz alusÃ£o a uma bola de futebol, destacando as linhas brancas das costuras entre os gomos. Os gomos das partes superior e inferior da representaÃ§Ã£o de bola sÃ£o azuis-claro. O grande gomo central Ã© preto e maior que os outros, ocupando praticamente um terÃ§o da bola e toda a sua largura. Neste gomo preto estÃ¡ escrito em branco e letras maiÃºsculas a palavra GRÃŠMIO. \r\nBem no centro, logo acima do  grande gomo preto, existe um gomo branco, com o ano de fundaÃ§Ã£o do clube: 1903. Outro gomo branco, mas abaixo do preto, indica a abreviaÃ§Ã£o do nome do clube FBPA.\r\nNa parte de cima da representaÃ§Ã£o de bola, tem trÃªs estrelas. A primeira na cor bronze, a segunda prateada e a teceira dourada. \r\nNota proÃªmia: FBPA significa Futebol Brasileiro Porto-A	legrense. As estrelas bronze, prata e dourada simbolizam, respectivamente, as conquistas do Campeonato Brasileiro, da Libertadores da AmÃ©rica e do Mundial Interclubes. \r\n', 'b20c1b4698e05bb76fb095e53c04983e.jpg', 'jpg', 'revisar'),
+(6, 39, '2016-04-24', '22:39:36', 5, 'BRASÃƒO ESPORTE CLUBE INTERNACIONAL', NULL, '57902c277ef1791f67ef9bef7083863b.png', 'png', 'descrever'),
+(7, 39, '2016-04-24', '22:40:25', 3, 'CRISTO REDENTOR, RIO DE JANEIRO', 'O Cristo Redentor Ã© uma estÃ¡tua feita de concreto e pedra sabÃ£o. Ã‰ uma imagem de Jesus Cristo, com os braÃ§os abertos e as mÃ£os viradas para frente. As vestes esculpidas representam uma tÃºnica comprida e franzida perto dos pÃ©s. Esta imagem de Jesus o mostra com o rosto sereno, cabelos atÃ© os ombros, barba comprida que acompanha o formato de seu rosto. \r\nA estÃ¡tua fica no topo do morro Corcovado, a 709 metros de altura. O morro estÃ¡ rodeado de um mar azul. Ao fundo pode-se enxergar outros diversos morros, tambÃ©m banhados pelo mar. Os morros sÃ£o encobertos de uma mata densa e verde, aparecendo algumas paredes de pedra entre a mata. No pÃ© dos morros, entre a mata e a Ã¡gua do mar, hÃ¡ prÃ©dios e construÃ§Ãµes luxuosas. No mar hÃ¡ diversos barcos e lanchas, predominantemente da cor branca.', 'c6483656fa08401612e891c22973997e.jpg', 'jpg', 'publicar'),
+(8, 39, '2016-04-24', '22:41:47', 3, 'O LAÃ‡ADOR', NULL, '8e63d75ca1a02d8a781e97bf2bbd64f3.jpg', 'jpg', 'descrever'),
+(9, 39, '2016-04-24', '22:43:00', 3, 'PALÃCIO DA ALVORADA', NULL, '599e9a3a1f4a8b78e839a49c1724cf9c.jpg', 'jpg', 'publicar'),
+(10, 39, '2016-04-24', '22:43:48', 3, 'PELOURINHO SALVADOR', NULL, '6a765b252786a60299a40dbc7da6af5a.jpg', 'jpg', 'publicar'),
+(11, 39, '2016-04-24', '22:45:05', 1, 'DILMA ROUSSEF', NULL, 'dde1c35531279ca4049d4d2d2120afab.jpg', 'jpg', 'descrever'),
+(12, 39, '2016-04-24', '22:46:23', 4, 'BRASÃƒO UFSM', NULL, 'da2de225e7d1576cc21f67ceaad1e553.jpg', 'jpg', 'publicar'),
+(13, 39, '2016-04-30', '20:25:06', 6, 'Imagem teste', 'coraÃ§Ã£o, visÃ£o, Ã¡udio_descriÃ§Ã£o, Imagem - RevolucionÃ¡rio', '53781cdd249bc1ae5705f0d384e11c14.jpg', 'jpg', 'revisar'),
+(14, 39, '2016-05-01', '13:34:10', 2, 'Bandeira do Rio Grande do Sul', 'A bandeira do Rio Grande do Sul Ã© um retÃ¢ngulo dividido diagonalmente em trÃªs partes, sendo a mais de cima verde, a do centro vermelha e a inferior amarela. Bem no centro da bandeira, hÃ¡ um forma oval branca, com o brasÃ£o do estado.\r\nO brasÃ£o, que em seu aspecto geral tem um formato oval, possui bem em seu centro um losango verde de pÃ©, cujas pontas superior e inferior tÃªm uma estrela amarela cada. No centro do losango hÃ¡ um quadrado branco com um sabre de ouro (espada), sustentando um barrete frÃ­gio vermelho (uma espÃ©cie de touca) na ponta. Em cada lado do sabre, hÃ¡ um ramo verde florido de fumo e erva-mate, que se cruzam na parte de baixo.\r\nEm cada lado do losango verde, hÃ¡ duas colunas jÃ´nicas amarelas. Ambas estÃ£o sobre um campo verde ondulado. Em cima de cada uma hÃ¡ uma bala preta de canhÃ£o antigo.\r\nEmoldurando o losango, o campo verde e as colunas, hÃ¡ um contorno azul, que carrega as inscriÃ§Ãµes em amarelo "RepÃºblica Rio-Grandense" e  "20 de setembro de 1835". Ambas as frases fazem parte da moldura e estÃ£o separadas por duas estrelas amarelas de cinco pontas.\r\nEsta moldura fica sobreposta em quatro bandeiras tricolores, com verde, vermelho e amarelo. Com duas bandeiras entre-cruzadas de cada lado, suas hastes ficam na parte superior, arrematadas por Flores-de-Lis brancas e invertidas. Bem no centro superior, entre as 4 hastes das bandeiras, hÃ¡ quatro fuzis armados e uma lanÃ§a vermelha da cavalaria. E na base desse conjunto, dois tubos de canhÃ£o pretos, cruzados e semi-encobertos pelas bandeiras.\r\nBem abaixo do brasÃ£o, hÃ¡ um listel branco, simulando um tecido, com os dizeres "Liberdade, Igualdade e Humanidade".\r\n', 'dd86c35f4735f8cb42cf7d446ff4be04.png', 'png', 'revisar'),
+(15, 39, '2016-05-01', '13:39:17', 2, 'Bandeira do Brasil', 'A bandeira do Brasil ÃƒÂ© formada por um retÃƒÂ¢ngulo verde, no qual estÃƒÂ¡ inserido bem no meio um grande um losango amarelo, cujo centro possui um cÃƒÂ­rculo azul com vinte e sete estrelas brancas e uma faixa branca, que divide o cÃƒÂ­rculo ao meio. Na faixa branca contÃƒÂ©m a frase: Ã¢Â€ÂœOrdem e ProgressoÃ¢Â€Â. \r\nNota proÃƒÂªmia: Cada elemento da bandeira possui um significado, sendo o verde o sÃƒÂ­mbolo da robustez das matas brasileiras; O amarelo representa as riquezas minerais do solo; A cor azul ilustra o cÃƒÂ©u; E o branco, a paz; Cada uma das 27 estrelas brancas representa um estado brasileiro e o Distrito Federal;\r\n', '037e70492ebccb2fe0e421a3dd797afe.png', 'png', 'revisar'),
+(16, 39, '2016-05-01', '13:42:42', 3, 'Cristo Redentor Rio de Janeiro', 'O Cristo Redentor Ã© uma estÃ¡tua feita de concreto e pedra sabÃ£o. Ã‰ uma imagem de Jesus Cristo, com os braÃ§os abertos e as mÃ£os viradas para frente. As vestes esculpidas representam uma tÃºnica comprida e franzida perto dos pÃ©s. Esta imagem de Jesus o mostra com o rosto sereno, cabelos atÃ© os ombros, barba comprida que acompanha o formato de seu rosto. \r\nA estÃ¡tua fica no topo do morro Corcovado, a 709 metros de altura. O morro estÃ¡ rodeado de um mar azul. Ao fundo pode-se enxergar outros diversos morros, tambÃ©m banhados pelo mar. Os morros sÃ£o encobertos de uma mata densa e verde, aparecendo algumas paredes de pedra entre a mata. No pÃ© dos morros, entre a mata e a Ã¡gua do mar, hÃ¡ prÃ©dios e construÃ§Ãµes luxuosas. No mar hÃ¡ diversos barcos e lanchas, predominantemente da cor branca.\r\n', 'f51e647d20ae5d638ade15f10094ea7e.jpg', 'jpg', 'publicar'),
+(17, 39, '2016-05-01', '13:55:22', 1, 'Presidente Dilma Rouseff', 'O rosto de Dilma Rousseff Ã© arredondado. Sua pele Ã© branca com um leve bonzeado. Ela tem dentes bem quadrados, fazendo com que sÃ³ os dentes superiores apareÃ§am no sorriso. Seus lÃ¡bios pintados de batom levemente avermelhado sÃ£o finos e de espessura parecida um como outro. Ela tem o nariz arredondado, com largura levemente menor do que a largura da boca. Em cada lado do nariz, hÃ¡ uma forte linha de expressÃ£o, que acompanha o sorriso, revelando que ela jÃ¡ tem mais idade. Seus olhos sÃ£o catanhos e afastados. Suas orelhas sÃ£o bem rentes Ã  cabeÃ§a. Ela usa brincos com esferas beges, do tamanho da falange do dedo mÃ­nimo. Os cabelos de Dilma sÃ£o curtos e esticados para cima como um grande topete, bem castanhos na raiz e levemente mais claro nas pontas.\r\nA foto oficial da presidente brasileira Dilma Rousseff a mostra vestindo um terninho bege claro, que estÃ¡ fechado atÃ© a altura do meio do peito. Ela veste por baixo uma blusa da mesma cor, que aparece trÃªs dedos acima do ultimo botÃ£o do terno. Por cima da roupa ela carrega uma faixa que vai do  seu ombro direito atÃ© o quadril, do lado esquerdo. A faixa tem trÃªs listras de largura idÃªntica: duas verdes e uma amarela no meio. Na altura do seio, hÃ¡ um brasÃ£o na faixa, com uma estrela de cinco pontas contornada de vermelho. A estrela tem um cÃ­rculo azul no meio, com 5 pequenas estrelas brancas. Cada uma das cinco pontas da grande estrela Ã© colorida metadce verde e a outra metade amarelo. \r\n', 'e4e8f001ea6c92ae9ce710934631ee07.jpg', 'jpg', 'publicar'),
+(18, 39, '2016-05-01', '13:57:56', 3, 'teste', 'O rosto de Dilma Rousseff Ã© arredondado. Sua pele Ã© branca com um leve bonzeado. Ela tem dentes bem quadrados, fazendo com que sÃ³ os dentes superiores apareÃ§am no sorriso. Seus lÃ¡bios pintados de batom levemente avermelhado sÃ£o finos e de espessura parecida um como outro. Ela tem o nariz arredondado, com largura levemente menor do que a largura da boca. Em cada lado do nariz, hÃ¡ uma forte linha de expressÃ£o, que acompanha o sorriso, revelando que ela jÃ¡ tem mais idade. Seus olhos sÃ£o catanhos e afastados. Suas orelhas sÃ£o bem rentes Ã  cabeÃ§a. Ela usa brincos com esferas beges, do tamanho da falange do dedo mÃ­nimo. Os cabelos de Dilma sÃ£o curtos e esticados para cima como um grande topete, bem castanhos na raiz e levemente mais claro nas pontas.\r\nA foto oficial da presidente brasileira Dilma Rousseff a mostra vestindo um terninho bege claro, que estÃ¡ fechado atÃ© a altura do meio do peito. Ela veste por baixo uma blusa da mesma cor, que aparece trÃªs dedos acima do ultimo botÃ£o do terno. Por cima da roupa ela carrega uma faixa que vai do  seu ombro direito atÃ© o quadril, do lado esquerdo. A faixa tem trÃªs listras de largura idÃªntica: duas verdes e uma amarela no meio. Na altura do seio, hÃ¡ um brasÃ£o na faixa, com uma estrela de cinco pontas contornada de vermelho. A estrela tem um cÃ­rculo azul no meio, com 5 pequenas estrelas brancas. Cada uma das cinco pontas da grande estrela Ã© colorida metadce verde e a outra metade amarelo. \r\n', 'ba825ad6c56668127f90d575b7787f24.png', 'png', 'descrever'),
+(19, 39, '2016-05-09', '18:57:09', 5, 'sadsad', 'ola mundoooooo!!! AÃ§ude, aÃ§Ãºcar, Ã guia...', 'f52678184c844b228e1cc9e6d4e11488.jpg', 'jpg', 'descrever'),
+(20, 39, '2016-05-09', '19:02:58', 5, 'ddd', 'gfdhhhdhdhedhdfÃƒÂ‡aÃƒÂ§a, ÃƒÂ guia, SoluÃƒÂ§ÃƒÂ£o, ChapÃƒÂ©u!', '6fdbab8cf7b35c84d42dc4e99e676364.jpg', 'jpg', 'descrever'),
+(21, 39, '2016-05-09', '19:09:04', 1, 'jjjjjjj', 'muÃ§ulmano, ItajaÃ­', 'f7f39e23e16b7c93eead0adcc4602f86.jpg', 'jpg', 'publicar'),
+(26, 39, '2016-05-09', '19:36:52', 6, 'AÃ§Ãºde, AcÃºcar_', 'AÃƒÂ§ÃƒÂºde, AcÃƒÂºcar_', 'aece4881bf5ad10ab7339ebc14254a64.jpg', 'jpg', 'descrever'),
+(27, 39, '2016-05-09', '19:42:14', 6, 'AÃ§Ãºde, AcÃºcar_', 'AÃ§Ãºde, AcÃºcar_', '55e3373cdb823780f828a83ada72a848.jpg', 'jpg', 'publicar'),
+(28, 39, '2016-05-09', '20:05:42', 6, 'Eeeeeeee! Agora tem que funcionar!!!AÃ§ude', 'Eeeeeeee! Agora tem que funcionar!!!AÃ§ude, CoraÃ§Ã£oooo, ', 'f41b400ee48ae4f776b8cb2c9b4509b9.jpg', 'jpg', 'publicar'),
+(29, 39, '2016-05-09', '20:14:11', 1, 'aÃ§ude, enchente, soluÃ§Ã£o', 'Eeeeeeee! Agora tem que funcionar!!!AÃ§ude', '4163cf352f6a6f68073e22f93f4ae4b3.jpg', 'jpg', 'revisar'),
+(30, 39, '2016-05-09', '20:26:43', 3, 'AÃ§Ãºde, AcÃºcar_FeijÃ£oo', 'AÃƒÂ§ÃƒÂºde, AcÃƒÂºcar_', '3a76f03f31b73b756beec9ec4d5ce08c.jpg', 'jpg', 'descrever'),
+(31, 39, '2016-05-09', '20:39:08', 6, 'AÃ§Ãºde, AcÃºcar_', 'Açúde, Acúcar_feijão', '13258346613d81735c645b605a72ac16.jpg', 'jpg', 'descrever'),
+(32, 39, '2016-05-09', '20:41:05', 6, 'Açúde, Acúcar_Feijão', 'Açúde, Acúcar_Feijão', 'a332469f1b4809edf17b89ded8888c1d.jpg', 'jpg', 'descrever'),
+(33, 39, '2016-05-09', '20:52:14', 3, 'Açúde, Acúcar_', 'Açúde, Acúcar_', 'a220910e77e169111fbb3eedb2458751.jpg', 'jpg', 'descrever'),
+(34, 39, '2016-05-09', '21:18:24', 4, 'Açúde, Acúcar_', 'fgfdgfdgfdgAÃ§ude, sout CoraÃ§Ã£o', 'df083c20cbd87da8d8642ae5d354eb31.jpg', 'jpg', 'descrever'),
+(35, 39, '2016-05-09', '21:21:22', 5, 'Açúde, Acúcar_', 'AÃ§Ãºde, AcÃºcar_', 'd78d941f3797262f786863171ef879be.jpg', 'jpg', 'descrever'),
+(36, 39, '2016-05-09', '21:27:03', 6, 'Açúde, Acúcar_', 'AÃƒÂ§ÃƒÂºde, AcÃƒÂºcar_ FeijÃƒÂ£o', '9388e0649a8f2cbf35ec76120639b3f3.jpg', 'jpg', 'revisar'),
+(37, 39, '2016-05-09', '22:48:12', 3, 'Furacão, Solidão, Paixão, avião, caçador_', 'ForaÃ§Ã£o, coraÃ§Ã£o, pulmÃ£o, atenÃ§Ã£o!Saudades, verdades, BoticÃ¡rio! Coragem, Kouton,  coraÃ§Ã£o', 'ee5ee8fd97e768368f38862fa2716861.jpg', 'jpg', 'publicar');
 
 -- --------------------------------------------------------
 
@@ -9906,7 +9945,83 @@ CREATE TABLE IF NOT EXISTS `log` (
   PRIMARY KEY (`log_codigo`),
   KEY `user_codigo` (`user_codigo`,`img_codigo`),
   KEY `img_codigo` (`img_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
+
+--
+-- Extraindo dados da tabela `log`
+--
+
+INSERT INTO `log` (`log_codigo`, `log_data_hora`, `user_codigo`, `img_codigo`, `log_tipo`, `log_observacao`) VALUES
+(1, '2016-04-25 05:03:00', 39, 11, 3, 'Inserir a Ã¡udio-descriÃ§Ã£o'),
+(2, '2016-04-25 05:48:06', 39, 6, 3, 'Para testar'),
+(3, '2016-04-25 05:53:34', 39, 6, 3, 'Precisa de ajustes'),
+(4, '2016-04-25 06:12:32', 39, 5, 3, 'Eeeeee!!!'),
+(5, '2016-04-25 06:15:41', 39, 4, 3, 'ola mundo!'),
+(6, '2016-04-25 06:29:13', 39, 6, 2, 'tals'),
+(7, '2016-04-25 06:36:12', 39, 6, 2, 'olaaa'),
+(8, '2016-04-25 06:38:33', 39, 6, 2, 'sdsdsdsdsd'),
+(9, '2016-04-25 09:47:21', 39, 7, 2, ''),
+(10, '2016-04-25 09:49:50', 39, 7, 3, ''),
+(11, '2016-04-30 20:26:24', 39, 13, 2, 'lokk'),
+(12, '2016-05-01 13:29:46', 43, 5, 2, ''),
+(13, '2016-05-01 13:35:00', 39, 14, 2, ''),
+(14, '2016-05-01 13:39:53', 39, 15, 2, ''),
+(15, '2016-05-01 13:43:32', 39, 16, 2, ''),
+(16, '2016-05-01 13:57:23', 39, 17, 2, ''),
+(17, '2016-05-01 14:40:49', 39, 17, 3, ''),
+(18, '2016-05-09 19:10:32', 39, 21, 2, ''),
+(19, '2016-05-09 19:12:42', 39, 21, 3, ''),
+(20, '2016-05-09 19:50:51', 39, 27, 2, ''),
+(21, '2016-05-09 19:51:21', 39, 27, 2, ''),
+(22, '2016-05-09 19:54:39', 39, 27, 3, ''),
+(23, '2016-05-09 19:55:05', 39, 27, 2, ''),
+(24, '2016-05-09 19:55:22', 39, 27, 3, ''),
+(25, '2016-05-09 20:06:11', 39, 28, 2, ''),
+(26, '2016-05-09 20:06:25', 39, 28, 3, ''),
+(27, '2016-05-09 20:14:25', 39, 29, 2, ''),
+(28, '2016-05-09 20:14:47', 39, 29, 2, ''),
+(29, '2016-05-09 21:19:02', 39, 34, 2, ''),
+(30, '2016-05-09 21:47:48', 39, 36, 2, ''),
+(31, '2016-05-09 21:58:50', 39, 36, 3, ''),
+(32, '2016-05-09 22:22:55', 39, 35, 2, ''),
+(33, '2016-05-09 22:23:29', 39, 35, 3, ''),
+(34, '2016-05-09 22:23:56', 39, 34, 3, ''),
+(35, '2016-05-09 22:35:42', 39, 36, 2, ''),
+(36, '2016-05-09 22:41:58', 39, 16, 3, ''),
+(37, '2016-05-09 22:51:05', 39, 37, 2, ''),
+(38, '2016-05-09 22:51:56', 39, 37, 3, ''),
+(39, '2016-05-09 22:52:39', 39, 37, 3, ''),
+(40, '2016-05-09 23:01:52', 39, 37, 2, ''),
+(41, '2016-05-09 23:02:17', 39, 37, 3, ''),
+(42, '2016-05-09 23:11:37', 39, 37, 2, ''),
+(43, '2016-05-09 23:11:59', 39, 37, 3, ''),
+(44, '2016-05-09 23:12:55', 39, 37, 2, ''),
+(45, '2016-05-09 23:13:36', 39, 37, 3, ''),
+(46, '2016-05-09 23:15:35', 39, 37, 2, 'lllllklkkjnhjjkghjfghfdcgdchfvhyvbhj'),
+(47, '2016-05-09 23:16:12', 39, 37, 3, ''),
+(48, '2016-05-09 23:17:31', 39, 37, 2, 'agora sim hen!'),
+(49, '2016-05-09 23:18:00', 39, 37, 3, ''),
+(50, '2016-05-28 16:32:55', 39, 2, 3, ''),
+(51, '2016-05-28 17:31:13', 39, 2, 3, ''),
+(52, '2016-05-28 18:31:22', 39, 5, 3, ''),
+(53, '2016-05-28 18:39:16', 39, 2, 3, ''),
+(54, '2016-05-28 18:57:02', 39, 5, 3, ''),
+(55, '2016-05-28 18:57:13', 39, 2, 3, ''),
+(56, '2016-05-28 19:55:33', 39, 2, 3, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tabela_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `tabela_tag` (
+  `tag_codigo` int(11) NOT NULL,
+  `tag_descricao` varchar(255) COLLATE utf8_bin NOT NULL,
+  `tag_cont` int(11) DEFAULT '1',
+  `tag_ultima_buca` datetime NOT NULL,
+  PRIMARY KEY (`tag_codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -9925,7 +10040,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usu_data_hora_cad` datetime DEFAULT NULL,
   PRIMARY KEY (`usu_codigo`),
   KEY `cid_codigo` (`cid_codigo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -9934,7 +10049,11 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`usu_codigo`, `usu_nome`, `usu_email`, `usu_senha`, `usu_escolaridade`, `usu_descricao`, `cid_codigo`, `usu_data_hora_cad`) VALUES
 (23, 'Juliana de Fatima da Silva', 'julianafatsil@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', '2', 'Pouco conhecimento em audio_descricao', NULL, NULL),
 (38, 'usuario', 'usuario@mail.com', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Terceiro Grau Completo', 'Pouco conhecimento', 5671, '2016-04-24 22:01:06'),
-(39, 'Juliana de Fatima da Silva', 'julianafatsil@gmail.com', 'e1e58cab7873729c6d8d4f22331b7eebe8c562d4', 'Terceiro Grau Incompleto', 'Regular', 7527, '2016-04-24 22:11:13');
+(39, 'Juliana de Fatima da Silva', 'julianafatsil@gmail.com', 'e1e58cab7873729c6d8d4f22331b7eebe8c562d4', 'Terceiro Grau Incompleto', 'Regular', 7527, '2016-04-24 22:11:13'),
+(40, 'Juliana de Fatima da Silva', 'juteste@hotmail.com', 'e1e58cab7873729c6d8d4f22331b7eebe8c562d4', 'Terceiro Grau Incompleto', 'lol', 7221, '2016-04-27 17:19:19'),
+(41, 'Junior de Almeida', 'ju@hotmail.com', 'a7ae639ea556171c56cd06c61c2cfd09ccbee0a9', 'Terceiro Grau Completo', '', 7224, '2016-04-30 17:14:56'),
+(42, 'ju', 'teste@hotmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'EspecializaÃ§Ã£o', '', 5449, '2016-05-01 01:43:12'),
+(43, 'ju', 'sonho@hotmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'EspecializaÃ§Ã£o', '', 5450, '2016-05-01 01:44:36');
 
 -- --------------------------------------------------------
 
@@ -9957,9 +10076,21 @@ CREATE TABLE IF NOT EXISTS `usuario_categoria_usuario` (
 
 INSERT INTO `usuario_categoria_usuario` (`usu_codigo`, `cat_usu_codigo`, `cat_usu_situacao`) VALUES
 (38, 1, NULL),
-(39, 1, NULL),
-(39, 2, NULL),
-(39, 3, NULL);
+(39, 1, 'ativo'),
+(39, 2, 'ativo'),
+(39, 3, 'ativo'),
+(40, 1, 'ativo'),
+(40, 2, 'ativo'),
+(40, 3, 'ativo'),
+(41, 1, 'pendente'),
+(41, 2, 'ativo'),
+(41, 3, 'pendente'),
+(42, 1, 'pendente'),
+(42, 2, 'ativo'),
+(42, 3, 'pendente'),
+(43, 1, 'pendente'),
+(43, 2, 'ativo'),
+(43, 3, 'pendente');
 
 --
 -- Constraints for dumped tables
@@ -9972,6 +10103,13 @@ ALTER TABLE `cidades`
   ADD CONSTRAINT `cidades_ibfk_1` FOREIGN KEY (`est_codigo`) REFERENCES `estados` (`est_codigo`);
 
 --
+-- Limitadores para a tabela `imagem_tag`
+--
+ALTER TABLE `imagem_tag`
+  ADD CONSTRAINT `imagem_tag_ibfk_2` FOREIGN KEY (`tag_codigo`) REFERENCES `tabela_tag` (`tag_codigo`),
+  ADD CONSTRAINT `imagem_tag_ibfk_1` FOREIGN KEY (`img_codigo`) REFERENCES `imagens` (`img_codigo`);
+
+--
 -- Limitadores para a tabela `imagens`
 --
 ALTER TABLE `imagens`
@@ -9982,8 +10120,8 @@ ALTER TABLE `imagens`
 -- Limitadores para a tabela `log`
 --
 ALTER TABLE `log`
-  ADD CONSTRAINT `log_ibfk_2` FOREIGN KEY (`img_codigo`) REFERENCES `imagens` (`img_codigo`),
-  ADD CONSTRAINT `log_ibfk_1` FOREIGN KEY (`user_codigo`) REFERENCES `usuario` (`usu_codigo`);
+  ADD CONSTRAINT `log_ibfk_1` FOREIGN KEY (`user_codigo`) REFERENCES `usuario` (`usu_codigo`),
+  ADD CONSTRAINT `log_ibfk_2` FOREIGN KEY (`img_codigo`) REFERENCES `imagens` (`img_codigo`);
 
 --
 -- Limitadores para a tabela `usuario`
