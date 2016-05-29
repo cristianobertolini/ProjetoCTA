@@ -77,7 +77,7 @@
             mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
             $codigoImg = $mysqli->insert_id;
             
-            $tags     = Trim(strtolower($mysqli->real_escape_string($_POST['tag'])));
+            $tags     = Trim($mysqli->real_escape_string($_POST['tag']));
             $arrayTag = explode(',', $tags);
 
             foreach($arrayTag as $valoresTag) {
@@ -85,7 +85,7 @@
                     $sqlTag = "SELECT `tag_codigo`,
                                       `tag_descricao`, 
                                       `tag_cont`, 
-                                      `tag_ultima_buca` 
+                                      `tag_ultima_busca` 
                                  FROM `tag` 
                                 WHERE `tag_descricao` LIKE '$valoresTag' ";
 
@@ -105,7 +105,7 @@
                                                     (`tag_descricao`, 
                                                      `tag_cont`) 
                                              VALUES ('$valoresTag',
-                                                     '1')";
+                                                     '0')";
                         $mysqli->query($sqlTagInsert);
                         $codigotag = $mysqli->insert_id;
 

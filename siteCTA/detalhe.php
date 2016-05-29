@@ -9,7 +9,14 @@
             if(isset($_GET['id'])){
                 $id = $mysqli->real_escape_string($_GET['id']);
 
-                $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original` 
+                $sqlImg =  "SELECT i.`img_codigo`, 
+                                   i.`usu_codigo`, 
+                                   i.`img_data`, 
+                                   i.`img_hora`, 
+                                   i.`img_audiodescricao`, 
+                                   i.`img_nome`, 
+                                   i.`img_nome_original`,
+                                   i.`cat_codigo`
                             FROM `imagens` as i 
                             WHERE i.`img_codigo` = $id";
                 
@@ -50,6 +57,25 @@
             echo '      <div class="w3-justify">'.$registroImg['img_audiodescricao'].'</div>';
             echo '      <br>';            
             echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
+            echo '      <br><br>'; 
+            echo '      <strong>Categoria:</strong> '.BuscaDado('cat_nome', 'categoria', 'cat_codigo = '.$registroImg['cat_codigo']);
+            echo '      <br>'; 
+            echo '      <strong>Palavras-chave:</strong> ';
+            
+            $sqlTag = "SELECT it.`tag_codigo`,
+                              t.`tag_descricao`,
+                              t.`tag_cont`
+                       FROM `imagem_tag` as it 
+                           INNER JOIN `tag` as t
+                               ON t.`tag_codigo` = it.`tag_codigo`
+                       WHERE it.`img_codigo` = ".$registroImg['img_codigo']."
+                       ORDER BY t.`tag_cont` DESC";
+            $queryTag = $mysqli->query($sqlTag);
+            while ($registroTag = $queryTag->fetch_assoc()) {
+                echo '<a href="./tag.php?id='.$registroTag['tag_codigo'].'"><span class="w3-tag w3-green">'.$registroTag['tag_descricao'].' <span class="w3-badge">';
+                echo $registroTag['tag_cont'];
+                echo '</span> </span></a> ';
+            }            
             echo '      <br><br>';
             echo '  </div>';
             echo '</div>';

@@ -54,9 +54,9 @@
         if ($rowsCat > 0) {
             //Mostra as categorias
             while ($registroCat = $queryCat->fetch_assoc()) {    
-                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.(utf8_encode($registroCat['cat_nome'])).' (';
+                echo '<a href="./categoria.php?id='.$registroCat['cat_codigo'].'">'.(utf8_encode($registroCat['cat_nome'])).' <span class="w3-badge w3-green">';
                 echo contaCategoria($registroCat['cat_codigo']);
-                echo ')</a>';
+                echo '</span></a>';
             }   
         } else {
             echo "<a>Nenhuma categoria encontrada</a>";
