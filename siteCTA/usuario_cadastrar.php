@@ -2,7 +2,6 @@
 <html lang="pt-br">
     <head>
         <?php
-            include("restrito.php");
             include("cabecalho.php");
             $pagina = 'IN';
         ?>    
@@ -39,16 +38,16 @@
             <div class="w3-container">
                 <form id="cadastro_usuario" action="usuario_inserir.php" method="POST">
                     <div class="w3-section">
-                       <label><strong>Nome</strong></label>
+                       <label class="w3-label"><strong>Nome</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
 
-                        <label><strong>Login (E-mail)</strong></label>
+                        <label class="w3-label"><strong>Login (E-mail)</strong></label>
                         <input class="w3-input w3-border" id="email" name="email" type="email" placeholder="Insira seu email" required>
 
-                        <label><strong>Senha</strong></label>
+                        <label class="w3-label"><strong>Senha</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
                                
-                        <label for="escolaridade"><strong>Escolaridade</strong>
+                        <label class="w3-label" for="escolaridade"><strong>Escolaridade</strong>
                             <select class="w3-select" name="escolaridade" id="escolaridade" required>
                                 <option value=""disabled selected> Selecione uma opção </option>
                                 <option value="Primeiro Grau Incompleto">1º Grau - Incompleto</option>
@@ -65,7 +64,7 @@
                         <br>
                         
                         
-                        <label for="est_codigo"><strong>Estado:</strong></label>
+                        <label class="w3-label" for="est_codigo"><strong>Estado:</strong></label>
                         <select class="w3-select" name="est_codigo" id="est_codigo" required>
                             <option value="">Selecione uma opção</option>
                                 <?php
@@ -82,7 +81,7 @@
                         <br> 
                         <br>
                         
-                        <label for="cid_codigo"><strong>Cidade:</strong></label>
+                        <label class="w3-label" for="cid_codigo"><strong>Cidade:</strong></label>
                         <span class="carregando">Aguarde, carregando...</span>
                         <select class="w3-select" name="cid_codigo" id="cid_codigo" required>
                             <option value="" disabled selected>-- Escolha um estado --</option> 
@@ -90,10 +89,10 @@
                         <br>
                         <br>
                         
-                        <label><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
+                        <label class="w3-label"><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
                         <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea></br>
 
-                        <label required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>    
+                        <label class="w3-label" required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>    
                             <input type='hidden' class="w3-check"  id='categoria' name='categoria[]' value='1'checked>
                             <label for='categoria1' class="w3-validate"></label></p>
                             <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='2'>
