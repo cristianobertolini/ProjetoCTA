@@ -5,12 +5,17 @@
         <?php
             include("restrito.php");
             include("include/conexao.php");
-            include("cabecalho.php");
+            include("cabecalho.php");            
             $pagina = 'AU';
             
+            if(isset($_GET['imagem'])){
+                $id = $mysqli->real_escape_string($_GET['imagem']);
+            }
             if(isset($_POST['imagem'])){
                 $id = $mysqli->real_escape_string($_POST['imagem']);
-
+            }
+            
+            if (isset($id)) {
                 $sqlImg =  "SELECT i.`img_codigo`, i.`usu_codigo`, i.`img_data`, i.`img_hora`, i.`img_audiodescricao`, i.`img_nome`, i.`img_nome_original`,i.`img_situacao`, i.`cat_codigo`  
                             FROM `imagens` as i 
                             WHERE i.`img_codigo` = $id";
@@ -92,7 +97,52 @@
             }
             echo '</table>';
             echo '</div>';
-        }    
+        }  
+        
+        $sqlTag = "SELECT it.`tag_codigo`,
+                          t.`tag_descricao`,
+                          t.`tag_cont`,
+                          t.`tag_ultima_busca`,
+                          it.`img_codigo`
+                   FROM `imagem_tag` as it 
+                       INNER JOIN `tag` as t
+                           ON t.`tag_codigo` = it.`tag_codigo`
+                   WHERE it.`img_codigo` = $id
+                   ORDER BY t.`tag_descricao`";
+        $queryTag = $mysqli->query($sqlTag);              
+
+        if (mysqli_num_rows($queryTag) > 0){
+            echo '<div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
+            echo '    <h3>Palavra-chave associada:</h3>';
+            echo '<table class="w3-table w3-striped w3-border">';
+            echo '    <thead>';
+            echo '    <tr class="w3-green">';
+            echo '      <th>Palavra-chave</th>';
+            echo '      <th WIDTH="140" class="w3-center">Núm. de buscas</th>';
+            echo '      <th>Última busca</th>';
+            echo '      <th WIDTH="75">Excluir</th>';
+            echo '    </tr>';
+            echo '    </thead>';
+
+            while ($registroTag = $queryTag->fetch_assoc()) {    
+                echo '<tr>';
+                echo '  <td>'.$registroTag['tag_descricao'].'</td>';
+                echo '  <td WIDTH="140" class="w3-center">'.$registroTag['tag_cont'].'</td>';
+                $timestampTag  = strtotime($registroTag['tag_ultima_busca']);
+                echo '  <td>'.date('d/m/Y H:i:s', $timestampTag).'</td>';
+                echo '  <td WIDTH="75"><form id="tag_alteracao" action="tag_alteracao.php" method="post">';
+                echo '          <input id="img" name="img" type="hidden" value="'.$registroTag['img_codigo'].'"/>';
+                echo '          <input id="tag" name="tag" type="hidden" value="'.$registroTag['tag_codigo'].'"/>';
+                echo '          <input id="tipo" name="tipo" type="hidden" value="1"/>';
+                echo '          <button id="Deletar" type="submit" class="w3-btn w3-red"><i class="fi-x"></i></button>';
+                echo '      </form>'; 
+                echo '  </td>';                        
+                echo '</tr>';                        
+            }
+            echo '</table>';
+            echo '</div>';
+        }                      
+        
     ?>
     <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
         <h3>Descrever imagem:</h3> 
@@ -130,18 +180,19 @@
                     ?>
                 </select>
                 <br><br> 
-                <label><strong>Observação: (opcional)</strong></label> 
-                
+                <label class="w3-label"><strong>Observação: (opcional)</strong></label> 
                 <textarea class="w3-input w3-border" name="obs" id="obs"></textarea></br>
                 
-                <label class="w3-label"><b>Áudio-descrição:</b></label> 
-
+                <label class="w3-label"><strong>Áudio-descrição:</strong></label> 
                 <textarea class="w3-input w3-border" onkeyup="blocTexto(this.value)" id="audiodescricao" name="audiodescricao" class="textarea" rows="3" maxlength="5000" required><?php echo $registroImg['img_audiodescricao']; ?></textarea>
 
 
-                <label ><b>Restam <span id="cont">5000</span> caracteres</label>     
+                <label ><strong>Restam <span id="cont">5000</span> caracteres</strong></label>     
                 <br>
- 
+                
+                <label class="w3-label"><strong>Tag (palavra-chave separada por vírgula):</strong></label> 
+                <input class="w3-input w3-border" name="tag" type="text"/>
+                
                 <input id="img" name="img" type="hidden" value="<?php echo $id; ?>"/>
                 
                 <div class="w3-row">
@@ -149,25 +200,25 @@
                     <input class="w3-input w3-blue-grey w3-half" type="reset" value="Limpar" />
                 </div> 
             </div>
-        </form>
+        </form>    
     </div>   
         
-         <script type="text/javascript">
-            function blocTexto(valor)
-            {
-                quant = 5000;
-                total = valor.length;
-                if(total <= quant)
-                {
-                    resto = quant - total;
-                    document.getElementById('cont').innerHTML = resto;
-                }
-                else
-                {
-                    document.getElementById('texto').value = valor.substr(0,quant);
-                }
-            }
-            </script>
+    <script type="text/javascript">
+       function blocTexto(valor)
+       {
+           quant = 5000;
+           total = valor.length;
+           if(total <= quant)
+           {
+               resto = quant - total;
+               document.getElementById('cont').innerHTML = resto;
+           }
+           else
+           {
+               document.getElementById('texto').value = valor.substr(0,quant);
+           }
+       }
+    </script>
     <?php
         include("rodape.php");
     ?>    

@@ -23,6 +23,12 @@
         </div>
         
                <?php
+                if((isset($_GET['mensagem'])) && (isset($_GET['texto']))){
+                    echo "<div class='w3-container ".$_GET['mensagem']."'><span onclick='this.parentElement.style.display=\"none\"' class='w3-closebtn'>X</span>";
+                    echo $_GET['texto'];
+                    echo "</div>";
+                }
+               
                 /*pega no banco de dados todas as imagens com situação de imagem descrever*/
                 $sqlImagens = "select  i.img_codigo,i.img_data,i.img_hora,i.img_nome,c.cat_nome,u.usu_nome 
                                 from imagens as i 
@@ -59,7 +65,7 @@
                         echo '  <td>'.date('d/m/Y', strtotime($Linha['img_data'])).' - '.$Linha['img_hora'].'</td>';
                         echo '  <td>'.$Linha['cat_nome'].'</td>';
                         echo '  <td>'.$Linha['usu_nome'].'</td>';
-                        echo '  <td WIDTH="75">  <form id="descrever_imagem" action="audio_descrever_imagem.php" method="post">';
+                        echo '  <td WIDTH="75"><form id="descrever_imagem" action="audio_descrever_imagem.php" method="post">';
                         echo '          <input id="imagem" name="imagem" type="hidden" value="'.$Linha['img_codigo'].'"/>';
                         echo '          <button id="Descrever" type="submit" class="w3-btn w3-green"><i class="fi-page-edit"></i></button>';
                         echo '      </form>'; 

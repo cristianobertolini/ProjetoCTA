@@ -103,9 +103,11 @@
                         //se não encontrar insere tag nova e insere na imagem
                         $sqlTagInsert = "INSERT INTO `tag`
                                                     (`tag_descricao`, 
-                                                     `tag_cont`) 
+                                                     `tag_cont`,
+                                                     `tag_ultima_busca`) 
                                              VALUES ('$valoresTag',
-                                                     '0')";
+                                                     '0',
+                                                      now())";
                         $mysqli->query($sqlTagInsert);
                         $codigotag = $mysqli->insert_id;
 

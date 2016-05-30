@@ -89,7 +89,52 @@
             }
             echo '</table>';
             echo '</div>';
-        }    
+        }  
+        
+
+        $sqlTag = "SELECT it.`tag_codigo`,
+                          t.`tag_descricao`,
+                          t.`tag_cont`,
+                          t.`tag_ultima_busca`,
+                          it.`img_codigo`
+                   FROM `imagem_tag` as it 
+                       INNER JOIN `tag` as t
+                           ON t.`tag_codigo` = it.`tag_codigo`
+                   WHERE it.`img_codigo` = $id
+                   ORDER BY t.`tag_descricao`";
+        $queryTag = $mysqli->query($sqlTag);              
+
+        if (mysqli_num_rows($queryTag) > 0){
+            echo '<div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
+            echo '    <h3>Palavra-chave associada:</h3>';
+            echo '<table class="w3-table w3-striped w3-border">';
+            echo '    <thead>';
+            echo '    <tr class="w3-green">';
+            echo '      <th>Palavra-chave</th>';
+            echo '      <th WIDTH="140" class="w3-center">Núm. de buscas</th>';
+            echo '      <th>Última busca</th>';
+            echo '      <th WIDTH="75">Excluir</th>';
+            echo '    </tr>';
+            echo '    </thead>';
+
+            while ($registroTag = $queryTag->fetch_assoc()) {    
+                echo '<tr>';
+                echo '  <td>'.$registroTag['tag_descricao'].'</td>';
+                echo '  <td WIDTH="140" class="w3-center">'.$registroTag['tag_cont'].'</td>';
+                $timestampTag  = strtotime($registroTag['tag_ultima_busca']);
+                echo '  <td>'.date('d/m/Y H:i:s', $timestampTag).'</td>';
+                echo '  <td WIDTH="75"><form id="tag_alteracao" action="tag_alteracao.php" method="post">';
+                echo '          <input id="img" name="img" type="hidden" value="'.$registroTag['img_codigo'].'"/>';
+                echo '          <input id="tag" name="tag" type="hidden" value="'.$registroTag['tag_codigo'].'"/>';
+                echo '          <input id="tipo" name="tipo" type="hidden" value="1"/>';
+                echo '          <button id="Deletar" type="submit" class="w3-btn w3-red"><i class="fi-x"></i></button>';
+                echo '      </form>'; 
+                echo '  </td>';                        
+                echo '</tr>';                        
+            }
+            echo '</table>';
+            echo '</div>';
+        }                              
     ?>
     <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
         <h3>Revisar imagem:</h3> 
@@ -135,9 +180,12 @@
                         <p><button class="w3-btn-block w3-teal" type="button" onClick="NovaCat()">Adicionar Nova Categoria</button></p></div>
                 </div>
                 
-                <label><strong>Observação: (opcional)</strong></label> 
+                <label class="w3-label" for="obs"><strong>Observação: (opcional)</strong></label> 
                 <textarea class="w3-input w3-border" name="obs" id="obs"></textarea></br>
                 
+                <label class="w3-label" for="tag"><strong>Tag (palavra-chave separada por vírgula):</strong></label> 
+                <input class="w3-input w3-border" name="tag" id="tag" type="text"/>                
+                    
                 <input id="img" name="img" type="hidden" value="<?php echo $id; ?>"/>
                 
                 <div class="w3-row">

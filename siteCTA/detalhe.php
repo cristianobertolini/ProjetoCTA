@@ -59,9 +59,7 @@
             echo '      <img src="./img/'.$registroImg['img_nome_original'].'" style="width:45%" alt="'.$registroImg['img_nome'].'">';                                       
             echo '      <br><br>'; 
             echo '      <strong>Categoria:</strong> '.BuscaDado('cat_nome', 'categoria', 'cat_codigo = '.$registroImg['cat_codigo']);
-            echo '      <br>'; 
-            echo '      <strong>Palavras-chave:</strong> ';
-            
+             
             $sqlTag = "SELECT it.`tag_codigo`,
                               t.`tag_descricao`,
                               t.`tag_cont`
@@ -71,11 +69,14 @@
                        WHERE it.`img_codigo` = ".$registroImg['img_codigo']."
                        ORDER BY t.`tag_cont` DESC";
             $queryTag = $mysqli->query($sqlTag);
-            while ($registroTag = $queryTag->fetch_assoc()) {
-                echo '<a href="./tag.php?id='.$registroTag['tag_codigo'].'"><span class="w3-tag w3-green">'.$registroTag['tag_descricao'].' <span class="w3-badge">';
-                echo $registroTag['tag_cont'];
-                echo '</span> </span></a> ';
-            }            
+            if (mysqli_num_rows($queryTag) > 0){
+                echo '      <br>';
+                echo '      <strong>Palavras-chave:</strong> ';
+                while ($registroTag = $queryTag->fetch_assoc()) {
+                    echo '<a href="./tag.php?id='.$registroTag['tag_codigo'].'"><span class="w3-tag w3-green w3-margin-4">'.$registroTag['tag_descricao'].'';
+                    echo '</span></a> ';
+                } 
+            }
             echo '      <br><br>';
             echo '  </div>';
             echo '</div>';
