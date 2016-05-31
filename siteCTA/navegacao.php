@@ -82,7 +82,7 @@
     </div>  
     
     <div id="cat1" class="myMenu"  <?php if ($pagina != 'US') {echo " style='display:none'";} ?>>
-        <div class="w3-container"><span class="w3-large">USUARIO</span></div>
+        <div class="w3-container"><span class="w3-large">USUÁRIO</span></div>
         <a href="./upload_imagem.php">Submeter imagem</a>
         <a href="./usuario_editar.php">Editar perfil</a>
     </div>  

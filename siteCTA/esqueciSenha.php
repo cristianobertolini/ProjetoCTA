@@ -26,7 +26,7 @@
             <br>            
             <div id="instrucoes" class="w3-container w3-leftbar w3-grey">
                 <br><p>Caso você tenha esquecido a sua senha, preencha o campo abaixo.</p>
-                <p>Após, o sistema enviará UMA NOVA senha para o e-mail digitado
+                <p>Após, o sistema enviará uma senha para o e-mail digitado
                 se o mesmo for compatível com o e-mail de login cadastrado.</p>
             </div>
             <br>

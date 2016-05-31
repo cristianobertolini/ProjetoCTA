@@ -105,42 +105,6 @@ function contaCategoria($codCat){
     $mysqli->Close();
 }
 
-function BancaResultado($codluno, $tipo){
-    //Ve o resultado das avalia��es Aprovado ou Reprovado
-    include("conexao.php");       
-
-    $sql = "SELECT bav.`bav_codigo`, bav.`bav_nota_soma` 
-            FROM `banca_detalhe_avaliacao` as bav
-                RIGHT JOIN `banca_detalhe` as bd 
-                    ON bd.`band_codigo` = bav.`band_codigo` 
-                RIGHT JOIN `banca` as b 
-                    ON bd.`ban_codigo` = b.`ban_codigo` 
-            WHERE b.`usu_codigo` = $codluno 
-              AND b.`ban_tipo`= $tipo
-              AND bav.`bav_nota_soma` IS NOT NULL";
-
-    $query = $mysqli->query($sql);
-    
-    $nota  = 0;
-    $soma  = 0;
-    
-    if (mysqli_num_rows($query) >= 3) {
-        while ($Resultado = $query->fetch_assoc()) {
-            $soma = $soma + $Resultado['bav_nota_soma'];
-        }        
-        $nota = $soma/3;
-        if ($nota >=7){    
-            return True;
-        } else {
-            return False;
-        }
-    } else {
-        return False;
-    }        
-
-    $mysqli->Close();
-}
-
 function nomeCatUsu($codigo){
     
     include("conexao.php");       

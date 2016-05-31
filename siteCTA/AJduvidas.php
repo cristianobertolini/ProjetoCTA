@@ -25,67 +25,68 @@
             <h1>Dúvidas gerais</h1>
         </div>
         <div id="main" class="w3-container">
-        <h2>Como cada usuário contribui para o Sistema ColabAD:</h2>
-        <ul class="none"
-            <p style="text-align: justify;">
-          
-                <li> <strong>Usuário comum </strong>: Gera demanda de imagens, ao cadastrar-se, automaticamente
-                    é aceito como usuário normal, podendo fazer o envio (upload) de imagens para áudio-descrição.</li>
-                </br>
-                 <li> <strong>Áudio-descritor</strong>: Possui permissões de usuário normal e também pode áudio-descrever imagens, mas para fazer áudio-descrição
-                     nas imagens é preciso aceitação do Administrador do Sistema que irá avaliar seu conhecimento
-                     em áudio-descrição.</li>
-                 </br>
-                 <li> <strong>Revisor</strong>:  Possui permissões de usuário normal e a forma de cadastro funciona como para o 
-                     áudio-descritor, contribui fazendo revisões nas imagens áudio-descritas, podendo inclusive
-                     enviar novamente para o áudio-descritor com observações.</li>
-                 </br> 
-            </p>
-        </ul>
-        
-         <h3>Usuários com todas as permissões (usuario comum, áudio-descritor e revisor) para teste:</h3>
+            <h2>Como cada usuário contribui para o Sistema ColabAD:</h2>
+            <ul class="none">
+                <p style="text-align: justify;">
+                    <li> <strong>Usuário comum </strong>: Gera demanda de imagens, ao cadastrar-se, automaticamente
+                        é aceito como usuário normal, podendo fazer o envio (upload) de imagens para áudio-descrição.
+                    </li>
+                        <br>
+                     <li> <strong>Áudio-descritor</strong>: Possui permissões de usuário normal e também pode áudio-descrever imagens, mas para fazer áudio-descrição
+                         nas imagens é preciso aceitação do Administrador do Sistema que irá avaliar seu conhecimento
+                         em áudio-descrição.
+                     </li>
+                        <br>
+                     <li> <strong>Revisor</strong>:  Possui permissões de usuário normal e a forma de cadastro funciona como para o 
+                         áudio-descritor, contribui fazendo revisões nas imagens áudio-descritas, podendo inclusive
+                         enviar novamente para o áudio-descritor com observações.
+                     </li>
+                        <br> 
+                </p>
+            </ul>
 
-        <table class="w3-table w3-striped w3-bordered w3-card-4">
-        <thead>
-        <tr class="w3-green">
-          <th>Nome</th>
-          <th>Login</th>
-          <th>Senha</th>
-        </tr>
-        </thead>
-        <tr>
-          <td>teste1</td>
-          <td>teste1@mail.com</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>teste2</td>
-          <td>teste2@mail.com</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>teste3</td>
-          <td>teste3@mail.com</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>teste4</td>
-          <td>teste4@mail.com</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>teste5</td>
-          <td>teste5@mail.com</td>
-          <td>123</td>
-        </tr>
-        <tr>
-          <td>teste6</td>
-          <td>teste6@mail.com</td>
-          <td>123</td>
-        </tr>
-        </table>
-        
-        
+            <p><strong>Você pode fazer login no site com qualquer um dos usuários abaixo, para que você possa testar as funcionalidades do sistema com todas as permissões de: usuario comum, áudio-descritor e revisor.
+                </strong>
+            </p>
+             <table class="w3-table w3-striped w3-bordered w3-card-4">
+                <thead>
+                    <tr class="w3-green">
+                        <th>Nome</th>
+                        <th>Login</th>
+                        <th>Senha</th>
+                    </tr>
+                    <tr>
+                        <td>teste1</td>
+                        <td>teste1@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>teste2</td>
+                        <td>teste2@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>teste3</td>
+                        <td>teste3@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>teste4</td>
+                        <td>teste4@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>teste5</td>
+                        <td>teste5@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                    <tr>
+                        <td>teste6</td>
+                        <td>teste6@mail.com</td>
+                        <td>123</td>
+                    </tr>
+                </thead>
+            </table>
        </div>
     </div>
         <?php

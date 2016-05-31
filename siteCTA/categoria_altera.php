@@ -35,20 +35,16 @@
                     <div class="w3-section">
                         <div class="w3-row">
                             <label class="w3-label" for="nome"><strong>Descrição: </strong></label>
-                            <div class="w3-col s8">
+                            <div class="w3-col s6">
                                 <input class="w3-input w3-border w3-margin-bottom"  name="nome" id="nome" type="text" maxlength="50" placeholder="Insira o nome da categoria que deseja Buscar">
                             </div>
-                            <div class="w3-col s1">
-                                &nbsp;
-                            </div>
-
                             <div class="w3-col s2">
-                                <input class="w3-btn w3-btn-block w3-green" type="submit" value="Buscar">
+                                <button id="buscar" type="submit" class="w3-btn-block w3-green" value="Buscar">Buscar <i class="fi-magnifying-glass"></i></button>
                             </div> 
                         </div>
                     </div>
                 </form>
-                </br>
+                
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                 </div>
             </div>
