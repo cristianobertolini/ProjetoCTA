@@ -58,9 +58,10 @@
             </li> 
         </div>
             </ul>
-    </div>     
+        
         <?php
             include("rodape.php");
-        ?>    
+        ?>  
+         </div>
     </body>
 </html> 

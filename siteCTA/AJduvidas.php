@@ -80,10 +80,11 @@
                     </tr>
                 </thead>
             </table>
-       </div>
+      
         <?php
             include("rodape.php");
-        ?>    
+        ?>   
+        </div>
     </body>
 </html> 
 

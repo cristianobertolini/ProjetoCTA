@@ -35,12 +35,11 @@
              O ColabAD é um sistema aberto, desenvolvido para facilitar e disseminar a áudio-descrição.
             </p>
         </div>
-    </div>
-
-
+  
         <?php
             include("rodape.php");
-        ?>    
+        ?>  
+          </div>
     </body>
 </html> 
 
