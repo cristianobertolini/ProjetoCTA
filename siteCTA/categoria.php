@@ -33,12 +33,12 @@
         <title>colabAD | Categoria <?php echo utf8_encode($nome); ?> </title>           
     </head>    
 
-    <body>
-        
+<body>   
     <?php
         include("navegacao.php");
-        
-        echo '<div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">';
+    ?>    
+        <div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">
+    <?php
         echo '  <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">';
         echo '      <h1>Categoria '.utf8_decode($nome).'</h1>';
         echo '  </div>';
@@ -84,7 +84,7 @@
             } 
         }  
     ?>
-   
+    </div>
     <?php
         include("rodape.php");
     ?>    

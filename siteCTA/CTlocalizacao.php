@@ -19,11 +19,11 @@
             <h1>Localização</h1>
         </div>
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
-            <div class="w3-row">
+            <!--<div class="w3-row">
                 <h2>Onde Estamos</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3542.387650096885!2d-53.43080368523519!3d-27.394833220081026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fb9db5d68358e1%3A0xc72f45885e08948a!2sUniversidade+Federal+de+Santa+Maria%2C+Campus+de+Frederico+Westphalen!5e0!3m2!1spt-BR!2sbr!4v1459028766219" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-            <br><br>
+            <br><br> -->
             <div class="w3-row">
                 <div class="w3-container w3-quarter">
                     <strong>CAMPUS SEDE</strong><br>

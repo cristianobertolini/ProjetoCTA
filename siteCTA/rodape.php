@@ -10,17 +10,17 @@
 </footer>
 
 </div>
-
+</main>
 <script>
-function w3_open() {
-    document.getElementsByClassName("w3-sidenav")[0].style.width = "300px";
-    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
-    document.getElementById("main").style.marginLeft = "300px";
-}
-function w3_close() {
-    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
-    document.getElementById("main").style.marginLeft = 0;
-}
+//function w3_open() {
+//    document.getElementsByClassName("w3-sidenav")[0].style.width = "300px";
+//    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+//    document.getElementById("main").style.marginLeft = "300px";
+//}
+//function w3_close() {
+//    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+//    document.getElementById("main").style.marginLeft = 0;
+//}
 function w3_show_nav(name) {
     document.getElementById("menuCategoria").style.display = "none";
     document.getElementById("menuQuemSomos").style.display = "none";
@@ -33,4 +33,8 @@ function w3_show_nav(name) {
     w3-open();
 }
 </script>
+
+<noscript>Seu navegador não suporta JavaScript!</noscript>
+
+
      

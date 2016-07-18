@@ -49,7 +49,7 @@
                                
                         <label class="w3-label" for="escolaridade"><strong>Escolaridade</strong>
                             <select class="w3-select" name="escolaridade" id="escolaridade" required>
-                                <option value=""disabled selected> Selecione uma opção </option>
+                                <option value="" disabled selected> Selecione uma opção </option>
                                 <option value="Primeiro Grau Incompleto">1º Grau - Incompleto</option>
                                 <option value="Primeiro Grau Completo">1º Grau - Completo</option>
                                 <option value="Segundo Grau Incompleto">2º Grau - Incompleto</option>
@@ -59,7 +59,7 @@
                                 <option value="Especializa&ccedil;&atilde;o">Especialização</option>
                                 <option value="Mestrado">Mestrado</option>
                                 <option value="Doutorado">Doutorado</option>
-                            </select>  <br/>
+                            </select>  <br>
                         </label>    
                         <br>
                         
@@ -76,7 +76,6 @@
                                         echo '<option value="'.$registroEstado['est_codigo'].'">'.$registroEstado['est_uf'].' - '.(utf8_encode($registroEstado['est_nome'])).'</option>';
                                     }
                                 ?>
-                            </option>
                         </select>
                         <br> 
                         <br>
@@ -90,22 +89,26 @@
                         <br>
                         
                         <label class="w3-label"><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
-                        <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea></br>
+                        <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea>
+                        <br>
+                        
+                        <strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)
+                        <br>
+                        
+                        <input type='checkbox' class="w3-check"  id='categoria1' name='categoria[]' value='1' checked hidden>
+                        
+                        <input class="w3-check" id='categoria2' name='categoria[]' type='checkbox' value='2'>
+                        <span class="w3-validate"><strong>Áudio-descritor</strong> (O usuário tem permissão de fazer áudio-descricao nas imagens)</span> 
+                        <br>
+                        
+                        <input class="w3-check" id='categoria3' name='categoria[]' type='checkbox' value='3'>
+                        <span class="w3-validate"><strong>Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com áudio-descrição)</span> 
 
-                        <label class="w3-label" required><strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)<br>    
-                            <input type='hidden' class="w3-check"  id='categoria' name='categoria[]' value='1'checked>
-                            <label for='categoria1' class="w3-validate"></label></p>
-                            <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='2'>
-                            <label for='categoria2' class="w3-validate"><strong>Áudio-descritor</strong> (O usuário tem permissão de fazer áudio-descricao nas imagens)</label></p>
-                            <p>
-                            <input class="w3-check" id='categoria' name='categoria[]' type='checkbox' value='3'>
-                            <label for='categoria3' class="w3-validate"><strong> Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com áudio-descrição)</label></p>
-
-        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button class="w3-btn w3-btn-block w3-green">Enviar</button>
-        </div>
+                        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                          <button class="w3-btn w3-btn-block w3-green">Enviar</button>
+                        </div>
+                    </div>
                 </form>
-              </div>
             </div>
         </div>
         

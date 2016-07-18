@@ -2,6 +2,11 @@
     Created on : 17/03/2016, 23:24:13
     Author     : Talliny
 */
+.skip{
+position:absolute;
+text-indent:-9999em;
+width:0;
+}
 
 .w3-theme {
     color:#fff !important;

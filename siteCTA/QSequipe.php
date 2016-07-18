@@ -51,11 +51,11 @@
               </li> 
                <li class="w3-padding-hor-16">
                     <img src="img/logo_acessibilidade.png" class="w3-left w3-circle w3-margin-right" style="width:30px" alt="logo do grupo de acessibilidade de Santa Maria">
-                    <span class="w3-medium">O Sistema ColabAD é desenvolvido em conjunto com o <strong>Núcleo de Acessibilidade UFSM </strong>- <a href="http://w3.ufsm.br/acessibilidade."> http://w3.ufsm.br/acessibilidade/</a></span><br>
-                </br>
+                    <span class="w3-medium">O Sistema ColabAD é desenvolvido em conjunto com o <strong>Núcleo de Acessibilidade UFSM </strong>- <a href="http://w3.ufsm.br/acessibilidade."> http://w3.ufsm.br/acessibilidade/
+                    </a></span><br>
               </li> 
             </ul>
-
+            <br>
 
         <?php
             include("rodape.php");

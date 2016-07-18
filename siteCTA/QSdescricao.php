@@ -18,8 +18,8 @@
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <h1>O colabAD</h1>
         </div>
-         <div id="main" class="w3-container">
-             </br>
+         <div class="w3-container">
+             <br>
             <p style="text-align: justify;">O sistema ColabAD consiste em uma plataforma colaborativa que possibilita o acesso à 
                 AD de imagens para pessoas com deficiência visual e profissionais que precisam do 
                 recurso de AD em suas imagens. Nossa missão é missão formar uma rede de áudio-descritores 
