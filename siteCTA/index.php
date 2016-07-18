@@ -6,7 +6,7 @@
             include("cabecalho.php");
             $pagina = 'IN';
         ?>
-        <title> ColabAD | Sistema Colaboratido de Áudiodescrição)</title>           
+        <title> ColabAD | Sistema Colaborativo de Áudio-descrição</title>           
     </head>    
 
     <body>
