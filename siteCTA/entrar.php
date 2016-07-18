@@ -34,10 +34,10 @@
                 <div class="w3-container">
                     <form id="cadastro_usuario" action="entrar_login.php" method="POST">
                         <div class="w3-section">
-                            <label><strong>Email</strong></label>
+                            <label class="w3-label" for="email"><strong>Email</strong></label>
                             <input class="w3-input w3-border w3-margin-bottom" id="email" name="email" type="text" placeholder="Insira seu email" required>
 
-                            <label><strong>Senha</strong></label>
+                            <label class="w3-label" for="senha"><strong>Senha</strong></label>
                             <input class="w3-input w3-border" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
 
                             <button class="w3-btn w3-btn-block w3-green">Entrar</button>

@@ -38,13 +38,13 @@
             <div class="w3-container">
                 <form id="cadastro_usuario" action="usuario_inserir.php" method="POST">
                     <div class="w3-section">
-                       <label class="w3-label"><strong>Nome</strong></label>
+                       <label class="w3-label" for="nome"><strong>Nome</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="nome" name="nome" type="text" placeholder="Insira seu nome completo" required>
 
-                        <label class="w3-label"><strong>Login (E-mail)</strong></label>
+                        <label class="w3-label" for="email"><strong>Login (E-mail)</strong></label>
                         <input class="w3-input w3-border" id="email" name="email" type="email" placeholder="Insira seu email" required>
 
-                        <label class="w3-label"><strong>Senha</strong></label>
+                        <label class="w3-label" for="senha"><strong>Senha</strong></label>
                         <input class="w3-input w3-border w3-margin-bottom" id="senha" name="senha" type="password" placeholder="Insira sua senha" required>
                                
                         <label class="w3-label" for="escolaridade"><strong>Escolaridade</strong>
@@ -88,21 +88,22 @@
                         <br>
                         <br>
                         
-                        <label class="w3-label"><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
+                        <label class="w3-label" for="descricao"><strong>Conte-nos qual é o seu conhecimento sobre áudio-descrição: (opcional)</strong></label> 
                         <textarea class="w3-input w3-border" name="descricao" id="descricao"></textarea>
                         <br>
                         
                         <strong>Deseja contribuir também como:</strong> (Para ser aceito seu usuário será avaliado pelo administrador do sistema)
-                        <br>
+
                         
                         <input type='checkbox' class="w3-check"  id='categoria1' name='categoria[]' value='1' checked hidden>
-                        
+                        <label class="w3-label" for="categoria1"></label>
+                        <br>
                         <input class="w3-check" id='categoria2' name='categoria[]' type='checkbox' value='2'>
-                        <span class="w3-validate"><strong>Áudio-descritor</strong> (O usuário tem permissão de fazer áudio-descricao nas imagens)</span> 
+                        <label class="w3-label" for="categoria2"><strong>Áudio-descritor</strong> (O usuário tem permissão de fazer áudio-descricao nas imagens)</label> 
                         <br>
                         
                         <input class="w3-check" id='categoria3' name='categoria[]' type='checkbox' value='3'>
-                        <span class="w3-validate"><strong>Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com áudio-descrição)</span> 
+                        <label class="w3-label" for="categoria3"><strong>Revisor</strong> (O usuário tem permissão de fazer revisões das imagens com áudio-descrição)</label> 
 
                         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                           <button class="w3-btn w3-btn-block w3-green">Enviar</button>
@@ -113,10 +114,11 @@
         </div>
         
         <script src="http://www.google.com/jsapi"></script>
+        <noscript>Seu navegador não suporta JavaScript!</noscript> 
         <script type="text/javascript">
           google.load('jquery', '1.3');
         </script>        
-
+        <noscript>Seu navegador não suporta JavaScript!</noscript> 
         <script type="text/javascript">        
             $(function(){
                 $('#est_codigo').change(function(){
@@ -136,8 +138,8 @@
                     }
                 });
             });      
-        </script>          
-        
+        </script> 
+        <noscript>Seu navegador não suporta JavaScript!</noscript>      
 
         <?php
             include("rodape.php");

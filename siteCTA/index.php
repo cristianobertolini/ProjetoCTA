@@ -15,7 +15,7 @@
         include("navegacao.php");
     ?>  
         
-    <div id="main" n class="w3-container" style="margin-left:300px;margin-top:118px">
+    <div id="main" class="w3-container" style="margin-left:300px;margin-top:118px">
         <div class="w3-container w3-section w3-padding-large w3-card-4 w3-light-grey">
             <h1>Últimas imagens</h1>
         </div>

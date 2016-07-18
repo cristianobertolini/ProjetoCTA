@@ -41,6 +41,7 @@
                 áudio-descritor e revisor.</strong>
             </p>
              <table class="w3-table w3-striped w3-bordered w3-card-4">
+                 <caption class="w3-left-align">Exemplos de login:</caption>
                 <thead>
                     <tr class="w3-green">
                         <th>Nome</th>
