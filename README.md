@@ -16,7 +16,7 @@ Trabalho desenvolvido em conjunto com a CTA - Comunicação, Tecnologia e Acessi
 
 
 
-Sistema de Colaborativo de Audiodescricao - colabAD
+Sistema Colaborativo de Audiodescricao - colabAD
 ==============
 O projeto de Pesquisa e Extensão de Comunicação, Tecnologia e Acessibilidade da Universidade Federal de Santa Maria (UFSM), está desenvolvendo uma plataforma colaborativa que possibilita o acesso à audiodescrição de imagens para pessoas com deficiência visual e profissionais que precisam do recurso de AD em suas imagens.
 
